@@ -1,6 +1,17 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap');
 
 :root {
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-cormorant: "Cormorant Garamond", serif;
+  --font-cinzel: "Cinzel Decorative", cursive;
+  --font-cinzel-regular: "Cinzel", serif; /* New Cinzel variant */
+}
+
+
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -23,4 +34,4 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
