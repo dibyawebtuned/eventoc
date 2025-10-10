@@ -45,13 +45,13 @@ const Footer = () => {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-10 max-w-6xl mx-auto px-6 text-sm">
                 {/* Quick Links */}
                 <div>
-                    <h3 className="text-[#D7B26A] font-serif text-lg mb-4 tracking-wide">
+                    <h3 className="text-[#D7B26A] font-serif text-[24px] mb-4 tracking-wide">
                         QUICK LINKS
                     </h3>
                     <ul className="space-y-2">
                         <li>
                             <Link href="/"
-                                className="relative hover:text-[#D7B26A] transition duration-300 
+                                className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
                                 after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
                                 after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
                                 hover:after:w-full">
@@ -60,21 +60,21 @@ const Footer = () => {
                         </li>
 
                         <li>
-                            <Link href="/about" className="relative hover:text-[#D7B26A] transition duration-300 
+                            <Link href="/about" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
                             after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
                             after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
                             hover:after:w-full">About Us</Link>
                         </li>
 
                         <li>
-                            <Link href="/services" className="relative hover:text-[#D7B26A] transition duration-300 
+                            <Link href="/services" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
                             after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
                             after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
                             hover:after:w-full">Services</Link>
                         </li>
 
                         <li>
-                            <Link href="/gallery" className="relative hover:text-[#D7B26A] transition duration-300 
+                            <Link href="/gallery" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
                             after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
                             after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
                             hover:after:w-full">Gallery</Link>
@@ -84,33 +84,33 @@ const Footer = () => {
 
                 {/* Style Guide */}
                 <div>
-                    <h3 className="text-[#D7B26A] font-serif text-lg mb-4 tracking-wide">
+                    <h3 className="text-[#D7B26A] font-serif text-[24px] mb-4 tracking-wide">
                         STYLE GUIDE
                     </h3>
                     <ul className="space-y-2">
                         <li>
-                            <Link href="/utility" className="relative hover:text-[#D7B26A] transition duration-300 
+                            <Link href="/utility" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
                             after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
                             after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
                             hover:after:w-full">Utility Page</Link>
                         </li>
 
                         <li>
-                            <Link href="/404" className="relative hover:text-[#D7B26A] transition duration-300 
+                            <Link href="/404" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
                             after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
                             after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
                             hover:after:w-full">Not Found</Link>
                         </li>
 
                         <li>
-                            <Link href="/privacy-policy" className="relative hover:text-[#D7B26A] transition duration-300 
+                            <Link href="/privacy-policy" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
                             after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
                             after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
                             hover:after:w-full">Privacy Policy</Link>
                         </li>
-                        
+
                         <li>
-                            <Link href="/licenses" className="relative hover:text-[#D7B26A] transition duration-300 
+                            <Link href="/licenses" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
                             after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
                             after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
                             hover:after:w-full">Licenses</Link>
@@ -120,30 +120,33 @@ const Footer = () => {
 
                 {/* Utility Pages */}
                 <div>
-                    <h3 className="text-[#D7B26A] font-serif text-lg mb-4 tracking-wide">
+                    <h3 className="text-[#D7B26A] font-serif text-[24px] mb-4 tracking-wide">
                         UTILITY PAGES
                     </h3>
                     <ul className="space-y-2">
                         <li>
-                            <Link href="/" className="relative hover:text-[#D7B26A] transition duration-300 
+                            <Link href="/" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
                             after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
                             after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
                             hover:after:w-full">Home</Link>
                         </li>
+
                         <li>
-                            <Link href="/about" className="relative hover:text-[#D7B26A] transition duration-300 
+                            <Link href="/about" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
                             after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
                             after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
                             hover:after:w-full">About Us</Link>
                         </li>
+
                         <li>
-                            <Link href="/services" className="relative hover:text-[#D7B26A] transition duration-300 
+                            <Link href="/services" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
                             after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
                             after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
                             hover:after:w-full">Services</Link>
                         </li>
+
                         <li>
-                            <Link href="/gallery" className="relative hover:text-[#D7B26A] transition duration-300 
+                            <Link href="/gallery" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
                             after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
                             after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
                             hover:after:w-full">Gallery</Link>
@@ -153,17 +156,15 @@ const Footer = () => {
 
                 {/* Contact */}
                 <div>
-                    <h3 className="text-[#D7B26A] font-serif text-lg mb-4 tracking-wide">
+                    <h3 className="text-[#D7B26A] font-serif text-[24px] mb-4 tracking-wide">
                         CONTACT
                     </h3>
                     <ul className="space-y-3">
                         <li>
-                            <Link href="tel:0426006760" legacyBehavior>
-                                <a className="flex items-center gap-2 hover:text-[#D7B26A] transition duration-300">
-                                    <FaPhoneAlt className="text-[#D7B26A] w-4 h-4" />
-                                    <span>0426006760</span>
-                                </a>
-                            </Link>
+                            <a className="flex items-center gap-2 hover:text-[#D7B26A] transition duration-300">
+                                <FaPhoneAlt className="text-[#D7B26A] w-4 h-4" />
+                                <span className="text-[16px]">0426006760</span>
+                            </a>
                         </li>
 
                         <li>
@@ -173,12 +174,12 @@ const Footer = () => {
                                 aria-label="Send an email to the.events.oc@gmail.com"
                             >
                                 <FaEnvelope className="text-[#D7B26A] w-4 h-4" />
-                                <span>the.events.oc@gmail.com</span>
+                                <span className="text-[16px]">the.events.oc@gmail.com</span>
                             </a>
                         </li>
 
                         <li className="flex items-center gap-2">
-                            <FaPaperPlane className="text-[#D7B26A]" /> Gold Coast
+                            <FaPaperPlane className="text-[#D7B26A]" /> <span className="text-[16px]">Gold Coast</span>
                         </li>
                     </ul>
                 </div>
@@ -188,7 +189,7 @@ const Footer = () => {
             <div className="border-t border-[#FFF4DE]/30 mt-10 mb-4 max-w-6xl mx-auto"></div>
 
             {/* Copyright */}
-            <div className="text-center text-gray-400 text-sm">
+            <div className="text-center text-gray-400 text-[16px]">
                 2025 Copyright © <span className="text-[#D7B26A]">EventsOC</span> - Events of the Century. Powered by{" "}
                 <span className="text-[#D7B26A]">Murphys Technology</span>
             </div>

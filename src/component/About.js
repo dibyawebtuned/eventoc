@@ -20,7 +20,7 @@ export default function About() {
 
     // Animation setup (center image first, then outward)
     const centerIndex = Math.floor(images.length / 2);
-    const order = [2, 1, 3, 0, 4]; // Animate center -> sides
+    const order = [2, 1, 3, 0, 4];
 
     const heights = ["312px", "424px", "536px", "424px", "312px"];
     const radii = ["50% / 33%", "50% / 25%", "50% / 20%", "50% / 25%", "50% / 33%"];
@@ -32,7 +32,7 @@ export default function About() {
             y: 0,
             transition: {
                 duration: 0.6,
-                delay: order.indexOf(i) * 0.2, // Staggered from center outward
+                delay: order.indexOf(i) * 0.2,
                 ease: "easeOut",
             },
         }),
@@ -40,37 +40,25 @@ export default function About() {
 
     return (
         <section id="services" className="py-24 bg-black overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6 text-center flex flex-col gap-16">
+            <div className="max-w-7xl mx-auto px-6 text-center flex flex-col gap-8 md:gap-16">
                 {/* Title */}
                 <div className="flex flex-row items-center gap-5 justify-center">
                     <Image src={Left_heading_line} alt="Left Line" />
-                    <h2
-                        className="text-4xl md:text-[36px] font-light text-[#D7B26A] uppercase"
-                        style={{
-                            fontFamily: "var(--font-cinzel-regular)",
-                            lineHeight: "120%",
-                        }}
-                    >
+                    <h2 className="text-3xl sm:text-4xl md:text-[36px] lg:text-[40px] font-light text-[#D7B26A]" style={{ fontFamily: "var(--font-cinzel-regular)", lineHeight: "1.2" }} >
                         Events OC
                     </h2>
                     <Image src={Right_heading_line} alt="Right Line" />
                 </div>
 
                 {/* Description */}
-                <p className="text-white text-[21px] w-[85%] mx-auto leading-[160%]">
-                    EventOC plans high-energy celebrations across the Byron Bays,
-                    Sunshine Coast & Gold Coast — birthdays, brand openings, hens nights,
-                    beach & pool parties, private and community events, and live music.
-                    We handle venues, catering, entertainment, AV, styling, florals, and
-                    photographers, or we'll plug in your preferred vendors. One organiser,
-                    one plan, zero stress.
+                <p className="text-white text-base sm:text-lg md:text-[21px] leading-[1.6] w-full sm:w-11/12 md:w-10/12 lg:w-9/12 mx-auto text-center px-4 sm:px-0"
+                    style={{ fontFamily: "var(--font-montserrat)" }}>
+                    EventOC plans high-energy celebrations across the Byron Bays, Sunshine Coast & Gold Coast — birthdays, brand openings, hens nights, beach & pool parties, private and community events, and live music. We handle venues, catering, entertainment, AV, styling, florals, and photographers, or we'll plug in your preferred vendors. One organiser, one plan, zero stress.
                 </p>
 
+
                 {/* Image Row (Animated) */}
-                <div
-                    ref={ref}
-                    className="flex flex-nowrap justify-center items-center gap-[15px]"
-                >
+                <div ref={ref} className="flex flex-nowrap justify-center items-center gap-[15px] responsive-images">
                     {images.map((src, index) => (
                         <motion.div
                             key={index}
@@ -86,15 +74,12 @@ export default function About() {
                             animate={isInView ? "visible" : "hidden"}
                             custom={index}
                         >
-                            <Image
-                                src={src}
-                                alt={`Event ${index + 1}`}
-                                fill
-                                className="object-cover"
-                            />
+                            <Image src={src} alt={`Event ${index + 1}`} fill className="object-cover" />
                         </motion.div>
                     ))}
                 </div>
+
+
             </div>
         </section>
     );

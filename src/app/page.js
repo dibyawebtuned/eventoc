@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Navbar from "../component/Nav";
 import Hero from "../component/Hero";
-import Service from "../component/Service";
+import ServiceSection from "../component/Service";
 import About from "../component/About";
 import Marquee from "../component/Marquee";
 import Banner from "../component/Banner";
@@ -12,7 +12,7 @@ export default function Home() {
     <div>
       <Navbar />
       <Hero />
-      <Service />
+      <ServiceSection />
       <About />
       <Marquee />
       <Banner />

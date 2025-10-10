@@ -7,7 +7,12 @@
   --font-montserrat: "Montserrat", sans-serif;
   --font-cormorant: "Cormorant Garamond", serif;
   --font-cinzel: "Cinzel Decorative", cursive;
-  --font-cinzel-regular: "Cinzel", serif; /* New Cinzel variant */
+  --font-cinzel-regular: "Cinzel", serif;
+}
+
+
+html {
+  scroll-behavior: smooth;
 }
 
 

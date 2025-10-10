@@ -1,32 +1,57 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
+    // Variants for text
+    const textVariant = {
+        hidden: { opacity: 0, y: 30 },
+        visible: (custom = 0) => ({
+            opacity: 1,
+            y: 0,
+            transition: { delay: custom * 0.3, duration: 0.8, ease: "easeOut" },
+        }),
+    };
+
+    // Variants for buttons
+    const buttonVariant = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { delay: 1, duration: 0.6, ease: "easeOut" } },
+    };
+
     return (
-        <div className="bg-black">
+        <div className="bg-black mt-[83px]">
             <div className="container mx-auto">
-                <section className="relative w-full h-screen overflow-hidden">
+                <section className="relative w-full h-[85vh] overflow-hidden">
                     {/* Video Background */}
                     <video
-                        className="absolute top-0 left-0 w-full h-full object-cover"
+                        className="absolute top-0 left-0 w-full h-full object-cover rounded-t-none rounded-b-[20px]"
                         src="/assets/videos/hero.mp4"
                         autoPlay
                         muted
-                        loop
-                    ></video>
+                        loop>
+                    </video>
 
                     {/* Overlay for better text visibility */}
-                    <div className="absolute top-0 left-0 w-full h-full bg-black/70"></div>
+                    <div className="absolute top-0 left-0 w-full h-full bg-black/60 rounded-t-none rounded-b-[20px]"></div>
 
                     {/* Hero Content */}
                     <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-                        <h1 className="text-white text-4xl md:text-[78px] font-bold mb-4" style={{ fontFamily: "var(--font-cormorant)" }}>
+                        <motion.h1 className="text-white text-4xl md:text-[78px] font-bold mb-4" style={{ fontFamily: "var(--font-cormorant)" }}
+                            variants={textVariant}
+                            initial="hidden"
+                            animate="visible"
+                            custom={0}>
                             Where events become <br /> experiences
-                        </h1>
-                        <p className="text-gray-200 text-lg md:text-[16px] mb-8 max-w-2xl" style={{ fontFamily: "var(--font-montserrat)" }}>
+                        </motion.h1>
+                        <motion.p className="text-gray-200 text-lg md:text-[16px] mb-8 max-w-2xl" style={{ fontFamily: "var(--font-montserrat)" }}
+                            variants={textVariant}
+                            initial="hidden"
+                            animate="visible"
+                            custom={1}>
                             Birthdays , beach & pool parties, brand launches, hens, live music-planned end-to-end.
-                        </p>
+                        </motion.p>
                         <div className="flex gap-4">
                             <Link
                                 href="#services"
