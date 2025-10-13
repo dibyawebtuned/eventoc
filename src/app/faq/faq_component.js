@@ -2,8 +2,8 @@ import React from 'react'
 
 const faq_component = () => {
   return (
-    <div>
-      This is the FAQ Compoenent
+    <div className='mt-[100px]'>
+      <span className='text-white'>This is the FAQ Compoenent</span>
     </div>
   )
 }

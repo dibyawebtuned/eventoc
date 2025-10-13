@@ -2,8 +2,8 @@ import React from 'react'
 
 const contact_component = () => {
   return (
-    <div>
-      This is Contact Component
+    <div className='mt-[100px]'>
+      <span className='text-white'>This is Contact Component</span>
     </div>
   )
 }

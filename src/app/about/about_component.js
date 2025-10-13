@@ -3,8 +3,8 @@ import React from 'react'
 
 const about_component = () => {
   return (
-    <div>
-      This is About Us Compoenent
+    <div className='mt-[100px]'>
+      <span className='text-white'>This is About Us Compoenent</span>
     </div>
   )
 }

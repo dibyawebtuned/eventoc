@@ -53,7 +53,7 @@ export default function About() {
                 {/* Description */}
                 <p className="text-white text-base sm:text-lg md:text-[21px] leading-[1.6] w-full sm:w-11/12 md:w-10/12 lg:w-9/12 mx-auto text-center px-4 sm:px-0"
                     style={{ fontFamily: "var(--font-montserrat)" }}>
-                    EventOC plans high-energy celebrations across the Byron Bays, Sunshine Coast & Gold Coast — birthdays, brand openings, hens nights, beach & pool parties, private and community events, and live music. We handle venues, catering, entertainment, AV, styling, florals, and photographers, or we'll plug in your preferred vendors. One organiser, one plan, zero stress.
+                    EventOC plans high-energy celebrations across the Byron Bays, Sunshine Coast & Gold Coast — birthdays, brand openings, hens nights, beach & pool parties, private and community events, and live music. We handle venues, catering, entertainment, AV, styling, florals, and photographers, or we will plug in your preferred vendors. One organiser, one plan, zero stress.
                 </p>
 
 

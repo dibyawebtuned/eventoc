@@ -519,16 +519,13 @@ export default function Navbar() {
                             {/* Right Menu */}
                             <Link
                                 href="/book"
-                                className="hidden md:inline-block px-4 py-2 rounded-md font-semibold bg-gradient-to-r from-[#B8860B] to-[#D4AF37] text-white"
-                            >
+                                className="inline-block px-6 py-2 rounded-md font-normal transition-shadow shadow-sm bg-gradient-to-b from-[#BE9545] to-[#7A5E39] text-white">
                                 Book Now
                             </Link>
                         </div>
 
                         {/* Mobile Menu */}
-                        <div
-                            className={`md:hidden mt-2 transition-all duration-200 ${mobileOpen ? "block" : "hidden"}`}
-                        >
+                        <div className={`md:hidden mt-2 transition-all duration-200 ${mobileOpen ? "block" : "hidden"}`}>
                             <div className="bg-black/95 rounded-lg p-4 shadow-lg border border-gray-800/40">
                                 <ul className="flex flex-col gap-2 text-white text-sm font-medium">
                                     {/* Events with Submenu */}
