@@ -230,7 +230,7 @@ export default function Navbar() {
                                         </button>
                                     </div>
 
-                                    <div className="absolute left-1/2 transform -translate-x-1/2 pointer-events-none top-[-1px]"
+                                    <div className="absolute left-1/2 transform -translate-x-1/2 pointer-events-none -top-1"
                                         style={{ zIndex: 51 }}>
                                         <Link href="/" className="pointer-events-auto">
                                             <Image
