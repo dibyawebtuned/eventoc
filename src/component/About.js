@@ -6,11 +6,11 @@ import { motion, useInView } from "framer-motion";
 
 import Left_heading_line from "/public/assets/img/Left.png";
 import Right_heading_line from "/public/assets/img/Right.png";
-import Img1 from "/public/assets/img/service/service_one.png";
-import Img2 from "/public/assets/img/service/service_two.png";
-import Img3 from "/public/assets/img/service/service_three.png";
-import Img4 from "/public/assets/img/service/service_five.png";
-import Img5 from "/public/assets/img/service/service_five.png";
+import Img1 from "/public/assets/img/content_image/a-microphone-in-focus-with-blurred-bokeh-lights-in-the-background-creating-a-vibrant-nightlife-atmosphere.-16727451-scaled-e1737059691145.jpg";
+import Img2 from "/public/assets/img/content_image/2283609.jpg";
+import Img3 from "/public/assets/img/content_image/6347dab01e23fef85fb0d3f8_63457b651fc7f5b5a272591f_See+how+to+stop+slow+nights+with+these+restaurant+and+bar+event+ideas.jpg";
+import Img4 from "/public/assets/img/content_image/81z6UCSU5YL.jpg";
+import Img5 from "/public/assets/img/content_image/5e4c014e-45f2-4d0e-bc46-c7474b26b367.jpg";
 
 export default function About() {
     const images = [Img1, Img2, Img3, Img4, Img5];

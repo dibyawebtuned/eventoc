@@ -24,7 +24,7 @@ export default function Banner() {
                 </div>
 
                 {/* Subtitle */}
-                <p className="text-white text-base sm:text-lg md:text-[21px] leading-[1.6] w-full sm:w-11/12 md:w-10/12 lg:w-9/12 mx-auto text-center sm:text-left px-4 sm:px-0"
+                <p className="text-white text-base sm:text-lg md:text-[21px] leading-[1.6] w-full sm:w-11/12 md:w-10/12 lg:w-9/12 mx-auto text-center px-4 sm:px-0"
                     style={{ fontFamily: "var(--font-montserrat)" }}>
                     Luxe details, seamless logistics, unforgettable moments.
                 </p>

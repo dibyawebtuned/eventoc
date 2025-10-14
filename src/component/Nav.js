@@ -32,19 +32,19 @@ export default function Navbar() {
 
     const menuItems = [
         { href: "/events/birthday", label: "Birthday", icon: Gift },
-        { href: "/events/workshops", label: "Beach & Pool", icon: Umbrella },
-        { href: "/events/festivals", label: "Brand Launch", icon: Sparkles },
-        { href: "/events/festivals", label: "Music Night", icon: Music },
-        { href: "/events/festivals", label: "Custom Events", icon: Users },
+        // { href: "/events/workshops", label: "Beach & Pool", icon: Umbrella },
+        // { href: "/events/festivals", label: "Brand Launch", icon: Sparkles },
+        // { href: "/events/musicnight", label: "Music Night", icon: Music },
+        // { href: "/events/festivals", label: "Custom Events", icon: Users },
     ];
 
     const servicemenusItems = [
-        { href: "/services/venue", label: "Venue Sourcing", icon: Building2 },
-        { href: "/services/catering", label: "Catering", icon: UtensilsCrossed },
-        { href: "/services/entertainment", label: "Audio & Visuals", icon: Headphones },
-        { href: "/services/design", label: "Style & Designs", icon: Sparkles },
-        { href: "/services/floral", label: "Floral", icon: Flower2 },
-        { href: "/services/photographs", label: "Photographs", icon: Camera },
+        { href: "/services/venuesourcing", label: "Venue Sourcing", icon: Building2 },
+        // { href: "/services/catering", label: "Catering", icon: UtensilsCrossed },
+        // { href: "/services/entertainment", label: "Audio & Visuals", icon: Headphones },
+        // { href: "/services/design", label: "Style & Designs", icon: Sparkles },
+        // { href: "/services/floral", label: "Floral", icon: Flower2 },
+        // { href: "/services/photographs", label: "Photographs", icon: Camera },
     ];
 
     return (
