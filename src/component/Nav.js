@@ -230,7 +230,7 @@ export default function Navbar() {
                                         </button>
                                     </div>
 
-                                    <div className="absolute left-1/2 transform -translate-x-1/2 pointer-events-none top-[-1]"
+                                    <div className="absolute left-1/2 transform -translate-x-1/2 pointer-events-none top-[-1px]"
                                         style={{ zIndex: 51 }}>
                                         <Link href="/" className="pointer-events-auto">
                                             <Image
@@ -696,11 +696,11 @@ export default function Navbar() {
                             </div>
 
                             {/* Right Menu */}
-                            <Link
-                                href="/book"
+                            <button
+                                onClick={() => setIsModalOpen(true)}
                                 className="inline-block px-6 py-2 rounded-md font-normal transition-shadow shadow-sm bg-gradient-to-b from-[#BE9545] to-[#7A5E39] text-white">
                                 Book Now
-                            </Link>
+                            </button>
                         </div>
 
                         {/* Mobile Menu */}
