@@ -12,9 +12,10 @@ import "swiper/css/navigation";
 import Left_heading_line from "/public/assets/img/Left.png";
 import Right_heading_line from "/public/assets/img/Right.png";
 import ServiceOne from "/public/assets/img/Event of OC/Anniversary/Champagne.jpg";
-import ServiceTwo from "/public/assets/img/Event of OC/Anniversary/Drink.jpg";
-import ServiceThree from "/public/assets/img/Event of OC/Anniversary/Drink.jpg";
-import ServiceFour from "/public/assets/img/Event of OC/Anniversary/Drink.jpg";
+import ServiceTwo from "/public/assets/img/Event of OC/Wedding/Champagne.jpg";
+import ServiceThree from "/public/assets/img/Event of OC/Music/Music.jpg";
+import ServiceFour from "/public/assets/img/Event of OC/Conference/Conference1.jpg";
+import ServiceFive from "/public/assets/img/Event of OC/Birthday/Birthday Celebration 1.jpg";
 
 import { Cinzel, Montserrat } from "next/font/google";
 
@@ -45,7 +46,7 @@ const venueImages = [
   { src: ServiceTwo, title: "Byron Bays", link: "/venue/marble-courtyard" },
   { src: ServiceThree, title: "Sunshine Coast", link: "/venue/skyline-atrium" },
   { src: ServiceFour, title: "Gold Coast", link: "/venue/emerald-lounge" },
-  { src: ServiceThree, title: "Emerald Lounge", link: "/venue/emerald-lounge" },
+  { src: ServiceFive, title: "Emerald Lounge", link: "/venue/emerald-lounge" },
 ];
 
 export default function Service() {

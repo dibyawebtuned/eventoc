@@ -7,10 +7,10 @@ import { motion, useInView } from "framer-motion";
 import Left_heading_line from "/public/assets/img/Left.png";
 import Right_heading_line from "/public/assets/img/Right.png";
 import Img1 from "/public/assets/img/Event of OC/Conference/Conference.jpg";
-import Img2 from "/public/assets/img/Event of OC/Conference/Conference.jpg";
-import Img3 from "/public/assets/img/Event of OC/Conference/Conference.jpg";
-import Img4 from "/public/assets/img/Event of OC/Conference/Conference.jpg";
-import Img5 from "/public/assets/img/Event of OC/Conference/Conference.jpg";
+import Img2 from "/public/assets/img/Event of OC/Anniversary/Champagne.jpg";
+import Img3 from "/public/assets/img/Event of OC/Birthday/Birthday Celebration 1.jpg";
+import Img4 from "/public/assets/img/Event of OC/Music/DJ2.jpg";
+import Img5 from "/public/assets/img/Event of OC/Places/Light House Byron bay.jpg";
 
 export default function About() {
     const images = [Img1, Img2, Img3, Img4, Img5];
