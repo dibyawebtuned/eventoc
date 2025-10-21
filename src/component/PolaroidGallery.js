@@ -5,28 +5,28 @@ import React from "react";
 const PolaroidGallery = () => {
     const photos = [
         {
-            src: "/assets/img/content_image/2283609.jpg",
-            caption: "GRAVITY IS A TEACHER",
+            src: "/assets/img/Event of OC/Birthday/Birthday Celebration 1.jpg",
+            caption: "BIRTHDAYS ARE SPECIAL",
             rotate: "-rotate-6",
         },
         {
-            src: "/assets/img/content_image/2283609.jpg",
-            caption: "YOU ARE NOT A MACHINE",
+            src: "/assets/img/Event of OC/Conference/Conference.jpg",
+            caption: "CONFERENCES THAT INSPIRE",
             rotate: "-rotate-3",
         },
         {
-            src: "/assets/img/content_image/2283609.jpg",
-            caption: "MUSCLES HOLD MEMORY",
+            src: "/assets/img/Event of OC/Music/Concert.jpg",
+            caption: "MUSIC IS THE UNIVERSAL LANGUAGE",
             rotate: "rotate-1",
         },
         {
-            src: "/assets/img/content_image/2283609.jpg",
-            caption: "SPIRALS, NOT STRAIGHT LINES",
+            src: "/assets/img/Event of OC/Places/Opera-House.jpg",
+            caption: "PLACES THAT TAKE YOUR BREATH",
             rotate: "rotate-3",
         },
         {
-            src: "/assets/img/content_image/2283609.jpg",
-            caption: "THE SHAPE OF SOFTNESS",
+            src: "/assets/img/Event of OC/Wedding/Champagne.jpg",
+            caption: "WEDDINGS TO REMEMBER",
             rotate: "rotate-6",
         },
     ];

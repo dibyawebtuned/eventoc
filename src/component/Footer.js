@@ -9,7 +9,7 @@ import Logo from "/public/assets/img/EventOC_Logo.png";
 
 const Footer = () => {
     return (
-        <footer className="bg-black text-gray-300 py-10">
+        <footer className="bg-black text-gray-300 pt-10 pb-4">
             {/* Logo and tagline */}
             <div className="text-center mb-10">
                 <div className="flex justify-center mb-[15px]">
@@ -190,7 +190,7 @@ const Footer = () => {
 
             {/* Copyright */}
             <div className="text-center text-gray-400 text-[16px]">
-                2025 Copyright © <span className="text-[#D7B26A]">EventsOC</span> - Events of the Century. Powered by{" "}
+                2025 Copyright © <span className="text-[#D7B26A]">EventsOC</span> - Events of the Century. Crafted by{" "}
                 <span className="text-[#D7B26A]">Murphys Technology</span>
             </div>
         </footer>

@@ -89,7 +89,7 @@ const ContactComponent = () => {
         </div>
 
         {/* Form */}
-        <form className="w-[75%] mx-auto mt-10 flex flex-col items-center">
+        <form className="w-full md:w-[75%] mx-auto mt-10 flex flex-col items-center">
           {/* Two-column layout for top fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
             {/* Name */}

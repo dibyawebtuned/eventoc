@@ -1,169 +1,166 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
-import Image from "next/image";
 
-// Example images (replace with yours)
-import BirthdayImg from "/public/assets/img/service/service_one.png";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { FaGlassCheers, FaMusic, FaStar, FaMapMarkerAlt, FaBirthdayCake } from "react-icons/fa";
+import SignatureIdeas from "@/component/Birthday/Signature-ideas";
+import { PackagesComponent } from "@/component/Birthday/Birthday-package";
+import { RunSheetNew } from "@/component/Birthday/Run-sheet";
+import { BirthdayHeroSection } from "@/component/Birthday/Hero";
+import { Cinzel, Montserrat } from "next/font/google";
 
-const BirthdayComponent = () => {
+export const cinzel = Cinzel({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "700", "900"],
+  variable: "--font-cinzel",
+});
+
+export const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "700", "900"],
+  variable: "--font-montserrat",
+});
+
+export default function BirthdayPage() {
+  const [openFaq, setOpenFaq] = useState(null);
+
+  const faqs = [
+    { q: "How far in advance should I book?", a: "Six to eight weeks is ideal; we can fast-track smaller parties sooner if suppliers are free." },
+    { q: "Do you organise cakes and entertainment?", a: "Yes—custom cakes, performers, DJs, live sax/strings, magicians and more." },
+    { q: "Can you work in my home or Airbnb?", a: "Absolutely. We’ll assess access, noise and styling logistics, and obtain permissions where needed." },
+    { q: "What about noise and neighbours?", a: "We’ll plan levels with the venue and follow local guidelines, recommending finishing times where appropriate." },
+    { q: "Can I add a surprise element?", a: "Love that. We’ll design a seamless reveal that your guest of honour won’t see coming." },
+    { q: "Do you provide bar service?", a: "Yes—RSA-certified staff with cocktail packages or BYO management." },
+    { q: "What happens if it rains?", a: "We build a weather-safe Plan B (marquee/indoor switch) into every outdoor brief." },
+    { q: "Accessibility considerations?", a: "We’ll ensure access, seating and amenities suit your guests’ needs." },
+  ];
+
+  const packages = [
+    { name: "Essential", desc: "Venue shortlist, core styling, DJ, basic lighting, photographer (2–3 hrs)", color: "#86489B" },
+    { name: "Signature", desc: "Full concept, premium styling/florals, chef menu, DJ + sax, photographer (4–5 hrs)", color: "#F9A825" },
+    { name: "Luxe", desc: "Private venue/villa, immersive lighting, feature install, live entertainment, full media team", color: "#A7F3D0" },
+  ];
+
   return (
-    <section className="relative overflow-hidden mt-[100px] py-[120px]">
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#141414] to-[#0a0a0a]" />
-      <div className="absolute -top-52 -left-40 w-[400px] h-[400px] bg-[#BE9545]/20 blur-[180px] rounded-full" />
-      <div className="absolute -bottom-52 -right-40 w-[400px] h-[400px] bg-[#BE9545]/10 blur-[180px] rounded-full" />
+    <main className="bg-black text-white overflow-hidden">
+      {/* HERO */}
+      <BirthdayHeroSection />
 
-      {/* Floating Accent Lights */}
-      <motion.div
-        animate={{ y: [0, -15, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/3 left-1/4 w-10 h-10 bg-[#BE9545]/30 blur-lg rounded-full"
-      />
-      <motion.div
-        animate={{ y: [0, 15, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-1/3 right-1/4 w-14 h-14 bg-[#BE9545]/20 blur-2xl rounded-full"
-      />
-
-      {/* Content */}
-      <div className="relative grid md:grid-cols-2 gap-16 items-center container mx-auto px-6 lg:px-12 max-w-7xl">
-        {/* LEFT IMAGE */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="relative"
+      {/* WHAT WE HANDLE */}
+      <section className="container mx-auto px-6 py-[80px]">
+        <motion.h2
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className={`text-[36px] font-[400] text-center mb-10 text-[#BE9545] ${cinzel.className}`}
         >
-          <div className="overflow-hidden rounded-[30px] shadow-2xl border border-[#BE9545]/30 group">
-            <Image
-              src={BirthdayImg}
-              alt="Luxury Birthday Event"
-              className="object-cover w-full h-[480px] transition-transform duration-700 ease-in-out group-hover:scale-105"
-              quality={100}
-              placeholder="blur"
-            />
+          What We Handle
+        </motion.h2>
 
-            {/* Overlay Text */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-start p-6">
-              <div>
-                <h4
-                  className="text-white text-xl font-semibold"
-                  style={{ fontFamily: "var(--font-cinzel-regular)" }}
-                >
-                  Golden Hour Celebration
-                </h4>
-                <p
-                  className="text-[#BE9545] text-sm"
-                  style={{ fontFamily: "var(--font-montserrat)" }}
-                >
-                  Beachfront · 120 Guests · Live Music
-                </p>
+        <div className="grid md:grid-cols-3 gap-8 text-center">
+          {[
+            { icon: <FaMapMarkerAlt />, title: "Venue Sourcing", text: "Rooftops, waterfront spaces, private villas, boutique bars (Gold Coast & surrounds)." },
+            { icon: <FaBirthdayCake />, title: "Catering", text: "Grazing islands, chef-led stations, sit-down courses, late-night snacks." },
+            { icon: <FaMusic />, title: "Audio & Visuals", text: "DJ/MC, speech mics, ambient lighting, LED moments, live performers." },
+            { icon: <FaStar />, title: "Style & Design", text: "Concepting, mood boards, tablescapes, signage, balloons/installs." },
+            { icon: <FaGlassCheers />, title: "Floral & Decor", text: "Coastal luxe arrangements, sculptural pieces, photo-worthy backdrops." },
+            { icon: <FaStar />, title: "Photography", text: "Documentary-style coverage, portrait set-ups, highlight reels." },
+          ].map((item, i) => (
+            <motion.div
+              key={i}
+              whileHover={{
+                scale: 1.03,
+                rotate: 2,
+              }}
+              transition={{
+                scale: { duration: 0.5, ease: "easeInOut" },
+                rotate: { duration: 0 },
+              }}
+              className="relative p-8 rounded-2xl flex flex-col items-center justify-center text-center
+              bg-gradient-to-br from-[#0B0B0B] via-[#1A1A1A] to-[#0B0B0B] shadow-lg transform-gpu
+              hover:shadow-[0_0_30px_rgba(255,209,125,0.2)] transition-all duration-500 ease-in-out border border-[#BE9545]/20"
+            >
+              {/* Ambient light effect */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#BE9545]/10 via-[#FFD700]/10 to-[#BE9545]/5 blur-2xl pointer-events-none"></div>
+
+              {/* Content */}
+              <div className="relative z-10">
+                <div className="text-4xl mb-4 text-[#BE9545] flex justify-center">{item.icon}</div>
+                <h3 className={`text-xl font-semibold mb-2 text-white ${montserrat.className}`}>{item.title}</h3>
+                <p className={`text-gray-200 text-sm leading-relaxed ${montserrat.className}`}>{item.text}</p>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
 
-          {/* Glow Accent */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.6, duration: 1 }}
-            className="absolute -top-8 -left-8 w-24 h-24 bg-[#BE9545]/40 blur-xl rounded-full"
-          />
-        </motion.div>
+      {/* SIGNATURE IDEAS */}
+      <SignatureIdeas />
 
-        {/* RIGHT TEXT */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          <span
-            className="uppercase tracking-[0.3em] text-[#BE9545] text-sm font-semibold"
-            style={{ fontFamily: "var(--font-montserrat)" }}
-          >
-            Special Occasions
-          </span>
+      {/* PACKAGES */}
+      {/* <PackagesComponent /> */}
 
-          <h2
-            className="text-[36px] md:text-[48px] leading-tight text-white font-semibold mt-3 mb-5"
+      {/* RunSheet */}
+      {/* <RunSheetNew /> */}
+
+      {/* FAQ SECTION */}
+      <section className="py-20 bg-[#0B0B0B] text-white">
+        <div className="max-w-6xl mx-auto px-6">
+          {/* Title */}
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl font-bold text-center mb-14 text-[#D7B26A]"
             style={{ fontFamily: "var(--font-cinzel-regular)" }}
           >
-            Birthday <span className="text-[#BE9545]">Celebrations</span>
-          </h2>
+            FAQs
+          </motion.h2>
 
-          <p
-            className="text-gray-400 leading-[1.8] text-[16px] md:text-[17px] mb-5"
-            style={{ fontFamily: "var(--font-montserrat)" }}
-          >
-            Whether it’s an intimate gathering or a high-energy night under the stars,
-            we craft birthday experiences that are vibrant, elegant, and deeply
-            personal. From concept to confetti, our team ensures your celebration
-            reflects who you are — bold, joyful, and unforgettable.
-          </p>
-
-          <p
-            className="text-gray-400 leading-[1.8] text-[16px] md:text-[17px] mb-10"
-            style={{ fontFamily: "var(--font-montserrat)" }}
-          >
-            Our creative planners handle every detail — theme design, entertainment,
-            catering, and decor — while you focus on making memories that last a
-            lifetime.
-          </p>
-
-          {/* Feature Highlights */}
-          <div className="grid sm:grid-cols-2 gap-6 mb-10">
-            {[
-              { title: "Custom Themes", desc: "From glam to boho & neon" },
-              { title: "Entertainment", desc: "DJs, live bands & dancers" },
-              { title: "Luxury Decor", desc: "Bespoke setups & lighting" },
-              { title: "360° Planning", desc: "We handle every detail" },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.03 }}
-                className="border-l-4 border-[#BE9545] pl-4"
+          {/* Two per row */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="border border-gray-800 rounded-xl p-6 hover:border-[#D7B26A] transition-all duration-300 cursor-pointer"
+                onClick={() => setOpenFaq(openFaq === index ? null : index)}
               >
-                <h4
-                  className="text-white text-[17px] font-semibold"
-                  style={{ fontFamily: "var(--font-montserrat)" }}
-                >
-                  {item.title}
-                </h4>
-                <p
-                  className="text-gray-400 text-[15px]"
-                  style={{ fontFamily: "var(--font-montserrat)" }}
-                >
-                  {item.desc}
-                </p>
-              </motion.div>
+                {/* Question Button */}
+                <div className="w-full text-left flex justify-between items-center">
+                  <span className="font-semibold text-lg">{faq.q}</span>
+                  <span className="text-xl">{openFaq === index ? "−" : "+"}</span>
+                </div>
+
+                {/* Smooth Expandable Answer */}
+                <AnimatePresence initial={false}>
+                  {openFaq === index && (
+                    <motion.div
+                      key="content"
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{
+                        duration: 0.4,
+                        ease: "easeInOut",
+                      }}
+                      className="overflow-hidden mt-3"
+                    >
+                      <motion.p
+                        initial={{ y: -6 }}
+                        animate={{ y: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="text-gray-400 text-sm leading-relaxed"
+                      >
+                        {faq.a}
+                      </motion.p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             ))}
           </div>
-
-          {/* Buttons */}
-          <div className="flex flex-wrap gap-4">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="px-8 py-3 bg-[#BE9545] text-white rounded-full font-medium tracking-wide hover:bg-[#a7843e] transition-all duration-300"
-            >
-              Plan My Event
-            </motion.button>
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="px-8 py-3 border border-[#BE9545] text-[#BE9545] rounded-full font-medium tracking-wide hover:bg-[#BE9545]/10 transition-all duration-300"
-            >
-              View Gallery
-            </motion.button>
-          </div>
-        </motion.div>
-      </div>
-    </section>
+        </div>
+      </section>
+    </main>
   );
-};
-
-export default BirthdayComponent;
+}

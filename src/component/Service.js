@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -10,10 +11,24 @@ import "swiper/css/navigation";
 
 import Left_heading_line from "/public/assets/img/Left.png";
 import Right_heading_line from "/public/assets/img/Right.png";
-import ServiceOne from "/public/assets/img/content_image/2283609.jpg";
-import ServiceTwo from "/public/assets/img/content_image/5e4c014e-45f2-4d0e-bc46-c7474b26b367.jpg";
-import ServiceThree from "/public/assets/img/content_image/6347dab01e23fef85fb0d3f8_63457b651fc7f5b5a272591f_See+how+to+stop+slow+nights+with+these+restaurant+and+bar+event+ideas.jpg";
-import ServiceFour from "/public/assets/img//content_image/a-microphone-in-focus-with-blurred-bokeh-lights-in-the-background-creating-a-vibrant-nightlife-atmosphere.-16727451-scaled-e1737059691145.jpg";
+import ServiceOne from "/public/assets/img/Event of OC/Anniversary/Champagne.jpg";
+import ServiceTwo from "/public/assets/img/Event of OC/Anniversary/Drink.jpg";
+import ServiceThree from "/public/assets/img/Event of OC/Anniversary/Drink.jpg";
+import ServiceFour from "/public/assets/img/Event of OC/Anniversary/Drink.jpg";
+
+import { Cinzel, Montserrat } from "next/font/google";
+
+export const cinzel = Cinzel({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "700", "900"],
+  variable: "--font-cinzel",
+});
+
+export const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "700", "900"],
+  variable: "--font-montserrat",
+});
 
 const tabs = [
   { name: "Venue" },
@@ -26,11 +41,11 @@ const tabs = [
 ];
 
 const venueImages = [
-  { src: ServiceOne, title: "Crystal Ballroom", link: "/venue/crystal-ballroom" },
-  { src: ServiceTwo, title: "The Marble Courtyard", link: "/venue/marble-courtyard" },
-  { src: ServiceThree, title: "Skyline Atrium", link: "/venue/skyline-atrium" },
-  { src: ServiceFour, title: "Emerald Lounge", link: "/venue/emerald-lounge" },
-  { src: ServiceFour, title: "Emerald Lounge", link: "/venue/emerald-lounge" },
+  { src: ServiceOne, title: "Gold Coast", link: "/venue/crystal-ballroom" },
+  { src: ServiceTwo, title: "Byron Bays", link: "/venue/marble-courtyard" },
+  { src: ServiceThree, title: "Sunshine Coast", link: "/venue/skyline-atrium" },
+  { src: ServiceFour, title: "Gold Coast", link: "/venue/emerald-lounge" },
+  { src: ServiceThree, title: "Emerald Lounge", link: "/venue/emerald-lounge" },
 ];
 
 export default function Service() {
@@ -44,12 +59,11 @@ export default function Service() {
           <div>
             <Image src={Left_heading_line} alt="Services" />
           </div>
-          <h2
-            className="text-3xl sm:text-4xl md:text-[36px] lg:text-[40px] font-light text-[#D7B26A]"
-            style={{ fontFamily: "var(--font-cinzel-regular)", lineHeight: "1.2" }}
+          <p
+            className={`text-3xl sm:text-4xl md:text-[36px] lg:text-[36px] font-light text-[#D7B26A] ${cinzel.className}`}
           >
             SERVICES
-          </h2>
+          </p>
           <div>
             <Image src={Right_heading_line} alt="Services" />
           </div>
@@ -57,18 +71,23 @@ export default function Service() {
 
         <div className="flex flex-col gap-[15px] md:gap-[30px]">
           {/* Tabs */}
-          <div className="flex flex-wrap justify-center gap-1 sm:gap-6">
-            {tabs.map((tab) => (
+          <div className="flex flex-wrap justify-center gap-0 sm:gap-0">
+            {tabs.map((tab, index) => (
               <button
                 key={tab.name}
                 onClick={() => setActiveTab(tab.name)}
-                className={`py-2 px-3 sm:py-2 sm:px-4 text-base sm:text-lg md:text-lg font-light transition-all duration-300 cursor-pointer ${activeTab === tab.name
-                  ? "text-[#D7B26A]"
-                  : "text-white hover:text-[#D7B26A]"
-                  }`}
+                className={`
+                relative py-2 px-3 sm:py-2 sm:px-4 text-base transition-all duration-300 cursor-pointer
+                ${activeTab === tab.name ? "text-[#D7B26A] font-semibold" : "text-white hover:text-[#D7B26A] font-normal"}
+                `}
                 style={{ fontFamily: "var(--font-montserrat)", lineHeight: "1.2", letterSpacing: "-0.03em" }}
               >
                 {tab.name}
+
+                {/* Short right border */}
+                {index !== tabs.length - 1 && (
+                  <span className="absolute top-1/4 right-0 h-1/2 border-r border-white/50"></span>
+                )}
               </button>
             ))}
           </div>

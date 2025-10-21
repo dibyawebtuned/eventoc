@@ -8,11 +8,8 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Montserrat", "sans-serif"],
-                serif: ["Cinzel", "serif"],
-            },
-            fontSize: {
-                menu: "40px",
+                montserrat: ["Montserrat", "sans-serif"],
+                cinzel: ["Cinzel", "serif"],
             },
         },
     },

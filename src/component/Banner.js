@@ -18,7 +18,7 @@ export default function Banner() {
                 <div className="flex gap-[20px] items-center justify-center">
                     <Image src={Left_heading_line} alt="left connector" />
                     <h2 className="text-3xl sm:text-4xl md:text-[36px] lg:text-[40px] font-light text-[#D7B26A]" style={{ fontFamily: "var(--font-cinzel-regular)", lineHeight: "1.2" }}>
-                        Events of the Century
+                        Events of the century
                     </h2>
                     <Image src={Right_heading_line} alt="right connector" />
                 </div>
@@ -30,10 +30,12 @@ export default function Banner() {
                 </p>
 
                 {/* CTA Button */}
-                <button className="px-8 py-3 border border-white text-white text-lg font-light rounded-md hover:bg-white hover:text-black transition duration-300 mt-[20px]">
+                <button className="inline-block px-6 py-2 border border-white text-white text-lg font-light rounded-md 
+                transition-all duration-500 ease-in-out 
+                hover:bg-white hover:text-black hover:shadow-lg mt-[20px] cursor-pointer">
                     Book Now
                 </button>
             </div>
-        </section>
+        </section >
     );
 }

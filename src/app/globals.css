@@ -1,20 +1,18 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap");
 
 :root {
   --font-montserrat: "Montserrat", sans-serif;
-  --font-cormorant: "Cormorant Garamond", serif;
-  --font-cinzel: "Cinzel Decorative", cursive;
+  /* --font-cormorant: "Cormorant Garamond", serif; */
+  /* --font-cinzel: "Cinzel Decorative", cursive; */
   --font-cinzel-regular: "Cinzel", serif;
 }
-
 
 html {
   scroll-behavior: smooth;
 }
-
 
 /* :root {
   --background: #ffffff;
