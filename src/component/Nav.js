@@ -288,7 +288,7 @@ export default function Navbar() {
                                     </ul>
 
                                     {/* Mobile Toggle */}
-                                    <div className="md:hidden">
+                                    {/* <div className="md:hidden">
                                         <button
                                             aria-label="Toggle menu"
                                             onClick={() => setMobileOpen((s) => !s)}
@@ -304,7 +304,7 @@ export default function Navbar() {
                                                 </svg>
                                             )}
                                         </button>
-                                    </div>
+                                    </div> */}
                                 </div>
 
                                 {/* Booking Modal */}
