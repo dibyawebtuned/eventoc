@@ -796,7 +796,7 @@ export default function Navbar() {
                             {/* Right Menu */}
                             <button
                                 onClick={() => setIsModalOpen(true)}
-                                className="inline-block px-6 py-2 rounded-md font-medium transition-shadow shadow-sm bg-gradient-to-b from-[#BE9545] to-[#7A5E39] text-white">
+                                className="hidden sm:inline-block px-6 py-2 rounded-md font-medium transition-shadow shadow-sm bg-gradient-to-b from-[#BE9545] to-[#7A5E39] text-white">
                                 Book Now
                             </button>
                         </div>
