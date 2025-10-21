@@ -48,6 +48,10 @@ const venueImages = [
   { src: ServiceFour, title: "Gold Coast", link: "/venue/emerald-lounge" },
   { src: ServiceFive, title: "Emerald Lounge", link: "/venue/emerald-lounge" },
 ];
+const cateringImages = [
+  { src: ServiceOne, title: "Gold Coast", link: "/public/assets/img/Event of OC/Music/DJ.jpg" },
+  { src: ServiceTwo, title: "Byron Bays", link: "/public/assets/img/Event of OC/Music/Concert.jpg" },
+];
 
 export default function Service() {
   const [activeTab, setActiveTab] = useState("Venue");
@@ -95,10 +99,11 @@ export default function Service() {
 
           {/* Tab Content */}
           <div>
+            {/* Venue */}
             {activeTab === "Venue" && (
               <div className="relative">
                 <Swiper
-                  modules={[Autoplay, Pagination, Navigation]}
+                  modules={[Autoplay, Navigation]}
                   spaceBetween={20}
                   slidesPerView={1}
                   loop={true}
@@ -158,12 +163,387 @@ export default function Service() {
               </div>
             )}
 
-            {activeTab === "Catering" && <div className="text-center">Catering content goes here.</div>}
-            {activeTab === "Entertainment" && <div className="text-center">Entertainment content goes here.</div>}
-            {activeTab === "Audio & Visual" && <div className="text-center">Audio & Visual content goes here.</div>}
-            {activeTab === "Style & Design" && <div className="text-center">Style & Design content goes here.</div>}
-            {activeTab === "Photographs" && <div className="text-center">Photographs content goes here.</div>}
-            {activeTab === "Floral" && <div className="text-center">Floral content goes here.</div>}
+            {/* Catering */}
+            {activeTab === "Catering" && (
+              <div className="relative">
+                <Swiper
+                  modules={[Autoplay, Navigation]}
+                  spaceBetween={20}
+                  slidesPerView={1}
+                  loop={true}
+                  autoplay={{ delay: 3000, disableOnInteraction: false }}
+                  pagination={{
+                    el: ".custom-pagination",
+                    clickable: true,
+                    renderBullet: (index, className) => {
+                      return `<span class="${className} bg-[#D7B26A] w-3 h-3 rounded-full mx-1 inline-block"></span>`;
+                    },
+                  }}
+                  navigation={{
+                    nextEl: ".custom-next",
+                    prevEl: ".custom-prev",
+                  }}
+                  breakpoints={{
+                    640: { slidesPerView: 2 },
+                    1024: { slidesPerView: 4 },
+                  }}
+                >
+                  {cateringImages.map((image, index) => (
+                    <SwiperSlide key={index}>
+                      <Link
+                        href={image.link}
+                        className="block relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                      >
+                        <Image
+                          src={image.src}
+                          alt={image.title}
+                          width={400}
+                          height={352}
+                          className="w-full h-[352px] object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-110"
+                        />
+                        <div className="absolute bottom-0 left-0 w-full h-[50%] bg-gradient-to-t from-black/80 to-transparent p-4 flex items-end">
+                          <h3
+                            className="text-white text-lg font-light"
+                            style={{ fontFamily: "var(--font-cinzel-regular)" }}
+                          >
+                            {image.title}
+                          </h3>
+                        </div>
+                      </Link>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+
+                {/* Custom navigation */}
+                <button className="custom-prev absolute top-1/2 left-0 -translate-y-1/2 z-10 p-3 bg-[#D7B26A] rounded-full shadow-lg hover:bg-yellow-600 transition-all">
+                  &#8592;
+                </button>
+                <button className="custom-next absolute top-1/2 right-0 -translate-y-1/2 z-10 p-3 bg-[#D7B26A] rounded-full shadow-lg hover:bg-yellow-600 transition-all">
+                  &#8594;
+                </button>
+
+                {/* Custom pagination */}
+                <div className="custom-pagination flex justify-center mt-4"></div>
+              </div>
+            )}
+
+            {/* Entertainment */}
+            {activeTab === "Entertainment" && (
+              <div className="relative">
+                <Swiper
+                  modules={[Autoplay, Navigation]}
+                  spaceBetween={20}
+                  slidesPerView={1}
+                  loop={true}
+                  autoplay={{ delay: 3000, disableOnInteraction: false }}
+                  pagination={{
+                    el: ".custom-pagination",
+                    clickable: true,
+                    renderBullet: (index, className) => {
+                      return `<span class="${className} bg-[#D7B26A] w-3 h-3 rounded-full mx-1 inline-block"></span>`;
+                    },
+                  }}
+                  navigation={{
+                    nextEl: ".custom-next",
+                    prevEl: ".custom-prev",
+                  }}
+                  breakpoints={{
+                    640: { slidesPerView: 2 },
+                    1024: { slidesPerView: 4 },
+                  }}
+                >
+                  {cateringImages.map((image, index) => (
+                    <SwiperSlide key={index}>
+                      <Link
+                        href={image.link}
+                        className="block relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                      >
+                        <Image
+                          src={image.src}
+                          alt={image.title}
+                          width={400}
+                          height={352}
+                          className="w-full h-[352px] object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-110"
+                        />
+                        <div className="absolute bottom-0 left-0 w-full h-[50%] bg-gradient-to-t from-black/80 to-transparent p-4 flex items-end">
+                          <h3
+                            className="text-white text-lg font-light"
+                            style={{ fontFamily: "var(--font-cinzel-regular)" }}
+                          >
+                            {image.title}
+                          </h3>
+                        </div>
+                      </Link>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+
+                {/* Custom navigation */}
+                <button className="custom-prev absolute top-1/2 left-0 -translate-y-1/2 z-10 p-3 bg-[#D7B26A] rounded-full shadow-lg hover:bg-yellow-600 transition-all">
+                  &#8592;
+                </button>
+                <button className="custom-next absolute top-1/2 right-0 -translate-y-1/2 z-10 p-3 bg-[#D7B26A] rounded-full shadow-lg hover:bg-yellow-600 transition-all">
+                  &#8594;
+                </button>
+
+                {/* Custom pagination */}
+                <div className="custom-pagination flex justify-center mt-4"></div>
+              </div>
+            )}
+
+            {/* Audio & Visual */}
+            {activeTab === "Audio & Visual" && (
+              <div className="relative">
+                <Swiper
+                  modules={[Autoplay, Navigation]}
+                  spaceBetween={20}
+                  slidesPerView={1}
+                  loop={true}
+                  autoplay={{ delay: 3000, disableOnInteraction: false }}
+                  pagination={{
+                    el: ".custom-pagination",
+                    clickable: true,
+                    renderBullet: (index, className) => {
+                      return `<span class="${className} bg-[#D7B26A] w-3 h-3 rounded-full mx-1 inline-block"></span>`;
+                    },
+                  }}
+                  navigation={{
+                    nextEl: ".custom-next",
+                    prevEl: ".custom-prev",
+                  }}
+                  breakpoints={{
+                    640: { slidesPerView: 2 },
+                    1024: { slidesPerView: 4 },
+                  }}
+                >
+                  {cateringImages.map((image, index) => (
+                    <SwiperSlide key={index}>
+                      <Link
+                        href={image.link}
+                        className="block relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                      >
+                        <Image
+                          src={image.src}
+                          alt={image.title}
+                          width={400}
+                          height={352}
+                          className="w-full h-[352px] object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-110"
+                        />
+                        <div className="absolute bottom-0 left-0 w-full h-[50%] bg-gradient-to-t from-black/80 to-transparent p-4 flex items-end">
+                          <h3
+                            className="text-white text-lg font-light"
+                            style={{ fontFamily: "var(--font-cinzel-regular)" }}
+                          >
+                            {image.title}
+                          </h3>
+                        </div>
+                      </Link>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+
+                {/* Custom navigation */}
+                <button className="custom-prev absolute top-1/2 left-0 -translate-y-1/2 z-10 p-3 bg-[#D7B26A] rounded-full shadow-lg hover:bg-yellow-600 transition-all">
+                  &#8592;
+                </button>
+                <button className="custom-next absolute top-1/2 right-0 -translate-y-1/2 z-10 p-3 bg-[#D7B26A] rounded-full shadow-lg hover:bg-yellow-600 transition-all">
+                  &#8594;
+                </button>
+
+                {/* Custom pagination */}
+                <div className="custom-pagination flex justify-center mt-4"></div>
+              </div>
+            )}
+
+            {/* Style & Design */}
+            {activeTab === "Style & Design" && (
+              <div className="relative">
+                <Swiper
+                  modules={[Autoplay, Navigation]}
+                  spaceBetween={20}
+                  slidesPerView={1}
+                  loop={true}
+                  autoplay={{ delay: 3000, disableOnInteraction: false }}
+                  pagination={{
+                    el: ".custom-pagination",
+                    clickable: true,
+                    renderBullet: (index, className) => {
+                      return `<span class="${className} bg-[#D7B26A] w-3 h-3 rounded-full mx-1 inline-block"></span>`;
+                    },
+                  }}
+                  navigation={{
+                    nextEl: ".custom-next",
+                    prevEl: ".custom-prev",
+                  }}
+                  breakpoints={{
+                    640: { slidesPerView: 2 },
+                    1024: { slidesPerView: 4 },
+                  }}
+                >
+                  {cateringImages.map((image, index) => (
+                    <SwiperSlide key={index}>
+                      <Link
+                        href={image.link}
+                        className="block relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                      >
+                        <Image
+                          src={image.src}
+                          alt={image.title}
+                          width={400}
+                          height={352}
+                          className="w-full h-[352px] object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-110"
+                        />
+                        <div className="absolute bottom-0 left-0 w-full h-[50%] bg-gradient-to-t from-black/80 to-transparent p-4 flex items-end">
+                          <h3
+                            className="text-white text-lg font-light"
+                            style={{ fontFamily: "var(--font-cinzel-regular)" }}
+                          >
+                            {image.title}
+                          </h3>
+                        </div>
+                      </Link>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+
+                {/* Custom navigation */}
+                <button className="custom-prev absolute top-1/2 left-0 -translate-y-1/2 z-10 p-3 bg-[#D7B26A] rounded-full shadow-lg hover:bg-yellow-600 transition-all">
+                  &#8592;
+                </button>
+                <button className="custom-next absolute top-1/2 right-0 -translate-y-1/2 z-10 p-3 bg-[#D7B26A] rounded-full shadow-lg hover:bg-yellow-600 transition-all">
+                  &#8594;
+                </button>
+
+                {/* Custom pagination */}
+                <div className="custom-pagination flex justify-center mt-4"></div>
+              </div>)}
+
+            {/* Photographs */}
+            {activeTab === "Photographs" && (
+              <div className="relative">
+                <Swiper
+                  modules={[Autoplay, Navigation]}
+                  spaceBetween={20}
+                  slidesPerView={1}
+                  loop={true}
+                  autoplay={{ delay: 3000, disableOnInteraction: false }}
+                  pagination={{
+                    el: ".custom-pagination",
+                    clickable: true,
+                    renderBullet: (index, className) => {
+                      return `<span class="${className} bg-[#D7B26A] w-3 h-3 rounded-full mx-1 inline-block"></span>`;
+                    },
+                  }}
+                  navigation={{
+                    nextEl: ".custom-next",
+                    prevEl: ".custom-prev",
+                  }}
+                  breakpoints={{
+                    640: { slidesPerView: 2 },
+                    1024: { slidesPerView: 4 },
+                  }}
+                >
+                  {cateringImages.map((image, index) => (
+                    <SwiperSlide key={index}>
+                      <Link
+                        href={image.link}
+                        className="block relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                      >
+                        <Image
+                          src={image.src}
+                          alt={image.title}
+                          width={400}
+                          height={352}
+                          className="w-full h-[352px] object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-110"
+                        />
+                        <div className="absolute bottom-0 left-0 w-full h-[50%] bg-gradient-to-t from-black/80 to-transparent p-4 flex items-end">
+                          <h3
+                            className="text-white text-lg font-light"
+                            style={{ fontFamily: "var(--font-cinzel-regular)" }}
+                          >
+                            {image.title}
+                          </h3>
+                        </div>
+                      </Link>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+
+                {/* Custom navigation */}
+                <button className="custom-prev absolute top-1/2 left-0 -translate-y-1/2 z-10 p-3 bg-[#D7B26A] rounded-full shadow-lg hover:bg-yellow-600 transition-all">
+                  &#8592;
+                </button>
+                <button className="custom-next absolute top-1/2 right-0 -translate-y-1/2 z-10 p-3 bg-[#D7B26A] rounded-full shadow-lg hover:bg-yellow-600 transition-all">
+                  &#8594;
+                </button>
+
+                {/* Custom pagination */}
+                <div className="custom-pagination flex justify-center mt-4"></div>
+              </div>
+            )}
+
+            {/* Floral */}
+            {activeTab === "Floral" && (
+              <div className="relative">
+                <Swiper
+                  modules={[Autoplay, Navigation]}
+                  spaceBetween={20}
+                  slidesPerView={1}
+                  loop={true}
+                  autoplay={{ delay: 3000, disableOnInteraction: false }}
+                  pagination={{
+                    el: ".custom-pagination",
+                    clickable: true,
+                    renderBullet: (index, className) => {
+                      return `<span class="${className} bg-[#D7B26A] w-3 h-3 rounded-full mx-1 inline-block"></span>`;
+                    },
+                  }}
+                  navigation={{
+                    nextEl: ".custom-next",
+                    prevEl: ".custom-prev",
+                  }}
+                  breakpoints={{
+                    640: { slidesPerView: 2 },
+                    1024: { slidesPerView: 4 },
+                  }}
+                >
+                  {cateringImages.map((image, index) => (
+                    <SwiperSlide key={index}>
+                      <Link
+                        href={image.link}
+                        className="block relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                      >
+                        <Image
+                          src={image.src}
+                          alt={image.title}
+                          width={400}
+                          height={352}
+                          className="w-full h-[352px] object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-110"
+                        />
+                        <div className="absolute bottom-0 left-0 w-full h-[50%] bg-gradient-to-t from-black/80 to-transparent p-4 flex items-end">
+                          <h3
+                            className="text-white text-lg font-light"
+                            style={{ fontFamily: "var(--font-cinzel-regular)" }}
+                          >
+                            {image.title}
+                          </h3>
+                        </div>
+                      </Link>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+
+                {/* Custom navigation */}
+                <button className="custom-prev absolute top-1/2 left-0 -translate-y-1/2 z-10 p-3 bg-[#D7B26A] rounded-full shadow-lg hover:bg-yellow-600 transition-all">
+                  &#8592;
+                </button>
+                <button className="custom-next absolute top-1/2 right-0 -translate-y-1/2 z-10 p-3 bg-[#D7B26A] rounded-full shadow-lg hover:bg-yellow-600 transition-all">
+                  &#8594;
+                </button>
+
+                {/* Custom pagination */}
+                <div className="custom-pagination flex justify-center mt-4"></div>
+              </div>)}
           </div>
         </div>
       </div>

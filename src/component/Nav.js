@@ -10,12 +10,13 @@ import { Gift, Umbrella, Sparkles, Music, Users, Building2, UtensilsCrossed, Hea
 import { Dialog } from "@headlessui/react";
 import { Cinzel, Montserrat } from "next/font/google";
 
+
+// FONTS
 export const cinzel = Cinzel({
     subsets: ["latin"],
     weight: ["400", "500", "600", "700", "700", "900"],
     variable: "--font-cinzel",
 });
-
 export const montserrat = Montserrat({
     subsets: ["latin"],
     weight: ["400", "500", "600", "700", "700", "900"],

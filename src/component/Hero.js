@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Cormorant_Garamond, Cinzel, Montserrat } from "next/font/google";
+import { useState } from "react";
+import ThreeStepModal from "./Modal";
 
 const cormorant = Cormorant_Garamond({
     subsets: ["latin"],
@@ -23,6 +25,10 @@ const montserrat = Montserrat({
 });
 
 export default function HeroSection() {
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+
     // Variants for text
     const textVariant = {
         hidden: { opacity: 0, y: 30 },
@@ -73,30 +79,40 @@ export default function HeroSection() {
                         </motion.span>
                         <div className="flex gap-4">
                             {/* Book Now */}
-                            <Link
-                                href="#services"
-                                className="relative inline-flex items-center justify-center text-white px-6 py-3 rounded-lg font-normal transition-all duration-300 overflow-hidden"
-                                style={{
-                                    background: "linear-gradient(to bottom, #BE9546, #7A5E39)",
-                                }}>
-                                <span className="relative z-10">Book Now</span>
-                                <span className="absolute inset-0 bg-gradient-to-b from-[#7A5E39] to-[#BE9546] opacity-0 hover:opacity-20 rounded-lg transition-opacity duration-300"></span>
-                            </Link>
+                            <div>
+                                <button
+                                    onClick={() => setIsModalOpen(true)}
+                                    className="relative inline-flex items-center justify-center text-white px-6 py-3 rounded-lg font-normal transition-all duration-300 overflow-hidden"
+                                    style={{
+                                        background: "linear-gradient(to bottom, #BE9546, #7A5E39)",
+                                    }}>
+                                    <span className="relative z-10">Book Now</span>
+                                    <span className="absolute inset-0 bg-gradient-to-b from-[#7A5E39] to-[#BE9546] opacity-0 hover:opacity-20 rounded-lg transition-opacity duration-300"></span>
+                                </button>
+
+                                <ThreeStepModal
+                                    isOpen={isModalOpen}
+                                    onClose={() => setIsModalOpen(false)}
+                                />
+                            </div>
 
                             {/* Contact Organiser */}
-                            <Link
-                                href="#contact"
-                                className="group relative inline-flex items-center justify-center text-white px-6 py-2 rounded-lg font-normal border border-white hover:border-[#BE9546] overflow-hidden transition-all duration-300"
+                            <a
+                                href="tel:+9779812345678" // replace with the organiser's phone number
+                                className="group relative inline-flex items-center justify-center text-white px-6 py-2 rounded-lg font-normal border border-white hover:border-transparent overflow-hidden transition-all duration-300"
                             >
                                 <span className="relative z-10">Contact Organiser</span>
 
                                 {/* Smooth Hover Gradient Overlay */}
-                                <span className="absolute inset-0 rounded-lg bg-gradient-to-b from-[#BE9546] to-[#7A5E39] 
-                                opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></span>
+                                <span
+                                    className="absolute inset-0 rounded-lg bg-gradient-to-b from-[#BE9546] to-[#7A5E39] 
+                                    opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                                ></span>
 
                                 {/* Border disappears smoothly on hover */}
                                 <span className="absolute inset-0 rounded-lg border border-transparent group-hover:border-transparent transition-all duration-300"></span>
-                            </Link>
+                            </a>
+
 
                         </div>
                     </div>
