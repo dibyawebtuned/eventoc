@@ -1,7 +1,7 @@
 "use client";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-// import Preloader from "@/component/Preloader";
+import Preloader from "@/component/Preloader";
 import { motion, AnimatePresence } from "framer-motion";
 
 const geistSans = Geist({
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className="scroll-smooth">
       <body className={`antialiased ${geistSans.variable} ${geistMono.variable} bg-black`}>
         {/* Preloader always on top */}
-        {/* <Preloader /> */}
+        <Preloader />
 
         {/* Page fade-in after preloader */}
         <AnimatePresence mode="wait">
