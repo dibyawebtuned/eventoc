@@ -215,7 +215,7 @@ export default function FourStepModal({ isOpen, onClose }) {
                             {/* Terms and Conditions Checkbox */}
                             <div>
                                 <label className="flex items-center text-sm font-medium text-[#D7B26A]">
-                                    <input type="checkbox" className="mr-1 block text-sm font-medium text-[#D7B26A] text-start" /> I agree to the <Link href="#" className="underline block text-sm font-medium text-[#D7B26A] ml-2 ">Terms and Conditions</Link>
+                                    <input type="checkbox" className="mr-1 block text-sm font-medium text-[#D7B26A] text-start" /> I agree to the <Link href="/terms-and-conditions" className="underline block text-sm font-medium text-[#D7B26A] ml-2 ">Terms and Conditions</Link>
                                 </label>
                             </div>
                         </div>
