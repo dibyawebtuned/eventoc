@@ -2,11 +2,17 @@
 
 import React from "react";
 import Image from "next/image";
+import { useState } from "react";
+
 import Left_heading_line from "/public/assets/img/Left.png";
 import Right_heading_line from "/public/assets/img/Right.png";
 import BannerBg from "/public/assets/img/Banner.png";
+import ThreeStepModal from "./Modal";
+
 
 export default function Banner() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     return (
         <section className="relative w-full flex items-center justify-center overflow-hidden">
             {/* Background Image */}
@@ -28,13 +34,21 @@ export default function Banner() {
                     style={{ fontFamily: "var(--font-montserrat)" }}>
                     Luxe details, seamless logistics, unforgettable moments.
                 </p>
-
-                {/* CTA Button */}
-                <button className="inline-block px-6 py-2 border border-white text-white text-lg font-light rounded-md 
+                <div>
+                    {/* CTA Button */}
+                    <button
+                        onClick={() => setIsModalOpen(true)}
+                        className="inline-block px-6 py-2 border border-white text-white text-lg font-light rounded-md 
                 transition-all duration-500 ease-in-out 
                 hover:bg-white hover:text-black hover:shadow-lg mt-[20px] cursor-pointer">
-                    Book Now
-                </button>
+                        Book Now
+                    </button>
+
+                    <ThreeStepModal
+                        isOpen={isModalOpen}
+                        onClose={() => setIsModalOpen(false)}
+                    />
+                </div>
             </div>
         </section >
     );

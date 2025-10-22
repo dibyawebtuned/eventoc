@@ -7,8 +7,52 @@ import AddonsSection from "@/component/Venue/Addon";
 import TimelineSection from "@/component/Venue/Timeline";
 import Banner from "@/component/Banner";
 
+import {
+  Building2,
+  Sun,
+  Home,
+  GlassWater,
+  Ship, Car, Hotel, ShieldCheck, MapPin, Users, UtensilsCrossed, Headphones, Sparkles, Flower2, Camera
+} from "lucide-react";
+
 // Replace with your actual asset
 import VenueImg from "/public/assets/img/content_image/81z6UCSU5YL.jpg";
+
+const customVenues = [
+  { name: "Bar packages", icon: Building2 },
+  { name: "Signature cocktails", icon: Sun },
+  { name: "BYO management", icon: Home },
+  { name: "Turnaround", icon: GlassWater },
+  { name: "Re-use plan across ceremony", icon: Ship },
+];
+
+const customAddons = [
+  {
+    icon: Car,
+    label: "Celebration cake",
+    desc: "Seamless guest arrivals with premium transfers.",
+  },
+  {
+    icon: Hotel,
+    label: " Champagne towe",
+    desc: "Curated stays for comfort and convenience.",
+  },
+  {
+    icon: ShieldCheck,
+    label: " Coffee car",
+    desc: "Discreet, professional, and perfectly coordinated.",
+  },
+  {
+    icon: MapPin,
+    label: " Gelato/sorbet car",
+    desc: "Elegant direction systems designed for clarity.",
+  },
+  {
+    icon: Users,
+    label: "Juice/hydration ba",
+    desc: "Private zones crafted for comfort and calm.",
+  },
+];
 
 const VenueSourcingComponent = () => {
   return (
@@ -163,10 +207,18 @@ const VenueSourcingComponent = () => {
       {/* Additional Sections */}
       <section>
         {/* VenueStyles */}
-        <VenueStyles />
+        <VenueStyles
+          title="Beverage program"
+          subtitle="Discover spaces that define your celebration."
+          venues={customVenues}
+        />
 
         {/* AddonsSection */}
-        <AddonsSection />
+        <AddonsSection
+          title="Add-On"
+          subtitle="Tailored enhancements to elevate every moment."
+          addons={customAddons}
+        />
 
         {/* TimelineSection */}
         <TimelineSection />
