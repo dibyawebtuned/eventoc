@@ -10,12 +10,12 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
 // Example images
-import GalleryImg1 from "/public/assets/img/content_image/2283609.jpg";
-import GalleryImg2 from "/public/assets/img/content_image/5e4c014e-45f2-4d0e-bc46-c7474b26b367.jpg";
-import GalleryImg3 from "/public/assets/img/content_image/6347dab01e23fef85fb0d3f8_63457b651fc7f5b5a272591f_See+how+to+stop+slow+nights+with+these+restaurant+and+bar+event+ideas.jpg";
-import GalleryImg4 from "/public/assets/img/content_image/81z6UCSU5YL.jpg";
-import GalleryImg5 from "/public/assets/img/content_image/a-microphone-in-focus-with-blurred-bokeh-lights-in-the-background-creating-a-vibrant-nightlife-atmosphere.-16727451-scaled-e1737059691145.jpg";
-import GalleryImg6 from "/public/assets/img/content_image/2283609.jpg";
+import GalleryImg1 from "/public/assets/img/Event of OC/Anniversary/Champagne.jpg";
+import GalleryImg2 from "/public/assets/img/Event of OC/Birthday/Birthday celebration 2.jpg";
+import GalleryImg3 from "/public/assets/img/Event of OC/Music/Concert.jpg";
+import GalleryImg4 from "/public/assets/img/Event of OC/Anniversary/Pink-Wine.jpg";
+import GalleryImg5 from "/public/assets/img/Event of OC/Places/Opera-House.jpg";
+import GalleryImg6 from "/public/assets/img/Event of OC/Wedding/Bottle opening.jpg";
 
 import { Cinzel, Montserrat } from "next/font/google";
 
