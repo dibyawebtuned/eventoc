@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import { useState } from "react";
 import SectionHeader from "@/component/Title";
 import PolaroidGallery from "@/component/PolaroidGallery";
 import Service from "@/component/Service";
@@ -13,6 +14,9 @@ import BudgetsTimelines from "@/component/Budget-timeline";
 import Banner from "@/component/Banner";
 import ToolsMarquee from "@/component/Tools-Tech";
 import { motion } from "framer-motion";
+
+import ThreeStepModal from "../../component/Modal"
+
 import {
   Leaf,
   Recycle,
@@ -54,7 +58,11 @@ const about_component = () => {
     { icon: <MessageCircle size={28} className="text-[#BE9545]" />, text: "Transparent communication" },
   ];
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+
   return (
+
     <>
       <div className="mt-[100px] container mx-auto px-4 py-10">
         {/* Header */}
@@ -92,14 +100,19 @@ const about_component = () => {
 
           {/* Book Now Button */}
           <div>
-            <Link
-              href="/book"
+            <button
+              onClick={() => setIsModalOpen(true)}
               className="inline-block px-5 sm:px-6 py-2.5 sm:py-3 rounded-md font-medium transition-all duration-300 
                  shadow-md hover:shadow-[0_0_15px_rgba(190,149,69,0.5)]
                  bg-gradient-to-b from-[#BE9545] to-[#7A5E39] text-white text-sm sm:text-base"
             >
               Book Now
-            </Link>
+            </button>
+
+            <ThreeStepModal
+              isOpen={isModalOpen}
+              onClose={() => setIsModalOpen(false)}
+            />
           </div>
         </div>
 
