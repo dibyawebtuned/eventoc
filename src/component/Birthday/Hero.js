@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import BirthdayHeroImg from "/public/assets/img/content_image/2283609.jpg";
 import { Cinzel, Montserrat } from "next/font/google";
+import PropTypes from "prop-types";
 
 export const cinzel = Cinzel({
   subsets: ["latin"],
@@ -17,7 +17,18 @@ export const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
-export const BirthdayHeroSection = () => {
+export const HeroSection = ({
+  topLabel,
+  title,
+  highlightedText,
+  description,
+  features =[],
+  ctaButtons = [],
+  imageSrc,
+  imageAlt,
+  overlayTitle,
+  overlayDesc,
+}) => {
   return (
     <section className="relative overflow-hidden mt-[100px] py-[50px]">
       {/* Background Gradient */}
@@ -42,31 +53,26 @@ export const BirthdayHeroSection = () => {
             className="uppercase tracking-[0.2em] text-[#BE9545] text-xs sm:text-sm font-semibold"
             style={{ fontFamily: "var(--font-montserrat)" }}
           >
-            Celebrate in Style
+            {topLabel}
           </span>
 
           <h2
             className="text-3xl sm:text-4xl md:text-[40px] lg:text-[48px] leading-tight text-white font-semibold mt-3 mb-4 md:mb-5"
             style={{ fontFamily: "var(--font-cinzel-regular)" }}
           >
-            Magical <span className="text-[#BE9545]">Birthday Events</span> for Everyone
+            {title} {highlightedText && <span className="text-[#BE9545]">{highlightedText}</span>}
           </h2>
 
           <p
             className="text-gray-400 text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] leading-[1.7] mb-6 md:mb-8 text-justify"
             style={{ fontFamily: "var(--font-montserrat)" }}
           >
-            From intimate private gatherings to grand celebrations, we curate unforgettable birthday experiences with exquisite décor, premium catering, live entertainment, and seamless logistics.
+            {description}
           </p>
 
           {/* Highlight Features */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-10">
-            {[
-              { title: "Curated Themes", desc: "Unique birthday themes tailored to your style and mood." },
-              { title: "Premium Venues", desc: "Handpicked venues that match your vision and guest count." },
-              { title: "Entertainment", desc: "Live DJs, performers, and interactive experiences." },
-              { title: "Seamless Planning", desc: "End-to-end event coordination for stress-free celebrations." },
-            ].map((item, i) => (
+            {features.map((item, i) => (
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.02 }}
@@ -90,17 +96,19 @@ export const BirthdayHeroSection = () => {
 
           {/* Buttons */}
           <div className="flex flex-row flex-wrap gap-4 justify-start">
-            <motion.button
-              className="px-6 sm:px-8 py-2 sm:py-3 bg-[#BE9545] text-black rounded-full font-medium tracking-wide hover:bg-[#A67C33] transition-all duration-300 cursor-pointer text-sm sm:text-base"
-            >
-              Book Your Event Now
-            </motion.button>
-
-            <motion.button
-              className="px-6 sm:px-8 py-2 sm:py-3 border border-[#BE9545] text-[#BE9545] rounded-full font-medium tracking-wide hover:bg-[#FFD700]/10 transition-all duration-300 cursor-pointer text-sm sm:text-base"
-            >
-              Explore Packages
-            </motion.button>
+            {ctaButtons.map((btn, idx) => (
+              <motion.button
+                key={idx}
+                onClick={btn.onClick}
+                className={`px-6 sm:px-8 py-2 sm:py-3 rounded-full font-medium tracking-wide transition-all duration-300 cursor-pointer text-sm sm:text-base ${
+                  btn.type === "primary"
+                    ? "bg-[#BE9545] text-black hover:bg-[#A67C33]"
+                    : "border border-[#BE9545] text-[#BE9545] hover:bg-[#FFD700]/10"
+                }`}
+              >
+                {btn.text}
+              </motion.button>
+            ))}
           </div>
         </motion.div>
 
@@ -114,30 +122,33 @@ export const BirthdayHeroSection = () => {
         >
           <div className="relative overflow-hidden rounded-[20px] sm:rounded-[25px] md:rounded-[30px] border border-[#FFD700]/30 shadow-2xl group w-full max-w-full md:max-w-[500px]">
             <Image
-              src={BirthdayHeroImg}
-              alt="Birthday Celebration"
+              src={imageSrc}
+              alt={imageAlt}
               className="object-cover w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] transition-transform duration-700 group-hover:scale-105 rounded-[20px] sm:rounded-[25px] md:rounded-[30px]"
               quality={100}
-              placeholder="blur"
             />
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-start p-4 sm:p-6">
-              <div>
-                <h4
-                  className="text-white text-lg sm:text-xl md:text-2xl font-semibold"
-                  style={{ fontFamily: "var(--font-cinzel-regular)" }}
-                >
-                  Sunset Rooftop Party
-                </h4>
-                <p
-                  className="text-[#BE9545] text-xs sm:text-sm md:text-base"
-                  style={{ fontFamily: "var(--font-montserrat)" }}
-                >
-                  Downtown · 100 Guests · Premium Experience
-                </p>
+            {overlayTitle && (
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-start p-4 sm:p-6">
+                <div>
+                  <h4
+                    className="text-white text-lg sm:text-xl md:text-2xl font-semibold"
+                    style={{ fontFamily: "var(--font-cinzel-regular)" }}
+                  >
+                    {overlayTitle}
+                  </h4>
+                  {overlayDesc && (
+                    <p
+                      className="text-[#BE9545] text-xs sm:text-sm md:text-base"
+                      style={{ fontFamily: "var(--font-montserrat)" }}
+                    >
+                      {overlayDesc}
+                    </p>
+                  )}
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           {/* Floating Glow Accent */}
@@ -148,8 +159,32 @@ export const BirthdayHeroSection = () => {
             className="absolute -bottom-6 -right-6 w-20 sm:w-24 md:w-28 lg:w-32 h-20 sm:h-24 md:h-28 lg:h-32 bg-[#FFD700]/40 blur-2xl rounded-full"
           />
         </motion.div>
-
       </div>
     </section>
   );
+};
+
+// PropTypes validation
+HeroSection.propTypes = {
+  topLabel: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  highlightedText: PropTypes.string,
+  description: PropTypes.string.isRequired,
+  features: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      desc: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  ctaButtons: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      type: PropTypes.oneOf(["primary", "secondary"]),
+      onClick: PropTypes.func,
+    })
+  ),
+  imageSrc: PropTypes.any.isRequired,
+  imageAlt: PropTypes.string.isRequired,
+  overlayTitle: PropTypes.string,
+  overlayDesc: PropTypes.string,
 };

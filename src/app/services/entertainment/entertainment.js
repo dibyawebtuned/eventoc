@@ -2,11 +2,11 @@
 import React from 'react'
 
 const entertainment = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+    return (
+        <div>
+
+        </div>
+    )
 }
 
 export default entertainment

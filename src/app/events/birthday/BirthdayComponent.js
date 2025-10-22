@@ -8,6 +8,36 @@ import { PackagesComponent } from "@/component/Birthday/Birthday-package";
 import { RunSheetNew } from "@/component/Birthday/Run-sheet";
 import { BirthdayHeroSection } from "@/component/Birthday/Hero";
 import { Cinzel, Montserrat } from "next/font/google";
+import { HeroSection } from "@/component/Birthday/Hero";
+
+import BirthdayImg from "/public/assets/img/Event of OC/Birthday/Birthday Celebration 1.jpg";
+
+const birthdayIdeas = [
+  {
+    id: "golden",
+    label: "Golden Hour Rooftop",
+    icon: "FaCocktail",
+    image: "/assets/img/Event of OC/Birthday/Birthday celebration 2.jpg",
+  },
+  {
+    id: "villa",
+    label: "Private Villa Dinner",
+    icon: "FaBirthdayCake",
+    image: "/assets/img/Event of OC/Birthday/Birthday celebration 3.jpg",
+  },
+  {
+    id: "lounge",
+    label: "After-Dark Lounge",
+    icon: "FaMask",
+    image: "/assets/img/Event of OC/Birthday/Cake.jpg",
+  },
+  // {
+  //     id: "beach",
+  //     label: "Beach Party",
+  //     icon: "FaCocktail",
+  //     image: "/assets/img/content_image/beach.jpg",
+  // },
+];
 
 export const cinzel = Cinzel({
   subsets: ["latin"],
@@ -44,7 +74,26 @@ export default function BirthdayPage() {
   return (
     <main className="bg-black text-white overflow-hidden">
       {/* HERO */}
-      <BirthdayHeroSection />
+      <HeroSection
+        topLabel="Celebrate in Style"
+        title="Magical"
+        highlightedText="Birthday Events"
+        description="From intimate private gatherings to grand celebrations, we curate unforgettable birthday experiences with exquisite décor, premium catering, live entertainment, and seamless logistics."
+        features={[
+          { title: "Curated Themes", desc: "Unique birthday themes tailored to your style and mood." },
+          { title: "Premium Venues", desc: "Handpicked venues that match your vision and guest count." },
+          { title: "Entertainment", desc: "Live DJs, performers, and interactive experiences." },
+          { title: "Seamless Planning", desc: "End-to-end event coordination for stress-free celebrations." },
+        ]}
+        ctaButtons={[
+          { text: "Book Your Event Now", type: "primary" },
+          { text: "Explore Packages", type: "secondary" },
+        ]}
+        imageSrc={BirthdayImg}
+        imageAlt="Birthday Celebration"
+        overlayTitle="Sunset Rooftop Party"
+        overlayDesc="Downtown · 100 Guests · Premium Experience"
+      />
 
       {/* WHAT WE HANDLE */}
       <section className="container mx-auto px-6 py-[80px]">
@@ -95,7 +144,7 @@ export default function BirthdayPage() {
       </section>
 
       {/* SIGNATURE IDEAS */}
-      <SignatureIdeas />
+      <SignatureIdeas ideas={birthdayIdeas} />
 
       {/* PACKAGES */}
       {/* <PackagesComponent /> */}
