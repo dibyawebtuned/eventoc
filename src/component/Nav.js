@@ -798,6 +798,11 @@ export default function Navbar() {
                                 className="hidden sm:inline-block px-6 py-2 rounded-md font-medium transition-shadow shadow-sm bg-gradient-to-b from-[#BE9545] to-[#7A5E39] text-white">
                                 Book Now
                             </button>
+
+                            <ThreeStepModal
+                                                isOpen={isModalOpen}
+                                                onClose={() => setIsModalOpen(false)}
+                                            />
                         </div>
 
                         {/* Mobile Menu */}
@@ -876,18 +881,23 @@ export default function Navbar() {
                                     </li>
 
                                     {/* Other links */}
-                                    <li><Link href="/">Gallery</Link></li>
-                                    <li><Link href="/">About</Link></li>
-                                    <li><Link href="/">Portfolio</Link></li>
-                                    <li><Link href="/">FAQ</Link></li>
-                                    <li><Link href="/">Contact</Link></li>
+                                    <li><Link href="/gallery">Gallery</Link></li>
+                                    <li><Link href="/about">About</Link></li>
+                                    <li><Link href="/portfolio">Portfolio</Link></li>
+                                    <li><Link href="/faq">FAQ</Link></li>
+                                    <li><Link href="/contact">Contact</Link></li>
 
                                     <li>
                                         <button
                                             onClick={() => setIsModalOpen(true)}
-                                            className="block text-center px-3 py-1 rounded-md font-semibold bg-gradient-to-r from-[#B8860B] to-[#D4AF37] text-white">
+                                            className="block text-center px-3 py-1 rounded-md font-semibold bg-gradient-to-b from-[#BE9545] to-[#7A5E39] text-white">
                                             Book Now
                                         </button>
+
+                                        <ThreeStepModal
+                                            isOpen={isModalOpen}
+                                            onClose={() => setIsModalOpen(false)}
+                                        />
                                     </li>
                                 </ul>
                             </div>
