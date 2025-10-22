@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import VenueSourcingComponent from './CateringComponent'
+import VenueSourcingComponent from './style'
 import Header from "@/component/Nav";
 import Footer from "@/component/Footer";
 

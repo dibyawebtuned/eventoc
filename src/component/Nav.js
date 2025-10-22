@@ -10,6 +10,8 @@ import { Gift, Umbrella, Sparkles, Music, Users, Building2, UtensilsCrossed, Hea
 import { Dialog } from "@headlessui/react";
 import { Cinzel, Montserrat } from "next/font/google";
 
+import ThreeStepModal from "./Modal"
+
 
 // FONTS
 export const cinzel = Cinzel({
@@ -52,19 +54,19 @@ export default function Navbar() {
 
     const menuItems = [
         { href: "/events/birthday", label: "Birthday", icon: Gift },
-        // { href: "/events/workshops", label: "Beach & Pool", icon: Umbrella },
-        // { href: "/events/festivals", label: "Brand Launch", icon: Sparkles },
-        // { href: "/events/musicnight", label: "Music Night", icon: Music },
-        // { href: "/events/festivals", label: "Custom Events", icon: Users },
+        { href: "/events/beach", label: "Beach & Pool", icon: Umbrella },
+        { href: "/events/brand", label: "Brand Launch", icon: Sparkles },
+        { href: "/events/music", label: "Music Night", icon: Music },
+        { href: "/events/custom", label: "Custom Events", icon: Users },
     ];
 
     const servicemenusItems = [
         { href: "/services/venuesourcing", label: "Venue Sourcing", icon: Building2 },
-        // { href: "/services/catering", label: "Catering", icon: UtensilsCrossed },
+        { href: "/services/catering", label: "Catering", icon: UtensilsCrossed },
         // { href: "/services/entertainment", label: "Audio & Visuals", icon: Headphones },
-        // { href: "/services/design", label: "Style & Designs", icon: Sparkles },
-        // { href: "/services/floral", label: "Floral", icon: Flower2 },
-        // { href: "/services/photographs", label: "Photographs", icon: Camera },
+        { href: "/services/style", label: "Style & Designs", icon: Sparkles },
+        { href: "/services/floral", label: "Floral", icon: Flower2 },
+        { href: "/services/photograph", label: "Photographs", icon: Camera },
     ];
 
 
@@ -285,6 +287,11 @@ export default function Navbar() {
                                                 className="inline-block px-6 py-2 rounded-md transition-shadow shadow-sm bg-gradient-to-b from-[#BE9545] to-[#7A5E39] text-white" >
                                                 Book Now
                                             </button>
+
+                                            <ThreeStepModal
+                                                isOpen={isModalOpen}
+                                                onClose={() => setIsModalOpen(false)}
+                                            />
                                         </li>
                                     </ul>
 
@@ -309,14 +316,13 @@ export default function Navbar() {
                                 </div>
 
                                 {/* Booking Modal */}
-                                <Dialog
+                                {/* <Dialog
                                     open={isModalOpen}
                                     onClose={() => setIsModalOpen(false)}
                                     className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
                                 >
                                     <Dialog.Panel className="bg-[#000000] rounded-lg max-w-2xl w-full p-6 relative border border-[#D7B26A]/50">
 
-                                        {/* Logo & Title */}
                                         <div className="flex flex-col items-center justify-center">
                                             <div>
                                                 <Image src={Event_OC_Logo} alt="Logo" />
@@ -341,7 +347,6 @@ export default function Navbar() {
                                             </div>
                                         </div>
 
-                                        {/* Step Progress Indicator */}
                                         <div className="flex items-center justify-center mb-8 mt-8">
                                             {[
                                                 { step: 1, label: "Basic Details" },
@@ -349,7 +354,6 @@ export default function Navbar() {
                                                 { step: 3, label: "Verification" },
                                             ].map((item, index, arr) => (
                                                 <div key={item.step} className="flex items-center">
-                                                    {/* Step Circle */}
                                                     <div
                                                         className={`flex items-center justify-center w-8 h-8 rounded-full text-sm font-semibold transition-all duration-300 
                                                                     ${step === item.step
@@ -362,7 +366,6 @@ export default function Navbar() {
                                                         {item.step}
                                                     </div>
 
-                                                    {/* Label */}
                                                     <span
                                                         className={`ml-2 text-sm font-medium ${step === item.step
                                                             ? "text-[#D7B26A]"
@@ -372,7 +375,6 @@ export default function Navbar() {
                                                         {item.label}
                                                     </span>
 
-                                                    {/* Connecting Line */}
                                                     {index < arr.length - 1 && (
                                                         <div
                                                             className={`w-16 h-[2px] mx-2 transition-all duration-300 ${step > item.step ? "bg-[#D7B26A]" : "bg-[#D7B26A]/30"
@@ -383,11 +385,9 @@ export default function Navbar() {
                                             ))}
                                         </div>
 
-                                        {/* Booking Form */}
                                         <form onSubmit={handleSubmit} onKeyDown={(e) => e.key === "Enter" && e.preventDefault()} className="space-y-4">
                                             {step === 1 && (
                                                 <>
-                                                    {/* Form Fields */}
                                                     <div className="space-y-2 flex flex-col gap-4">
                                                         <div>
                                                             <label className="block text-sm font-medium text-[#D7B26A] mb-2">
@@ -479,7 +479,6 @@ export default function Navbar() {
                                                 </div>
                                             )}
 
-                                            {/* Navigation Buttons */}
                                             <div className="flex justify-between mt-6">
                                                 {step > 1 && (
                                                     <button
@@ -509,12 +508,11 @@ export default function Navbar() {
                                             </div>
                                         </form>
 
-                                        {/* Close Button */}
                                         <button onClick={() => setIsModalOpen(false)} className="absolute top-5 right-6 text-[#D7B26A]/60 text-2xl hover:text-[#D7B26A] cursor-pointer transition-colors duration-300">
                                             ✕
                                         </button>
                                     </Dialog.Panel>
-                                </Dialog>
+                                </Dialog> */}
 
                                 {/* Mobile Menu */}
                                 <div
@@ -616,12 +614,12 @@ export default function Navbar() {
 
                                             {/* Button */}
                                             <li>
-                                                <Link
-                                                    href="/book"
-                                                    className="block text-center px-4 py-2 rounded-md font-semibold bg-gradient-to-r from-[#B8860B] to-[#D4AF37] text-white"
+                                                <button
+                                                    onClick={() => setIsModalOpen(true)}
+                                                    className="block text-center px-4 py-2 rounded-md font-semibold bg-gradient-to-b from-[#BE9545] to-[#7A5E39] text-white"
                                                 >
                                                     Book Now
-                                                </Link>
+                                                </button>
                                             </li>
                                         </ul>
                                     </div>
@@ -885,9 +883,11 @@ export default function Navbar() {
                                     <li><Link href="/">Contact</Link></li>
 
                                     <li>
-                                        <Link href="/book" className="block text-center px-3 py-1 rounded-md font-semibold bg-gradient-to-r from-[#B8860B] to-[#D4AF37] text-white">
+                                        <button
+                                            onClick={() => setIsModalOpen(true)}
+                                            className="block text-center px-3 py-1 rounded-md font-semibold bg-gradient-to-r from-[#B8860B] to-[#D4AF37] text-white">
                                             Book Now
-                                        </Link>
+                                        </button>
                                     </li>
                                 </ul>
                             </div>
