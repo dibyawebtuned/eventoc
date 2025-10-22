@@ -9,31 +9,35 @@ import { RunSheetNew } from "@/component/Birthday/Run-sheet";
 import { BirthdayHeroSection } from "@/component/Birthday/Hero";
 import { Cinzel, Montserrat } from "next/font/google";
 
+import { HeroSection } from "@/component/Birthday/Hero";
+import BirthdayImg from "/public/assets/img/Event of OC/Music/Music.jpg";
+
+
 const beachIdeas = [
-    {
-        id: "golden",
-        label: "Sunset Swim Social",
-        icon: "FaCocktail",
-        image: "/assets/img/content_image/2283609.jpg",
-    },
-    {
-        id: "villa",
-        label: "Barefoot Beach Picnic",
-        icon: "FaBirthdayCake",
-        image: "/assets/img/content_image/5e4c014e-45f2-4d0e-bc46-c7474b26b367.jpg",
-    },
-    {
-        id: "lounge",
-        label: "Cabana Club",
-        icon: "FaMask",
-        image: "/assets/img/content_image/lounge.jpg",
-    },
-    // {
-    //     id: "beach",
-    //     label: "Beach Party",
-    //     icon: "FaCocktail",
-    //     image: "/assets/img/content_image/beach.jpg",
-    // },
+  {
+    id: "golden",
+    label: "Sunset Swim Social",
+    icon: "FaCocktail",
+    image: "/assets/img/content_image/2283609.jpg",
+  },
+  {
+    id: "villa",
+    label: "Barefoot Beach Picnic",
+    icon: "FaBirthdayCake",
+    image: "/assets/img/content_image/5e4c014e-45f2-4d0e-bc46-c7474b26b367.jpg",
+  },
+  {
+    id: "lounge",
+    label: "Cabana Club",
+    icon: "FaMask",
+    image: "/assets/img/content_image/lounge.jpg",
+  },
+  // {
+  //     id: "beach",
+  //     label: "Beach Party",
+  //     icon: "FaCocktail",
+  //     image: "/assets/img/content_image/beach.jpg",
+  // },
 ];
 
 export const cinzel = Cinzel({
@@ -71,7 +75,25 @@ export default function MusicPage() {
   return (
     <main className="bg-black text-white overflow-hidden">
       {/* HERO */}
-      <BirthdayHeroSection />
+      <HeroSection
+        topLabel="Music"
+        title="Night"
+        highlightedText="Birthday Events"
+        description="From intimate vinyl sessions to high-energy DJ takeovers, we build music-forward events with impeccable audio, atmospheric lighting and seamless stage management—so artists shine and guests feel the vibe from first track to encore."
+        features={[
+          { title: "Venue sourcing", desc: "Unique birthday themes tailored to your style and mood." },
+          { title: "Talent", desc: "Handpicked venues that match your vision and guest count." },
+          { title: "Audio & visuals", desc: "Live DJs, performers, and interactive experiences." },
+          { title: "Style & design", desc: "End-to-end event coordination for stress-free celebrations." },
+        ]}
+        ctaButtons={[
+          { text: "Book Your Event Now", type: "primary" },
+          { text: "Explore Packages", type: "secondary" },
+        ]}
+        imageSrc={BirthdayImg}
+        imageAlt="Birthday Celebration"
+        overlayTitle="Sunset Rooftop Party"
+        overlayDesc="Downtown · 100 Guests · Premium Experience" />
 
       {/* WHAT WE HANDLE */}
       <section className="container mx-auto px-6 py-[80px]">
