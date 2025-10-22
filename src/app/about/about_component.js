@@ -44,7 +44,8 @@ const tools = [
 ];
 
 
-const about_component = () => {
+
+const About_component = () => {
   const features = [
     { icon: <Leaf size={28} className="text-[#BE9545]" />, text: "Eco-conscious materials" },
     { icon: <Recycle size={28} className="text-[#BE9545]" />, text: "Zero-waste planning" },
@@ -575,4 +576,4 @@ const about_component = () => {
   );
 };
 
-export default about_component;
+export default About_component;
