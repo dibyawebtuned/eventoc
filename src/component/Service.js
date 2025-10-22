@@ -42,11 +42,11 @@ const tabs = [
 ];
 
 const venueImages = [
-  { src: ServiceOne, title: "Gold Coast", link: "/venue/crystal-ballroom" },
-  { src: ServiceTwo, title: "Byron Bays", link: "/venue/marble-courtyard" },
-  { src: ServiceThree, title: "Sunshine Coast", link: "/venue/skyline-atrium" },
-  { src: ServiceFour, title: "Gold Coast", link: "/venue/emerald-lounge" },
-  { src: ServiceFive, title: "Emerald Lounge", link: "/venue/emerald-lounge" },
+  { src: ServiceOne, title: "Gold Coast", link: "/services/venuesourcing" },
+  { src: ServiceTwo, title: "Byron Bays", link: "/services/venuesourcing" },
+  { src: ServiceThree, title: "Sunshine Coast", link: "/services/venuesourcing" },
+  { src: ServiceFour, title: "Gold Coast", link: "/services/venuesourcing" },
+  { src: ServiceFive, title: "Emerald Lounge", link: "/services/venuesourcing" },
 ];
 const cateringImages = [
   { src: ServiceOne, title: "Gold Coast", link: "/public/assets/img/Event of OC/Music/DJ.jpg" },
