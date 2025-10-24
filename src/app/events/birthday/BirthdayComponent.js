@@ -79,12 +79,12 @@ export default function BirthdayPage() {
         title="Magical"
         highlightedText="Birthday Events"
         description="From intimate private gatherings to grand celebrations, we curate unforgettable birthday experiences with exquisite décor, premium catering, live entertainment, and seamless logistics."
-        // features={[
-        //   { title: "Curated Themes", desc: "Unique birthday themes tailored to your style and mood." },
-        //   { title: "Premium Venues", desc: "Handpicked venues that match your vision and guest count." },
-        //   { title: "Entertainment", desc: "Live DJs, performers, and interactive experiences." },
-        //   { title: "Seamless Planning", desc: "End-to-end event coordination for stress-free celebrations." },
-        // ]}
+        features={[
+          { title: "Curated Themes", desc: "Unique birthday themes tailored to your style and mood." },
+          { title: "Premium Venues", desc: "Handpicked venues that match your vision and guest count." },
+          { title: "Entertainment", desc: "Live DJs, performers, and interactive experiences." },
+          { title: "Seamless Planning", desc: "End-to-end event coordination for stress-free celebrations." },
+        ]}
         ctaButtons={[
           { text: "Book Your Event Now", type: "primary" },
           // { text: "Explore Packages", type: "secondary" },
@@ -150,7 +150,7 @@ export default function BirthdayPage() {
       {/* <PackagesComponent /> */}
 
       {/* RunSheet */}
-      {/* <RunSheetNew /> */}
+      <RunSheetNew />
 
       {/* FAQ SECTION */}
       <section className="py-20 bg-[#0B0B0B] text-white">
