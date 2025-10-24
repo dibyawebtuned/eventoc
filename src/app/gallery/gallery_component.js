@@ -73,7 +73,8 @@ const GalleryComponent = () => {
   };
 
   // Convert Next.js image imports to plain URLs for lightbox
-  const gallerySrc = galleryData[activeTab].map((img) => img.src);
+  const gallerySrc = galleryData[activeTab.toLowerCase()]?.map((img) => img.src) || [];
+
 
   const openLightbox = (index) => {
     setCurrentIndex(index);
@@ -106,7 +107,7 @@ const GalleryComponent = () => {
                 : undefined
             }}
           >
-            {tab.charAt(0).toUpperCase() + tab.slice(1)}
+            {tab}
           </button>
         ))}
       </div>
