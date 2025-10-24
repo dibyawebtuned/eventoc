@@ -10,7 +10,7 @@ import "yet-another-react-lightbox/styles.css";
 
 // Project images
 import Project1a from "/public/assets/img/Event of OC/Conference/Conference.jpg";
-import Project1b from "/public/assets/img/Event of OC/Music/DJ.jpg";
+import Project1b from "/public/assets/img/content_image/rooftop.jpg";
 import Project1c from "/public/assets/img/Event of OC/Places/Opera-House.jpg";
 import Project1d from "/public/assets/img/Event of OC/Anniversary/Wine.jpg";
 import Project1e from "/public/assets/img/Event of OC/Birthday/Birthday Celebration.jpg";

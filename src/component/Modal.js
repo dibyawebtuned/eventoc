@@ -139,28 +139,53 @@ export default function FourStepModal({ isOpen, onClose }) {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                    <div className="flex-1">
+                    {/* Event Date */}
+                    <div className="flex-1 relative">
                       <label className="block text-sm sm:text-base font-medium text-[#D7B26A] mb-1 text-start">
-                        Email
+                        Event Date
                       </label>
                       <input
-                        type="text"
-                        name="email"
+                        type="date"
+                        name="eventDate"
                         required
-                        className="w-full border border-[#D7B26A] px-2 sm:px-3 py-2 rounded-md bg-transparent text-white text-sm sm:text-base"
+                        className="w-full border border-[#D7B26A] px-2 sm:px-3 py-2 rounded-md bg-transparent text-[#D7B26A] text-base pr-10"
                       />
                     </div>
-                    <div className="flex-1">
+
+
+                    {/* Event Venue */}
+                    <div className="flex-1 relative">
                       <label className="block text-sm sm:text-base font-medium text-[#D7B26A] mb-1 text-start">
-                        Contact Number
+                        Event Venue
                       </label>
-                      <input
-                        type="text"
-                        name="contact"
+
+                      <select
+                        name="eventVenue"
                         required
-                        className="w-full border border-[#D7B26A] px-2 sm:px-3 py-2 rounded-md bg-transparent text-white text-sm sm:text-base"
-                      />
+                        className="w-full border border-[#D7B26A] px-3 py-2 rounded-md bg-black text-[#D7B26A] text-sm sm:text-base appearance-none pr-10 focus:outline-none focus:ring-2 focus:ring-[#D7B26A] focus:border-[#D7B26A]"
+                      >
+                        <option value="">Select Venue</option>
+                        <option value="grand_ballroom">Grand Ballroom</option>
+                        <option value="skyline_atrium">Skyline Atrium</option>
+                        <option value="marble_courtyard">Marble Courtyard</option>
+                        <option value="emerald_garden">Emerald Garden</option>
+                      </select>
+
+                      {/* Dropdown Arrow */}
+                      <div className="absolute inset-y-0 top-6 right-3 flex items-center pointer-events-none">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={2}
+                          stroke="#D7B26A"
+                          className="w-5 h-5"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
                     </div>
+
                   </div>
                 </div>
               )}
