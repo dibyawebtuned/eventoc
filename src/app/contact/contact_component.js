@@ -11,7 +11,7 @@ const contactData = {
   heading: "Get In Touch",
   description:
     "Our doors are never closed. Let’s start a dialogue and go on an adventure together.",
-  image: "/assets/img/content_image/5e4c014e-45f2-4d0e-bc46-c7474b26b367.jpg",
+  image: "/assets/img/content_image/a-microphone-in-focus-with-blurred-bokeh-lights-in-the-background-creating-a-vibrant-nightlife-atmosphere.-16727451-scaled-e1737059691145.jpg",
   contacts: [
     {
       icon: Phone,
