@@ -14,18 +14,17 @@ import { Cinzel, Montserrat } from "next/font/google";
 
 export const cinzel = Cinzel({
     subsets: ["latin"],
-    weight: ["400", "500", "600", "700", "700", "900"],
+    weight: ["400", "500", "600", "700", "900"],
     variable: "--font-cinzel",
 });
 
 export const montserrat = Montserrat({
     subsets: ["latin"],
-    weight: ["400", "500", "600", "700", "700", "900"],
+    weight: ["400", "500", "600", "700", "900"],
     variable: "--font-montserrat",
 });
 
 const Footer = () => {
-
     useEffect(() => {
         AOS.init({
             duration: 1000,
@@ -35,142 +34,103 @@ const Footer = () => {
         });
     }, []);
 
-
     return (
-        <footer className="bg-[#141414] text-gray-300 pt-10 pb-4">
-            {/* Logo and tagline */}
-            <div className="text-center mb-10" data-aos="fade-up">
-                <div className="flex justify-center mb-[15px]">
-                    <Image
-                        src={Logo}
-                        alt="EventsOC Logo"
-                        width={160}
-                        height={95}
-                        className="mx-auto"
-                        priority
-                    />
+        <footer className="bg-[#141414] text-gray-300 pt-10 pb-6">
+            {/* Logo and Socials */}
+            <div className="text-center mb-8 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 2xl:px-40" data-aos="fade-up">
+                <div className="flex justify-center mb-4">
+                    <Image src={Logo} alt="EventsOC Logo" width={160} height={95} className="mx-auto" priority />
                 </div>
-                <p className={`text-[#D7B26A] text-[16px] ${montserrat.className}`}>
+                <p className={`text-[#D7B26A] text-sm sm:text-base ${montserrat.className}`}>
                     We are more than event planning service
                 </p>
-                <div className="flex justify-center gap-[40px] text-[#D7B26A] text-lg my-[30px]">
-                    <Link href="#" aria-label="Instagram" className="text-[20px] hover:scale-110 transition">
-                        <FaInstagram />
+                <div className="flex justify-center gap-6 text-[#D7B26A] text-lg my-6">
+                    <Link href="#" aria-label="Instagram" className="hover:scale-110 transition-transform duration-300">
+                        <FaInstagram size={20} />
                     </Link>
-                    <Link href="#" aria-label="Twitter / X" className="text-[20px] hover:scale-110 transition">
-                        <FaXTwitter />
+                    <Link href="#" aria-label="Twitter / X" className="hover:scale-110 transition-transform duration-300">
+                        <FaXTwitter size={20} />
                     </Link>
-                    <Link href="#" aria-label="Facebook" className="text-[20px] hover:scale-110 transition">
-                        <FaFacebookF />
+                    <Link href="#" aria-label="Facebook" className="hover:scale-110 transition-transform duration-300">
+                        <FaFacebookF size={20} />
                     </Link>
                 </div>
             </div>
 
             {/* Divider */}
-            <div className="border-t border-[#FFF4DE]/30 max-w-6xl mx-auto mb-10"></div>
+            <div className="border-t border-[#FFF4DE]/30 max-w-6xl mx-auto mb-8 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 2xl:px-40"></div>
 
-            {/* Footer content */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-10 max-w-6xl mx-auto px-6 text-sm">
+            {/* Footer Content */}
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 max-w-6xl mx-auto px-14">
                 {/* Quick Links */}
-                <div>x
-                    <h3 className={`text-[#D7B26A] font-serif text-[22px] mb-4 tracking-wide ${cinzel.className}`}>
+                <div>
+                    <h3 className={`text-[#D7B26A] font-serif text-lg sm:text-xl mb-4 tracking-wide ${cinzel.className}`}>
                         QUICK LINKS
                     </h3>
                     <ul className={`space-y-2 ${montserrat.className}`}>
-                        <li>
-                            <Link href="/"
-                                className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
-                                after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
-                                after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
-                                hover:after:w-full">
-                                Home
-                            </Link>
-                        </li>
-
-                        <li>
-                            <Link href="/about" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
-                            after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
-                            after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
-                            hover:after:w-full">About Us</Link>
-                        </li>
-
-                        <li>
-                            <Link href="/gallery" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
-                            after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
-                            after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
-                            hover:after:w-full">Gallery</Link>
-                        </li>
-
-                        <li>
-                            <Link href="/faq" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
-                            after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
-                            after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
-                            hover:after:w-full">FAQs</Link>
-                        </li>
+                        {["Home", "About Us", "Gallery", "FAQs"].map((item, idx) => (
+                            <li key={idx}>
+                                <Link
+                                    href={`/${item === "Home" ? "" : item.toLowerCase().replace(/\s+/g, "-")}`}
+                                    className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
+                  after:content-[''] after:absolute after:left-0 after:-bottom-[2px] 
+                  after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
+                  hover:after:w-full"
+                                >
+                                    {item}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
                 {/* Popular Services */}
                 <div>
-                    <h3 className={`text-[#D7B26A] font-serif text-[22px] mb-4 tracking-wide ${cinzel.className}`}>
+                    <h3 className={`text-[#D7B26A] font-serif text-lg sm:text-xl mb-4 tracking-wide ${cinzel.className}`}>
                         POPULAR SERVICES
                     </h3>
                     <ul className={`space-y-2 ${montserrat.className}`}>
-                        <li>
-                            <Link href="/services/venuesourcing" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
-                            after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
-                            after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
-                            hover:after:w-full">Venue Sourcing</Link>
-                        </li>
-
-                        <li>
-                            <Link href="/services/catering" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
-                            after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
-                            after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
-                            hover:after:w-full">Catering</Link>
-                        </li>
-
-                        <li>
-                            <Link href="/services/style" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
-                            after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
-                            after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
-                            hover:after:w-full">Styles & Designs</Link>
-                        </li>
-
-                        <li>
-                            <Link href="/services/floral" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
-                            after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
-                            after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
-                            hover:after:w-full">Floral</Link>
-                        </li>
+                        {["Venue Sourcing", "Catering", "Styles & Designs", "Floral"].map((service, idx) => (
+                            <li key={idx}>
+                                <Link
+                                    href={`/services/${service.toLowerCase().replace(/\s+/g, "")}`}
+                                    className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
+                  after:content-[''] after:absolute after:left-0 after:-bottom-[2px] 
+                  after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
+                  hover:after:w-full"
+                                >
+                                    {service}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
-                {/* Terms and policies Pages */}
+                {/* Terms & Policies */}
                 <div>
-                    <h3 className={`text-[#D7B26A] font-serif text-[22px] mb-4 tracking-wide ${cinzel.className}`}>
+                    <h3 className={`text-[#D7B26A] font-serif text-lg sm:text-xl mb-4 tracking-wide ${cinzel.className}`}>
                         TERMS & POLICIES
                     </h3>
                     <ul className={`space-y-2 ${montserrat.className}`}>
-                        <li>
-                            <Link href="/terms-and-conditions" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
-                            after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
-                            after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
-                            hover:after:w-full">Terms & Conditions</Link>
-                        </li>
-
-                        <li>
-                            <Link href="/terms-and-conditions" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
-                            after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
-                            after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
-                            hover:after:w-full">Privacy Policy</Link>
-                        </li>
+                        {["Terms & Conditions", "Privacy Policy"].map((policy, idx) => (
+                            <li key={idx}>
+                                <Link
+                                    href={`/terms-and-conditions`}
+                                    className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
+                  after:content-[''] after:absolute after:left-0 after:-bottom-[2px] 
+                  after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
+                  hover:after:w-full"
+                                >
+                                    {policy}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
                 {/* Contact */}
                 <div>
-                    <h3 className={`text-[#D7B26A] text-[22px] mb-4 tracking-wide ${cinzel.className}`}>
+                    <h3 className={`text-[#D7B26A] text-lg sm:text-xl mb-4 tracking-wide ${cinzel.className}`}>
                         CONTACT
                     </h3>
                     <ul className={`space-y-2 ${montserrat.className}`}>
@@ -180,7 +140,6 @@ const Footer = () => {
                                 <span className="text-[16px]">0426006760</span>
                             </a>
                         </li>
-
                         <li>
                             <a
                                 href="mailto:the.events.oc@gmail.com"
@@ -191,19 +150,19 @@ const Footer = () => {
                                 <span className="text-[16px]">the.events.oc@gmail.com</span>
                             </a>
                         </li>
-
                         <li className="flex items-center gap-2">
-                            <FaPaperPlane className="text-[#D7B26A]" /> <span className="text-[16px]">Gold Coast</span>
+                            <FaPaperPlane className="text-[#D7B26A]" />
+                            <span className="text-[16px]">Gold Coast</span>
                         </li>
                     </ul>
                 </div>
             </div>
 
             {/* Divider */}
-            <div className="border-t border-[#FFF4DE]/30 mt-10 mb-4 max-w-6xl mx-auto"></div>
+            <div className="border-t border-[#FFF4DE]/30 mt-8 mb-4 max-w-6xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 2xl:px-40"></div>
 
             {/* Copyright */}
-            <div className="text-center text-gray-400 text-[16px]">
+            <div className="text-center text-gray-400 text-[14px] sm:text-[16px] mb-4 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 2xl:px-40">
                 2025 Copyright © <span className="text-[#D7B26A]">EventsOC</span> - Events of the Century. Crafted by{" "}
                 <span className="text-[#D7B26A]">Murphys Technology</span>
             </div>

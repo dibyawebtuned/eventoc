@@ -96,20 +96,13 @@ export default function About() {
                 </p>
 
                 {/* 3D Image Row Animation */}
-                <div
-                    ref={ref}
-                    className="relative flex justify-center items-center gap-2 sm:gap-3 md:gap-4 lg:gap-5"
-                    style={{ perspective: "1200px", transformStyle: "preserve-3d" }}
-                >
+                <div ref={ref} className="image-row-3d">
                     {images.map((src, index) => (
                         <motion.div
                             key={index}
-                            className="relative overflow-hidden shadow-lg flex-shrink-0"
+                            className="image-card"
                             style={{
-                                width: "calc(25vw)", // responsive width: 25% of viewport width
-                                maxWidth: "220px",   // prevent it from being too wide
-                                minWidth: "150px",   // prevent it from being too small
-                                height: heights[index], // can be dynamic or proportional
+                                height: heights[index],
                                 borderRadius: radii[index],
                                 transformOrigin: "center center",
                             }}
@@ -127,6 +120,8 @@ export default function About() {
                         </motion.div>
                     ))}
                 </div>
+
+
 
             </div>
         </section>

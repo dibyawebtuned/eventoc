@@ -14,6 +14,75 @@ html {
   scroll-behavior: smooth;
 }
 
+
+
+
+/*  */
+
+.image-row-3d {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px; /* default gap */
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  flex-wrap: nowrap; /* ensures single row */
+}
+
+.image-card {
+  flex: 1 1 auto; /* allow shrinking */
+  max-width: 220px;
+  min-width: 30px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  height: var(--base-height); /* base height */
+}
+
+/* Responsive gaps and width */
+@media (min-width: 640px) {
+  .image-row-3d {
+    gap: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .image-row-3d {
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .image-row-3d {
+    gap: 20px;
+  }
+}
+
+/* Responsive height scaling */
+@media (max-width: 1024px) {
+  .image-card {
+    height: calc(var(--base-height) * 0.5); 
+    border-radius: 50px !important;
+    /* border: 3px solid red; */
+  }
+}
+
+@media (max-width: 768px) {
+  .image-card {
+    height: calc(var(--base-height) * 0.5); 
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-card {
+    height: calc(var(--base-height) * 0.5);
+    border-radius: 6px;
+  }
+}
+
+
 /* :root {
   --background: #ffffff;
   --foreground: #171717;

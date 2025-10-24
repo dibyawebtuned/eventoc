@@ -69,7 +69,6 @@ export default function Navbar() {
         { href: "/services/photograph", label: "Photographs", icon: Camera },
     ];
 
-
     // Step navigation
     const nextStep = () => setStep((prev) => (prev < 3 ? prev + 1 : prev));
     const prevStep = () => setStep((prev) => (prev > 1 ? prev - 1 : prev));
@@ -105,8 +104,8 @@ export default function Navbar() {
                         <div className="mx-auto transition-all duration-300 ease-in-out bg-black backdrop-blur-md py-5 shadow-2xl">
                             <div className="mx-auto px-6 relative">
                                 {/* Desktop */}
-                                <div className={`flex items-center justify-between sm:px-[70px] py-[8px] ${montserrat.className}`}>
-                                    <ul className="hidden md:flex items-center gap-8 text-white text-[16px] font-medium">
+                                <div className={`flex items-center justify-between xl:px-[80px] py-[8px] ${montserrat.className}`}>
+                                    <ul className="hidden lg:flex items-center gap-8 text-white text-[16px] font-medium">
                                         {/* Events */}
                                         <li className="relative group">
                                             <Link href="/" className="flex items-center gap-1">
@@ -209,7 +208,7 @@ export default function Navbar() {
                                         </li>
                                     </ul>
 
-                                    <div className="md:hidden">
+                                    <div className="lg:hidden">
                                         <button
                                             aria-label="Toggle menu"
                                             aria-expanded={mobileOpen}
@@ -264,7 +263,7 @@ export default function Navbar() {
                                         </Link>
                                     </div>
 
-                                    <ul className="hidden md:flex items-center gap-6 text-white text-[16px] font-medium">
+                                    <ul className="hidden lg:flex items-center gap-6 text-white text-[16px] font-medium">
                                         {/* Portfolio */}
                                         <li>
                                             <Link href="/portfolio">Portfolio</Link>
@@ -299,7 +298,7 @@ export default function Navbar() {
 
                                 {/* Mobile Menu */}
                                 <div
-                                    className={`md:hidden mt-3 transition-all duration-200 ${mobileOpen ? "block" : "hidden"
+                                    className={`lg:hidden mt-3 transition-all duration-200 ${mobileOpen ? "block" : "hidden"
                                         }`}
                                 >
                                     <div className="bg-black/95 rounded-lg p-4 shadow-lg border border-gray-800/40">
