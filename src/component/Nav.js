@@ -295,224 +295,7 @@ export default function Navbar() {
                                         </li>
                                     </ul>
 
-                                    {/* Mobile Toggle */}
-                                    {/* <div className="md:hidden">
-                                        <button
-                                            aria-label="Toggle menu"
-                                            onClick={() => setMobileOpen((s) => !s)}
-                                            className="p-2 rounded hover:bg-white/10 text-white transition"
-                                        >
-                                            {mobileOpen ? (
-                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                                                </svg>
-                                            ) : (
-                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 8h16M4 16h16" />
-                                                </svg>
-                                            )}
-                                        </button>
-                                    </div> */}
                                 </div>
-
-                                {/* Booking Modal */}
-                                {/* <Dialog
-                                    open={isModalOpen}
-                                    onClose={() => setIsModalOpen(false)}
-                                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
-                                >
-                                    <Dialog.Panel className="bg-[#000000] rounded-lg max-w-2xl w-full p-6 relative border border-[#D7B26A]/50">
-
-                                        <div className="flex flex-col items-center justify-center">
-                                            <div>
-                                                <Image src={Event_OC_Logo} alt="Logo" />
-                                            </div>
-
-                                            <div className="flex items-center gap-[15px]">
-                                                <div>
-                                                    <Image src={Left_heading_line} alt="Left_heading_line" />
-                                                </div>
-                                                <span
-                                                    className="text-[#D7B26A] text-[26px] text-center uppercase"
-                                                    style={{
-                                                        fontFamily: "var(--font-cinzel-regular)",
-                                                        lineHeight: "1.2",
-                                                    }}
-                                                >
-                                                    Excited to Engage <br /> with our Team?
-                                                </span>
-                                                <div>
-                                                    <Image src={Right_heading_line} alt="Right_heading_line" />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className="flex items-center justify-center mb-8 mt-8">
-                                            {[
-                                                { step: 1, label: "Basic Details" },
-                                                { step: 2, label: "Contact Details" },
-                                                { step: 3, label: "Verification" },
-                                            ].map((item, index, arr) => (
-                                                <div key={item.step} className="flex items-center">
-                                                    <div
-                                                        className={`flex items-center justify-center w-8 h-8 rounded-full text-sm font-semibold transition-all duration-300 
-                                                                    ${step === item.step
-                                                                ? "bg-[#D7B26A] text-black shadow-[0_0_10px_#D7B26A]"
-                                                                : step > item.step
-                                                                    ? "bg-[#D7B26A]/80 text-black"
-                                                                    : "border border-[#D7B26A]/40 text-[#D7B26A]/60"
-                                                            }`}
-                                                    >
-                                                        {item.step}
-                                                    </div>
-
-                                                    <span
-                                                        className={`ml-2 text-sm font-medium ${step === item.step
-                                                            ? "text-[#D7B26A]"
-                                                            : "text-[#D7B26A]/60"
-                                                            }`}
-                                                    >
-                                                        {item.label}
-                                                    </span>
-
-                                                    {index < arr.length - 1 && (
-                                                        <div
-                                                            className={`w-16 h-[2px] mx-2 transition-all duration-300 ${step > item.step ? "bg-[#D7B26A]" : "bg-[#D7B26A]/30"
-                                                                }`}
-                                                        />
-                                                    )}
-                                                </div>
-                                            ))}
-                                        </div>
-
-                                        <form onSubmit={handleSubmit} onKeyDown={(e) => e.key === "Enter" && e.preventDefault()} className="space-y-4">
-                                            {step === 1 && (
-                                                <>
-                                                    <div className="space-y-2 flex flex-col gap-4">
-                                                        <div>
-                                                            <label className="block text-sm font-medium text-[#D7B26A] mb-2">
-                                                                Full Name
-                                                            </label>
-                                                            <input
-                                                                type="text"
-                                                                name="firstName"
-                                                                value={formData.firstName}
-                                                                onChange={handleChange}
-                                                                required
-                                                                className="w-full border border-[#D7B26A] px-3 py-2 rounded-md bg-transparent text-white"
-                                                            />
-                                                        </div>
-
-                                                        <div className="flex gap-4">
-                                                            <div className="w-1/2">
-                                                                <label className="block text-sm font-medium text-[#D7B26A] mb-2">
-                                                                    Email
-                                                                </label>
-                                                                <input
-                                                                    type="text"
-                                                                    name="email"
-                                                                    value={formData.email}
-                                                                    onChange={handleChange}
-                                                                    required
-                                                                    className="w-full border border-[#D7B26A] px-3 py-2 rounded-md bg-transparent text-white"
-                                                                />
-                                                            </div>
-
-                                                            <div className="w-1/2">
-                                                                <label className="block text-sm font-medium text-[#D7B26A] mb-2">
-                                                                    Contact Number
-                                                                </label>
-                                                                <input
-                                                                    type="text"
-                                                                    name="contact"
-                                                                    value={formData.contact}
-                                                                    onChange={handleChange}
-                                                                    required
-                                                                    className="w-full border border-[#D7B26A] px-3 py-2 rounded-md bg-transparent text-white"
-                                                                />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </>
-                                            )}
-
-                                            {step === 2 && (
-                                                <div className="space-y-2 flex flex-col gap-4">
-                                                    <div>
-                                                        <label className="block text-sm font-medium text-[#D7B26A] mb-2">
-                                                            Event Type
-                                                        </label>
-                                                        <input
-                                                            type="text"
-                                                            name="eventType"
-                                                            value={formData.eventType}
-                                                            onChange={handleChange}
-                                                            required
-                                                            className="w-full border border-[#D7B26A] px-3 py-2 rounded-md bg-transparent text-white"
-                                                        />
-                                                    </div>
-
-                                                    <div>
-                                                        <label className="block text-sm font-medium text-[#D7B26A] mb-2">
-                                                            Location
-                                                        </label>
-                                                        <input
-                                                            type="text"
-                                                            name="location"
-                                                            value={formData.location}
-                                                            onChange={handleChange}
-                                                            required
-                                                            className="w-full border border-[#D7B26A] px-3 py-2 rounded-md bg-transparent text-white"
-                                                        />
-                                                    </div>
-                                                </div>
-                                            )}
-
-                                            {step === 3 && (
-                                                <div className="text-center text-[#D7B26A]">
-                                                    <p className="mb-4 text-lg font-medium">
-                                                        Review & Verify Your Details
-                                                    </p>
-                                                    <p className="text-sm opacity-70">
-                                                        Once confirmed, our team will contact you shortly.
-                                                    </p>
-                                                </div>
-                                            )}
-
-                                            <div className="flex justify-between mt-6">
-                                                {step > 1 && (
-                                                    <button
-                                                        type="button"
-                                                        onClick={prevStep}
-                                                        className="px-4 py-2 bg-[#D7B26A]/10 text-[#D7B26A] rounded-md border border-[#D7B26A]/40 hover:bg-[#D7B26A]/20 transition"
-                                                    >
-                                                        Back
-                                                    </button>
-                                                )}
-                                                {step < 3 ? (
-                                                    <button
-                                                        type="button"
-                                                        onClick={nextStep}
-                                                        className="px-4 py-2 bg-[#D7B26A] text-black rounded-md hover:bg-[#D7B26A]/90 transition"
-                                                    >
-                                                        Next
-                                                    </button>
-                                                ) : (
-                                                    <button
-                                                        type="submit"
-                                                        className="px-4 py-2 bg-[#D7B26A] text-black rounded-md hover:bg-[#D7B26A]/90 transition"
-                                                    >
-                                                        Submit
-                                                    </button>
-                                                )}
-                                            </div>
-                                        </form>
-
-                                        <button onClick={() => setIsModalOpen(false)} className="absolute top-5 right-6 text-[#D7B26A]/60 text-2xl hover:text-[#D7B26A] cursor-pointer transition-colors duration-300">
-                                            ✕
-                                        </button>
-                                    </Dialog.Panel>
-                                </Dialog> */}
 
                                 {/* Mobile Menu */}
                                 <div
@@ -597,19 +380,19 @@ export default function Navbar() {
 
                                             {/* Other links */}
                                             <li>
-                                                <Link href="/">Gallery</Link>
+                                                <Link href="/gallery">Gallery</Link>
                                             </li>
                                             <li>
-                                                <Link href="/">About</Link>
+                                                <Link href="/about">About</Link>
                                             </li>
                                             <li>
-                                                <Link href="/">Portfolio</Link>
+                                                <Link href="/portfolio">Portfolio</Link>
                                             </li>
                                             <li>
-                                                <Link href="/">FAQ</Link>
+                                                <Link href="/faq">FAQ</Link>
                                             </li>
                                             <li>
-                                                <Link href="/">Contact</Link>
+                                                <Link href="/contact">Contact</Link>
                                             </li>
 
                                             {/* Button */}
@@ -800,9 +583,9 @@ export default function Navbar() {
                             </button>
 
                             <ThreeStepModal
-                                                isOpen={isModalOpen}
-                                                onClose={() => setIsModalOpen(false)}
-                                            />
+                                isOpen={isModalOpen}
+                                onClose={() => setIsModalOpen(false)}
+                            />
                         </div>
 
                         {/* Mobile Menu */}
