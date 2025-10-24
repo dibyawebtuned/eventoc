@@ -1,8 +1,18 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const PolaroidGallery = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 1200,
+            easing: "ease-out-cubic",
+            once: true,
+        });
+    }, []);
+
     const photos = [
         {
             src: "/assets/img/Event of OC/Birthday/Birthday Celebration 1.jpg",
@@ -39,6 +49,8 @@ const PolaroidGallery = () => {
                         key={index}
                         className={`relative bg-white rounded-lg shadow-xl p-3 mx-[-25px] transform ${photo.rotate} hover:scale-105 transition-all duration-500`}
                         style={{ width: 300, height: 400 }}
+                        data-aos={photo.aos}
+                        data-aos-delay={index * 200}
                     >
                         <div className="relative w-full h-[340px] rounded-md overflow-hidden">
                             <Image

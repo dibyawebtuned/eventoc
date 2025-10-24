@@ -1,5 +1,7 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { Cinzel, Montserrat } from "next/font/google";
@@ -24,11 +26,22 @@ const beliefs = [
 ];
 
 export default function WhatWeBelievePage() {
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            easing: "ease-out-cubic",
+            once: true,
+            offset: 80,
+        });
+    }, []);
+
     return (
         <main className="min-h-screen bg-gradient-to-b from-[#0b0b0b] via-[#111111] to-[#0b0b0b] text-gray-200 py-[80px] flex flex-col">
             <div>
                 {/* Header */}
-                <section className="text-center mb-12">
+                <section className="text-center mb-12"
+                    data-aos="fade-up"
+                    data-aos-delay="100">
                     <h1 className={`mb-2 text-[36px] font-[400] text-center text-[#BE9545] ${cinzel.className}`}>
                         What We Believe
                     </h1>
@@ -58,6 +71,8 @@ export default function WhatWeBelievePage() {
                          shadow-[0_0_12px_rgba(190,149,69,0.05)] hover:shadow-[0_0_18px_rgba(190,149,69,0.25)] 
                          hover:border-[#BE9545]/60 transition-all duration-300
                          flex-[1_1_280px] max-w-[350px]"
+                                data-aos="zoom-in-up"
+                                data-aos-delay={index * 150}
                             >
                                 <CheckCircle2 className="text-[#BE9545] w-6 h-6 flex-shrink-0" />
                                 <h3
@@ -75,9 +90,9 @@ export default function WhatWeBelievePage() {
                 </section>
             </div>
 
-                {/* Decorative Glow Line (Bottom) */}
+            {/* Decorative Glow Line (Bottom) */}
             <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#BE9545]/30 to-transparent"></div>
-        
+
         </main>
     );
 }

@@ -1,9 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import SectionHeader from "@/component/Title";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // Lightbox
 import Lightbox from "yet-another-react-lightbox";
@@ -54,6 +56,14 @@ const GalleryComponent = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: "ease-out-cubic",
+      once: true,
+    });
+  }, []);
+
   // Gallery data
   const galleryData = {
     all: [annivarsary_one, annivarsary_two, annivarsary_three, annivarsary_four, birthday_one, birthday_two, birthday_three, birthday_four, conference_one, conference_two],
@@ -72,10 +82,14 @@ const GalleryComponent = () => {
 
   return (
     <div className="mt-[100px] container mx-auto px-6 py-[60px]">
-      <SectionHeader title="Gallery" />
+      <div data-aos="fade-up" data-aos-delay="100">
+        <SectionHeader title="Gallery" />
+      </div>
 
       {/* Tabs */}
-      <div className="flex justify-center flex-wrap gap-4 mb-14">
+      <div className="flex justify-center flex-wrap gap-4 mb-14"
+        data-aos="fade-up"
+        data-aos-delay="200">
         {["All", "Anniversary", "Birthday", "Conference"].map((tab) => (
           <button
             key={tab}
@@ -98,7 +112,9 @@ const GalleryComponent = () => {
       </div>
 
       {/* Gallery Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-5 auto-rows-[220px]">
+      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-5 auto-rows-[220px]"
+        data-aos="fade-up"
+        data-aos-delay="300">
         {galleryData[activeTab].map((img, idx) => (
           <motion.div
             key={idx}

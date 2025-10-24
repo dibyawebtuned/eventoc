@@ -25,7 +25,7 @@ const Footer = () => {
     return (
         <footer className="bg-black text-gray-300 pt-10 pb-4">
             {/* Logo and tagline */}
-            <div className="text-center mb-10" data-aos="fade-down">
+            <div className="text-center mb-10" data-aos="fade-up">
                 <div className="flex justify-center mb-[15px]">
                     <Image
                         src={Logo}
@@ -53,7 +53,7 @@ const Footer = () => {
             </div>
 
             {/* Divider */}
-            <div className="border-t border-[#FFF4DE]/30 max-w-6xl mx-auto mb-10" data-aos="fade-up"></div>
+            <div className="border-t border-[#FFF4DE]/30 max-w-6xl mx-auto mb-10"></div>
 
             {/* Footer content */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-10 max-w-6xl mx-auto px-6 text-sm">

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaGlassCheers, FaMusic, FaStar, FaMapMarkerAlt, FaBirthdayCake, FaSun, FaUtensils, FaGlassMartiniAlt } from "react-icons/fa";
 import SignatureIdeas from "@/component/Birthday/Signature-ideas";
 import { PackagesComponent } from "@/component/Birthday/Birthday-package";
@@ -9,6 +9,8 @@ import { RunSheetNew } from "@/component/Birthday/Run-sheet";
 import { BirthdayHeroSection } from "@/component/Birthday/Hero";
 import { Cinzel, Montserrat } from "next/font/google";
 import { HeroSection } from "@/component/Birthday/Hero";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import BirthdayImg from "/public/assets/img/Event of OC/Birthday/Birthday Celebration 1.jpg";
 
@@ -53,6 +55,15 @@ export const montserrat = Montserrat({
 
 export default function BirthdayPage() {
   const [openFaq, setOpenFaq] = useState(null);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-out",
+      offset: 100,
+    });
+  }, []);
 
   const faqs = [
     { q: "How far in advance should I book?", a: "Six to eight weeks is ideal; we can fast-track smaller parties sooner if suppliers are free." },
@@ -102,6 +113,7 @@ export default function BirthdayPage() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
           className={`text-[36px] font-[400] text-center mb-10 text-[#BE9545] ${cinzel.className}`}
+          data-aos="fade-up"
         >
           What We Handle
         </motion.h2>
@@ -116,7 +128,7 @@ export default function BirthdayPage() {
             { icon: <FaStar />, title: "Photography", text: "Documentary-style coverage, portrait set-ups, highlight reels." },
           ].map((item, i) => (
             <motion.div
-              key={i}
+              key={item.title}
               whileHover={{
                 scale: 1.03,
                 rotate: 2,
@@ -128,6 +140,9 @@ export default function BirthdayPage() {
               className="relative p-8 rounded-2xl flex flex-col items-center justify-center text-center
               bg-gradient-to-br from-[#0B0B0B] via-[#1A1A1A] to-[#0B0B0B] shadow-lg transform-gpu
               hover:shadow-[0_0_30px_rgba(255,209,125,0.2)] transition-all duration-500 ease-in-out border border-[#BE9545]/20"
+              data-aos="fade-up"
+              data-aos-delay={i * 150}
+              data-aos-duration="800"
             >
               {/* Ambient light effect */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#BE9545]/10 via-[#FFD700]/10 to-[#BE9545]/5 blur-2xl pointer-events-none"></div>

@@ -1,10 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import SectionHeader from "@/component/Title";
 
 import { Cinzel, Montserrat } from "next/font/google";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const cinzel = Cinzel({
   subsets: ["latin"],
@@ -95,6 +98,17 @@ const faqCategories = {
 };
 
 const FAQComponent = () => {
+
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 900,
+      offset: 100,
+      once: true,
+      easing: "ease-out-cubic",
+    });
+  }, []);
+
   const [activeCategory, setActiveCategory] = useState("General");
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -106,10 +120,12 @@ const FAQComponent = () => {
 
   return (
     <div className="mt-[80px] container mx-auto px-6 py-[60px]">
-      <SectionHeader
-        title="Frequently Asked Questions"
-        subtitle="This page summarises key points. For full details, please read our Terms & Conditions. By paying your deposit, you accept those Terms"
-      />
+      <div data-aos="fade-down">
+        <SectionHeader
+          title="Frequently Asked Questions"
+          subtitle="This page summarises key points. For full details, please read our Terms & Conditions. By paying your deposit, you accept those Terms"
+        />
+      </div>
 
       {/* Category Tabs */}
       <div className="flex flex-wrap justify-center gap-3 mt-8 mb-10">

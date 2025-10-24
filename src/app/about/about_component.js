@@ -1,7 +1,9 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import SectionHeader from "@/component/Title";
 import PolaroidGallery from "@/component/PolaroidGallery";
 import Service from "@/component/Service";
@@ -61,20 +63,36 @@ const About_component = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false,
+      offset: 100,
+    });
+  }, []);
+
 
   return (
 
     <>
       <div className="mt-[100px] container mx-auto px-4 py-10">
         {/* Header */}
-        <SectionHeader title="About Us" />
+        <div data-aos="fade-up">
+          <SectionHeader title="About Us" />
+        </div>
 
         {/* About Page Content */}
         {/* Hero Section */}
         <div className="flex flex-col gap-6 items-center w-full max-w-4xl mx-auto text-center px-4 sm:px-6 md:px-8">
           <div className="flex flex-col gap-4">
             {/* Title */}
-            <div>
+            <div
+              data-aos="fade-up"
+              data-aos-delay="100"
+              data-aos-duration="800"
+              data-aos-easing="ease-out-cubic">
               <span
                 className="block text-white text-2xl sm:text-3xl md:text-[38px] leading-snug md:leading-[1.2]"
                 style={{ fontFamily: "var(--font-cinzel-regular)" }}
@@ -85,7 +103,11 @@ const About_component = () => {
             </div>
 
             {/* Description */}
-            <div>
+            <div
+              data-aos="fade-up"
+              data-aos-delay="200"
+              data-aos-duration="1000"
+              data-aos-easing="ease-out-cubic">
               <span
                 className="text-gray-400 text-sm sm:text-base md:text-[16px] leading-relaxed md:leading-[1.8]"
                 style={{ fontFamily: "var(--font-montserrat)" }}
@@ -158,6 +180,9 @@ const About_component = () => {
                      shadow-[0_0_25px_-8px_rgba(190,149,69,0.2)] 
                      hover:shadow-[0_0_35px_-6px_rgba(190,149,69,0.35)] 
                      hover:border-[#BE9545]/50 transition-all duration-500 hover:-translate-y-1"
+
+              data-aos="fade-up-right"
+              data-aos-delay="100"
             >
               <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#BE9545]/10 border border-[#BE9545]/30">
                 <svg
@@ -203,6 +228,8 @@ const About_component = () => {
                      shadow-[0_0_25px_-8px_rgba(190,149,69,0.2)] 
                      hover:shadow-[0_0_35px_-6px_rgba(190,149,69,0.35)] 
                      hover:border-[#BE9545]/50 transition-all duration-500 hover:-translate-y-1"
+              data-aos="fade-up-left"
+              data-aos-delay="250"
             >
               <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#BE9545]/10 border border-[#BE9545]/30">
                 <svg

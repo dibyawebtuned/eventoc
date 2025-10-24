@@ -1,8 +1,11 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import SectionHeader from "@/component/Title";
 import { Phone, Mail, MapPin } from "lucide-react";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // Dynamic Data
 const contactData = {
@@ -32,16 +35,32 @@ const contactData = {
 };
 
 const ContactComponent = () => {
+
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 900,
+      offset: 100,
+      once: true,
+      easing: "ease-out-cubic",
+    });
+  }, []);
+
+
   return (
     <div className="mt-[100px] container mx-auto px-4 py-10">
       {/* Header */}
-      <SectionHeader title={contactData.title} />
+      <div data-aos="fade-down">
+        <SectionHeader title={contactData.title} />
+      </div>
 
       {/* Contact Page Content */}
       <div className="flex flex-col gap-[30px]">
         <div className="flex flex-col lg:flex-row items-center justify-center relative">
           {/* Left Image */}
-          <div className="lg:w-[45%] w-full h-[600px] relative rounded-xl overflow-hidden shadow-2xl">
+          <div className="lg:w-[45%] w-full h-[600px] relative rounded-xl overflow-hidden shadow-2xl"
+            data-aos="fade-right"
+            data-aos-delay="150">
             <Image
               src={contactData.image}
               alt="Contact"
@@ -54,7 +73,9 @@ const ContactComponent = () => {
           </div>
 
           {/* Right Info Card */}
-          <div className="lg:w-[40%] w-full bg-[rgba(216,216,216,0.9)] rounded-xl p-10 shadow-2xl flex flex-col gap-[12px] lg:-ml-28 mt-[-60px] lg:mt-0 z-10 backdrop-blur-sm">
+          <div className="lg:w-[40%] w-full bg-[rgba(216,216,216,0.9)] rounded-xl p-10 shadow-2xl flex flex-col gap-[12px] lg:-ml-28 mt-[-60px] lg:mt-0 z-10 backdrop-blur-sm"
+            data-aos="fade-left"
+            data-aos-delay="300">
             <span className="text-sm text-gray-500 tracking-widest uppercase">
               {contactData.subtitle}
             </span>
@@ -89,7 +110,9 @@ const ContactComponent = () => {
         </div>
 
         {/* Form */}
-        <form className="w-full md:w-[75%] mx-auto mt-10 flex flex-col items-center">
+        <form className="w-full md:w-[75%] mx-auto mt-10 flex flex-col items-center"
+          data-aos="fade-up"
+          data-aos-delay="200">
           {/* Two-column layout for top fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
             {/* Name */}

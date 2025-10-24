@@ -101,27 +101,30 @@ export const HeroSection = ({
           </div>
 
           {/* Buttons */}
+          {/* Buttons */}
           <div className="flex flex-row flex-wrap gap-4 justify-start">
             {ctaButtons.map((btn, idx) => (
-              <>
+              <div key={idx} className="relative">
                 <motion.button
-                  key={idx}
                   onClick={() => setIsModalOpen(true)}
                   className={`px-6 sm:px-8 py-2 sm:py-3 rounded-full font-medium tracking-wide transition-all duration-300 cursor-pointer text-sm sm:text-base ${btn.type === "primary"
-                    ? "bg-[#BE9545] text-black hover:bg-[#A67C33]"
-                    : "border border-[#BE9545] text-[#BE9545] hover:bg-[#FFD700]/10"
+                      ? "bg-[#BE9545] text-black hover:bg-[#A67C33]"
+                      : "border border-[#BE9545] text-[#BE9545] hover:bg-[#FFD700]/10"
                     }`}
                 >
                   {btn.text}
                 </motion.button>
 
+                {/* Only one modal for all buttons */}
                 <ThreeStepModal
                   isOpen={isModalOpen}
                   onClose={() => setIsModalOpen(false)}
                 />
-              </>
+              </div>
             ))}
           </div>
+
+
         </motion.div>
 
         {/* RIGHT: Hero Image */}

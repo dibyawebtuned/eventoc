@@ -1,9 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionHeader from "@/component/Title";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 // Lightbox
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -54,6 +58,20 @@ const projects = [
 ];
 
 const PortfolioComponent = () => {
+
+
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 900,
+      offset: 100,
+      once: true,
+      easing: "ease-out-cubic",
+    });
+  }, []);
+
+
+
   const [activeTabs, setActiveTabs] = useState({});
   const [hoveredCard, setHoveredCard] = useState(null);
 
@@ -74,7 +92,9 @@ const PortfolioComponent = () => {
 
   return (
     <div className="mt-[80px] container mx-auto px-6 py-[60px]">
-      <SectionHeader title="Portfolio" />
+      <div data-aos="fade-down">
+        <SectionHeader title="Portfolio" />
+      </div>
 
       {/* Lightbox */}
       <Lightbox
@@ -93,6 +113,7 @@ const PortfolioComponent = () => {
             <div
               key={index}
               className="relative w-full max-w-5xl overflow-hidden rounded-3xl shadow-2xl bg-[#111] transition-all duration-500"
+              data-aos = "fade-up"
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
             >

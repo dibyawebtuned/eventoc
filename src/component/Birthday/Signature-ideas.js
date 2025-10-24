@@ -1,15 +1,26 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as Icons from "react-icons/fa";
 import { Cinzel, Montserrat } from "next/font/google";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const cinzel = Cinzel({ subsets: ["latin"], weight: ["400", "700"] });
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export default function SignatureIdeas({ title = "Signature Birthday Concepts", ideas = [] }) {
     const [hoveredId, setHoveredId] = useState(null);
+
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: "ease-out",
+            offset: 100,
+        });
+    }, []);
 
     return (
         <section className="relative py-[80px] bg-gradient-to-b from-[#0c0c0c] to-[#1a1a1a] text-white overflow-visible">
@@ -20,6 +31,7 @@ export default function SignatureIdeas({ title = "Signature Birthday Concepts", 
                 {/* Heading */}
                 <h2
                     className={`text-2xl sm:text-3xl md:text-4xl font-[400] mb-10 tracking-wide text-[#BE9545] ${cinzel.className}`}
+                    data-aos="fade-up"
                 >
                     {title}
                 </h2>
@@ -29,7 +41,9 @@ export default function SignatureIdeas({ title = "Signature Birthday Concepts", 
                     {ideas.map((idea) => {
                         const Icon = Icons[idea.icon] || Icons.FaCocktail; // fallback icon
                         return (
-                            <div key={idea.id} className="relative flex flex-col items-center">
+                            <div key={idea.id} className="relative flex flex-col items-center"
+                                data-aos="fade-up"
+                                data-aos-duration="800">
                                 <motion.button
                                     onMouseEnter={() => setHoveredId(idea.id)}
                                     onMouseLeave={() => setHoveredId(null)}
