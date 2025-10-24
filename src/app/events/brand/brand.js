@@ -33,12 +33,12 @@ const beachIdeas = [
     icon: "FaMask",
     image: "/assets/img/Event of OC/Music/Concert1.jpg",
   },
-  // {
-  //     id: "beach",
-  //     label: "Beach Party",
-  //     icon: "FaCocktail",
-  //     image: "/assets/img/content_image/beach.jpg",
-  // },
+  {
+      id: "beach",
+      label: "Lead capture",
+      icon: "FaCocktail",
+      image: "/assets/img/content_image/beach.jpg",
+  },
 ];
 
 export const cinzel = Cinzel({
@@ -80,7 +80,7 @@ export default function BrandPage() {
         topLabel="Celebrate in Style"
         title="Brand"
         highlightedText="Launch Events"
-        description="From intimate private gatherings to grand celebrations, we curate unforgettable birthday experiences with exquisite décor, premium catering, live entertainment, and seamless logistics."
+        description="From product reveals to pop-up brand worlds, we design launch experiences that turn attentioninto advocacy. Expect crisp sound, cinematic lighting, on-brand styling and content capture that lives on long after doors close."
         features={[
           { title: "Curated Themes", desc: "Unique birthday themes tailored to your style and mood." },
           { title: "Premium Venues", desc: "Handpicked venues that match your vision and guest count." },
@@ -89,7 +89,7 @@ export default function BrandPage() {
         ]}
         ctaButtons={[
           { text: "Book Your Event Now", type: "primary" },
-          { text: "Explore Packages", type: "secondary" },
+          // { text: "Explore Packages", type: "secondary" },
         ]}
         imageSrc={BirthdayImg}
         imageAlt="Birthday Celebration"

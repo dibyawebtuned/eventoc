@@ -77,9 +77,9 @@ export default function BeachPage() {
       {/* HERO */}
       <HeroSection
         topLabel="Celebrate in Style"
-        title="Magical"
-        highlightedText="Birthday Events"
-        description="From intimate private gatherings to grand celebrations, we curate unforgettable birthday experiences with exquisite décor, premium catering, live entertainment, and seamless logistics."
+        title="Beach & "
+        highlightedText="Pool Events"
+        description="From Broadbeach lawn lounges to private pool villas, we create sun-kissed parties with coastal elegance and a little wild freedom. Hydration bars, shade plans, waterproof audio and safety-first staffing keep it smooth from first splash to last song."
         features={[
           { title: "Curated Themes", desc: "Unique birthday themes tailored to your style and mood." },
           { title: "Premium Venues", desc: "Handpicked venues that match your vision and guest count." },
@@ -88,7 +88,7 @@ export default function BeachPage() {
         ]}
         ctaButtons={[
           { text: "Book Your Event Now", type: "primary" },
-          { text: "Explore Packages", type: "secondary" },
+          // { text: "Explore Packages", type: "secondary" },
         ]}
         imageSrc={BirthdayImg}
         imageAlt="Birthday Celebration"

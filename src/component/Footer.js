@@ -67,89 +67,75 @@ const Footer = () => {
                         </li>
 
                         <li>
-                            <Link href="/services" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
-                            after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
-                            after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
-                            hover:after:w-full">Services</Link>
-                        </li>
-
-                        <li>
                             <Link href="/gallery" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
                             after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
                             after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
                             hover:after:w-full">Gallery</Link>
                         </li>
+
+                        <li>
+                            <Link href="/faq" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
+                            after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
+                            after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
+                            hover:after:w-full">FAQs</Link>
+                        </li>
                     </ul>
                 </div>
 
-                {/* Style Guide */}
+                {/* Popular Services */}
                 <div>
                     <h3 className="text-[#D7B26A] font-serif text-[24px] mb-4 tracking-wide">
-                        STYLE GUIDE
+                        POPULAR SERVICES
                     </h3>
                     <ul className="space-y-2">
                         <li>
-                            <Link href="/utility" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
+                            <Link href="/services/venuesourcing" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
                             after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
                             after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
-                            hover:after:w-full">Utility Page</Link>
+                            hover:after:w-full">Venue Sourcing</Link>
                         </li>
 
                         <li>
-                            <Link href="/404" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
+                            <Link href="/services/catering" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
                             after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
                             after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
-                            hover:after:w-full">Not Found</Link>
+                            hover:after:w-full">Catering</Link>
                         </li>
 
                         <li>
-                            <Link href="/privacy-policy" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
+                            <Link href="/services/style" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
+                            after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
+                            after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
+                            hover:after:w-full">Styles & Designs</Link>
+                        </li>
+
+                        <li>
+                            <Link href="/services/floral" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
+                            after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
+                            after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
+                            hover:after:w-full">Floral</Link>
+                        </li>
+                    </ul>
+                </div>
+
+                {/* Terms and policies Pages */}
+                <div>
+                    <h3 className="text-[#D7B26A] font-serif text-[24px] mb-4 tracking-wide">
+                        TERMS & POLICIES
+                    </h3>
+                    <ul className="space-y-2">
+                        <li>
+                            <Link href="/terms-and-conditions" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
+                            after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
+                            after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
+                            hover:after:w-full">Terms & Conditions</Link>
+                        </li>
+
+                        <li>
+                            <Link href="/terms-and-conditions" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
                             after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
                             after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
                             hover:after:w-full">Privacy Policy</Link>
-                        </li>
-
-                        <li>
-                            <Link href="/licenses" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
-                            after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
-                            after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
-                            hover:after:w-full">Licenses</Link>
-                        </li>
-                    </ul>
-                </div>
-
-                {/* Utility Pages */}
-                <div>
-                    <h3 className="text-[#D7B26A] font-serif text-[24px] mb-4 tracking-wide">
-                        UTILITY PAGES
-                    </h3>
-                    <ul className="space-y-2">
-                        <li>
-                            <Link href="/" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
-                            after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
-                            after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
-                            hover:after:w-full">Home</Link>
-                        </li>
-
-                        <li>
-                            <Link href="/about" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
-                            after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
-                            after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
-                            hover:after:w-full">About Us</Link>
-                        </li>
-
-                        <li>
-                            <Link href="/services" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
-                            after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
-                            after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
-                            hover:after:w-full">Services</Link>
-                        </li>
-
-                        <li>
-                            <Link href="/gallery" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
-                            after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
-                            after:w-0 after:h-[1px] after:bg-[#D7B26A] after:transition-all after:duration-300 
-                            hover:after:w-full">Gallery</Link>
                         </li>
                     </ul>
                 </div>

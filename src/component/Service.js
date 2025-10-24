@@ -11,11 +11,11 @@ import "swiper/css/navigation";
 
 import Left_heading_line from "/public/assets/img/Left.png";
 import Right_heading_line from "/public/assets/img/Right.png";
-import ServiceOne from "/public/assets/img/Event of OC/Anniversary/Champagne.jpg";
-import ServiceTwo from "/public/assets/img/Event of OC/Wedding/Champagne.jpg";
-import ServiceThree from "/public/assets/img/Event of OC/Music/Music.jpg";
-import ServiceFour from "/public/assets/img/Event of OC/Conference/Conference1.jpg";
-import ServiceFive from "/public/assets/img/Event of OC/Birthday/Birthday Celebration 1.jpg";
+import ServiceOne from "/public/assets/img/content_image/service_one .jpg";
+import ServiceTwo from "/public/assets/img/content_image/service_two.jpg";
+import ServiceThree from "/public/assets/img/content_image/service_three.jpg";
+import ServiceFour from "/public/assets/img/content_image/service_four.jpg";
+import ServiceFive from "/public/assets/img/content_image/a-microphone-in-focus-with-blurred-bokeh-lights-in-the-background-creating-a-vibrant-nightlife-atmosphere.-16727451-scaled-e1737059691145.jpg";
 
 import { Cinzel, Montserrat } from "next/font/google";
 

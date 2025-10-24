@@ -16,21 +16,21 @@ import BirthdayImg from "/public/assets/img/Event of OC/Music/Music.jpg";
 const beachIdeas = [
   {
     id: "golden",
-    label: "Sunset Swim Social",
+    label: "Open-Format DJ + Sax",
     icon: "FaCocktail",
-    image: "/assets/img/content_image/2283609.jpg",
+    image: "/assets/img/Event of OC/Music/Concert2.jpg",
   },
   {
     id: "villa",
-    label: "Barefoot Beach Picnic",
+    label: "Indie Sessions",
     icon: "FaBirthdayCake",
-    image: "/assets/img/content_image/5e4c014e-45f2-4d0e-bc46-c7474b26b367.jpg",
+    image: "/assets/img/Event of OC/Music/DJ1.jpg",
   },
   {
     id: "lounge",
-    label: "Cabana Club",
+    label: "Sunset to After-Dark",
     icon: "FaMask",
-    image: "/assets/img/content_image/lounge.jpg",
+    image: "/assets/img/Event of OC/Music/Music.jpg",
   },
   // {
   //     id: "beach",
@@ -77,8 +77,8 @@ export default function MusicPage() {
       {/* HERO */}
       <HeroSection
         topLabel="Music"
-        title="Night"
-        highlightedText="Birthday Events"
+        title="Music Night"
+        highlightedText="Events"
         description="From intimate vinyl sessions to high-energy DJ takeovers, we build music-forward events with impeccable audio, atmospheric lighting and seamless stage management—so artists shine and guests feel the vibe from first track to encore."
         features={[
           { title: "Venue sourcing", desc: "Unique birthday themes tailored to your style and mood." },
@@ -88,7 +88,7 @@ export default function MusicPage() {
         ]}
         ctaButtons={[
           { text: "Book Your Event Now", type: "primary" },
-          { text: "Explore Packages", type: "secondary" },
+          // { text: "Explore Packages", type: "secondary" },
         ]}
         imageSrc={BirthdayImg}
         imageAlt="Birthday Celebration"

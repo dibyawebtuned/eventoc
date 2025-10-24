@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 const OCMethodTimeline = () => {
     const steps = [
         { number: "01", title: "Discover", desc: "Mood, purpose, guest profile, budget guardrails." },
-        { number: "02", title: "Design", desc: "Concept & mood, floor plan, palette, hero moments, AV look & feel." },
-        { number: "03", title: "Build", desc: "Lock venue and suppliers, confirm menus, signage, florals, staffing." },
-        { number: "04", title: "Rehearse", desc: "Cue-to-cue for reveals, speeches, lighting, and content capture." },
+        { number: "02", title: "Design", desc: "Concept & mood, floor plan, palette, hero moments." },
+        { number: "03", title: "Build", desc: "Lock venue and suppliers, confirm menus, signage." },
+        { number: "04", title: "Rehearse", desc: "Cue-to-cue for reveals, speeches, lighting." },
         { number: "05", title: "Showtime", desc: "Producers run the floor; you live in the moment." },
         { number: "06", title: "Afterglow", desc: "Highlights, gallery, and post-event debrief." },
     ];

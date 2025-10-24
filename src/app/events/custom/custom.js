@@ -32,12 +32,12 @@ const beachIdeas = [
     icon: "FaMask",
     image: "/assets/img/Event of OC/Anniversary/Drink.jpg",
   },
-  // {
-  //     id: "beach",
-  //     label: "Beach Party",
-  //     icon: "FaCocktail",
-  //     image: "/assets/img/content_image/beach.jpg",
-  // },
+  {
+    id: "beach",
+    label: "Hybrid brand",
+    icon: "FaCocktail",
+    image: "/assets/img/content_image/beach.jpg",
+  },
 ];
 
 export const cinzel = Cinzel({
@@ -79,7 +79,7 @@ export default function CustomPage() {
         topLabel="Celebrate in Style"
         title="Custom"
         highlightedText="Events"
-        description="From intimate private gatherings to grand celebrations, we curate unforgettable birthday experiences with exquisite décor, premium catering, live entertainment, and seamless logistics."
+        description="Private brand experiences on an island deck? A secret supper in a warehouse with a single, glowing long table? A sunrise wellness event that ends in a champagne brunch? We craft one-off experiences built entirely around your story"
         features={[
           { title: "Curated Themes", desc: "Unique birthday themes tailored to your style and mood." },
           { title: "Premium Venues", desc: "Handpicked venues that match your vision and guest count." },
@@ -88,7 +88,7 @@ export default function CustomPage() {
         ]}
         ctaButtons={[
           { text: "Book Your Event Now", type: "primary" },
-          { text: "Explore Packages", type: "secondary" },
+          // { text: "Explore Packages", type: "secondary" },
         ]}
         imageSrc={BirthdayImg}
         imageAlt="Birthday Celebration"

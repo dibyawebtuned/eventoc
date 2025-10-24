@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 // Replace with your actual asset
-import VenueImg from "/public/assets/img/content_image/81z6UCSU5YL.jpg";
+import VenueImg from "/public/assets/img/content_image/service_four.jpg";
 
 const customVenues = [
   { name: "Bar packages", icon: Building2 },

@@ -87,7 +87,7 @@ export default function BirthdayPage() {
         ]}
         ctaButtons={[
           { text: "Book Your Event Now", type: "primary" },
-          { text: "Explore Packages", type: "secondary" },
+          // { text: "Explore Packages", type: "secondary" },
         ]}
         imageSrc={BirthdayImg}
         imageAlt="Birthday Celebration"

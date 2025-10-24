@@ -328,7 +328,7 @@ const About_component = () => {
       <Methods />
 
       {/* --- Our Team --- */}
-      <OurTeamSection />
+      {/* <OurTeamSection /> */}
 
       {/* --- Where We Play --- */}
       {/* <section className="mt-32 relative overflow-hidden bg-gradient-to-b from-[#0b0b0b] via-[#090909] to-[#000]">
@@ -564,7 +564,7 @@ const About_component = () => {
         </div> */}
 
       {/* WhatWeCreate */}
-      <WhatWeCreate />
+      {/* <WhatWeCreate /> */}
 
       {/* BudgetsTimelines */}
       <BudgetsTimelines />

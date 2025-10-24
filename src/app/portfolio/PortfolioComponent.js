@@ -9,11 +9,11 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
 // Project images
-import Project1a from "/public/assets/img/content_image/2283609.jpg";
-import Project1b from "/public/assets/img/content_image/5e4c014e-45f2-4d0e-bc46-c7474b26b367.jpg";
-import Project1c from "/public/assets/img/content_image/6347dab01e23fef85fb0d3f8_63457b651fc7f5b5a272591f_See+how+to+stop+slow+nights+with+these+restaurant+and+bar+event+ideas.jpg";
-import Project1d from "/public/assets/img/content_image/81z6UCSU5YL.jpg";
-import Project1e from "/public/assets/img/content_image/a-microphone-in-focus-with-blurred-bokeh-lights-in-the-background-creating-a-vibrant-nightlife-atmosphere.-16727451-scaled-e1737059691145.jpg";
+import Project1a from "/public/assets/img/Event of OC/Conference/Conference.jpg";
+import Project1b from "/public/assets/img/Event of OC/Music/DJ.jpg";
+import Project1c from "/public/assets/img/Event of OC/Places/Opera-House.jpg";
+import Project1d from "/public/assets/img/Event of OC/Anniversary/Wine.jpg";
+import Project1e from "/public/assets/img/Event of OC/Birthday/Birthday Celebration.jpg";
 
 import { Cinzel, Montserrat } from "next/font/google";
 
@@ -31,7 +31,7 @@ export const montserrat = Montserrat({
 
 const projects = [
   {
-    title: "E-commerce Website",
+    title: "Private Birthday at The Island Rooftop",
     short_description:
       "Events OC secured a private rooftop space at The Island for a client’s birthday, accommodating up to 20 guests. The booking was confirmed within a single day, even on a weekend",
     description:
@@ -49,7 +49,7 @@ const projects = [
         comment: "Very smooth booking and great venue.",
       },
     ],
-    date: "Oct 16, 2025",
+    date: "June 2025",
   },
 ];
 

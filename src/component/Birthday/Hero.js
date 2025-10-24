@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Cinzel, Montserrat } from "next/font/google";
 import PropTypes from "prop-types";
+import ThreeStepModal from "../Modal";
+import { useState } from "react";
+
 
 export const cinzel = Cinzel({
   subsets: ["latin"],
@@ -17,18 +20,21 @@ export const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
+
 export const HeroSection = ({
   topLabel,
   title,
   highlightedText,
   description,
-  features =[],
+  features = [],
   ctaButtons = [],
   imageSrc,
   imageAlt,
   overlayTitle,
   overlayDesc,
 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className="relative overflow-hidden mt-[100px] py-[50px]">
       {/* Background Gradient */}
@@ -97,17 +103,23 @@ export const HeroSection = ({
           {/* Buttons */}
           <div className="flex flex-row flex-wrap gap-4 justify-start">
             {ctaButtons.map((btn, idx) => (
-              <motion.button
-                key={idx}
-                onClick={btn.onClick}
-                className={`px-6 sm:px-8 py-2 sm:py-3 rounded-full font-medium tracking-wide transition-all duration-300 cursor-pointer text-sm sm:text-base ${
-                  btn.type === "primary"
+              <>
+                <motion.button
+                  key={idx}
+                  onClick={() => setIsModalOpen(true)}
+                  className={`px-6 sm:px-8 py-2 sm:py-3 rounded-full font-medium tracking-wide transition-all duration-300 cursor-pointer text-sm sm:text-base ${btn.type === "primary"
                     ? "bg-[#BE9545] text-black hover:bg-[#A67C33]"
                     : "border border-[#BE9545] text-[#BE9545] hover:bg-[#FFD700]/10"
-                }`}
-              >
-                {btn.text}
-              </motion.button>
+                    }`}
+                >
+                  {btn.text}
+                </motion.button>
+
+                <ThreeStepModal
+                  isOpen={isModalOpen}
+                  onClose={() => setIsModalOpen(false)}
+                />
+              </>
             ))}
           </div>
         </motion.div>
@@ -129,7 +141,7 @@ export const HeroSection = ({
             />
 
             {/* Overlay */}
-            {overlayTitle && (
+            {/* {overlayTitle && (
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-start p-4 sm:p-6">
                 <div>
                   <h4
@@ -148,7 +160,7 @@ export const HeroSection = ({
                   )}
                 </div>
               </div>
-            )}
+            )} */}
           </div>
 
           {/* Floating Glow Accent */}

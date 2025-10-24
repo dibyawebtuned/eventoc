@@ -74,6 +74,10 @@ export default function WhatWeBelievePage() {
                     </div>
                 </section>
             </div>
+
+                {/* Decorative Glow Line (Bottom) */}
+            <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#BE9545]/30 to-transparent"></div>
+        
         </main>
     );
 }
