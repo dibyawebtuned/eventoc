@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Link from "next/link";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -103,11 +105,19 @@ const photographsImage = [
 export default function Service() {
   const [activeTab, setActiveTab] = useState("Venue");
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 50,
+    });
+  }, []);
+
   return (
     <section id="services" className="py-20 bg-gradient-to-b from-[#0A0A0A] to-[#685736]">
       <div className="max-w-7xl mx-auto px-4 text-center flex flex-col gap-[25px] sm:gap-[50px]">
         {/* Title Content */}
-        <div className="flex flex-row items-center gap-[20px] justify-center">
+        <div className="flex flex-row items-center gap-[20px] justify-center" data-aos="fade-up">
           <div>
             <Image src={Left_heading_line} alt="Services" />
           </div>
@@ -123,7 +133,7 @@ export default function Service() {
 
         <div className="flex flex-col gap-[15px] md:gap-[30px]">
           {/* Tabs */}
-          <div className="flex flex-wrap justify-center gap-0 sm:gap-0">
+          <div className="flex flex-wrap justify-center gap-0 sm:gap-0" data-aos="fade-up" data-aos-delay="200">
             {tabs.map((tab, index) => (
               <button
                 key={tab.name}
@@ -176,6 +186,8 @@ export default function Service() {
                       <Link
                         href={image.link}
                         className="block relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                        data-aos="zoom-in"
+                        data-aos-delay={index * 100}
                       >
                         <Image
                           src={image.src}
@@ -240,6 +252,8 @@ export default function Service() {
                       <Link
                         href={image.link}
                         className="block relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                        data-aos="zoom-in"
+                        data-aos-delay={index * 100}
                       >
                         <Image
                           src={image.src}
@@ -304,6 +318,8 @@ export default function Service() {
                       <Link
                         href={image.link}
                         className="block relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                        data-aos="zoom-in"
+                        data-aos-delay={index * 100}
                       >
                         <Image
                           src={image.src}
@@ -368,6 +384,8 @@ export default function Service() {
                       <Link
                         href={image.link}
                         className="block relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                        data-aos="zoom-in"
+                        data-aos-delay={index * 100}
                       >
                         <Image
                           src={image.src}
@@ -432,6 +450,8 @@ export default function Service() {
                       <Link
                         href={image.link}
                         className="block relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                        data-aos="zoom-in"
+                        data-aos-delay={index * 100}
                       >
                         <Image
                           src={image.src}
@@ -495,6 +515,8 @@ export default function Service() {
                       <Link
                         href={image.link}
                         className="block relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                        data-aos="zoom-in"
+                        data-aos-delay={index * 100}
                       >
                         <Image
                           src={image.src}
@@ -559,6 +581,8 @@ export default function Service() {
                       <Link
                         href={image.link}
                         className="block relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                        data-aos="zoom-in"
+                        data-aos-delay={index * 100}
                       >
                         <Image
                           src={image.src}

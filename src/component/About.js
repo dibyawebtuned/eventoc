@@ -4,6 +4,9 @@ import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import Left_heading_line from "/public/assets/img/Left.png";
 import Right_heading_line from "/public/assets/img/Right.png";
 import Img1 from "/public/assets/img/Event of OC/Conference/Conference.jpg";
@@ -17,6 +20,17 @@ export default function About() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: false, threshold: 0.3 });
     const [animateState, setAnimateState] = useState("hidden");
+
+
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: "ease-out",
+            offset: 100,
+        });
+    }, []);
+
 
     useEffect(() => {
         setAnimateState(isInView ? "visible" : "hidden");
@@ -57,7 +71,7 @@ export default function About() {
         <section id="services" className="py-24 bg-black overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 text-center flex flex-col gap-8 md:gap-16">
                 {/* Title */}
-                <div className="flex flex-row items-center gap-5 justify-center">
+                <div className="flex flex-row items-center gap-5 justify-center" data-aos="fade-up">
                     <Image src={Left_heading_line} alt="Left Line" />
                     <h2 className="text-3xl sm:text-4xl md:text-[36px] lg:text-[40px] font-light text-[#D7B26A]" style={{
                         fontFamily: "var(--font-cinzel-regular)",
@@ -70,7 +84,9 @@ export default function About() {
 
                 {/* Description */}
                 <p className="text-white text-base sm:text-lg md:text-[21px] leading-[1.6] w-full sm:w-11/12 md:w-10/12 lg:w-9/12 mx-auto text-center px-4 sm:px-0"
-                    style={{ fontFamily: "var(--font-montserrat)" }} >
+                    style={{ fontFamily: "var(--font-montserrat)" }}
+                    data-aos="fade-up"
+                    data-aos-delay="200" >
                     EventOC plans high-energy celebrations across the Byron Bays, Sunshine
                     Coast & Gold Coast — birthdays, brand openings, hens nights, beach &
                     pool parties, private and community events, and live music. We handle

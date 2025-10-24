@@ -2,7 +2,11 @@
 
 import React from "react";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 import Left_heading_line from "/public/assets/img/Left.png";
 import Right_heading_line from "/public/assets/img/Right.png";
@@ -13,6 +17,16 @@ import ThreeStepModal from "./Modal";
 export default function Banner() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+    useEffect(() => {
+        AOS.init({
+            duration: 1000, // animation duration in ms
+            once: true,     // only animate once
+            easing: "ease-out",
+            offset: 100,    // trigger animation 100px before element comes into view
+        });
+    }, []);
+
+
     return (
         <section className="relative w-full flex items-center justify-center overflow-hidden">
             {/* Background Image */}
@@ -21,7 +35,7 @@ export default function Banner() {
             {/* Content */}
             <div className="relative z-10 flex flex-col gap-[10px] items-center justify-center text-center px-4 py-[95px]">
                 {/* Title with Diamond Lines */}
-                <div className="flex gap-[20px] items-center justify-center">
+                <div className="flex gap-[20px] items-center justify-center" data-aos="fade-down">
                     <Image src={Left_heading_line} alt="left connector" />
                     <h2 className="text-3xl sm:text-4xl md:text-[36px] lg:text-[40px] font-light text-[#D7B26A]" style={{ fontFamily: "var(--font-cinzel-regular)", lineHeight: "1.2" }}>
                         Events of the century
@@ -31,7 +45,9 @@ export default function Banner() {
 
                 {/* Subtitle */}
                 <p className="text-white text-base sm:text-lg md:text-[21px] leading-[1.6] w-full sm:w-11/12 md:w-10/12 lg:w-9/12 mx-auto text-center px-4 sm:px-0"
-                    style={{ fontFamily: "var(--font-montserrat)" }}>
+                    style={{ fontFamily: "var(--font-montserrat)" }}
+                    data-aos="fade-up"
+                    data-aos-delay="200">
                     Luxe details, seamless logistics, unforgettable moments.
                 </p>
                 <div>
@@ -39,8 +55,10 @@ export default function Banner() {
                     <button
                         onClick={() => setIsModalOpen(true)}
                         className="inline-block px-6 py-2 border border-white text-white text-lg font-light rounded-md 
-                transition-all duration-500 ease-in-out 
-                hover:bg-white hover:text-black hover:shadow-lg mt-[20px] cursor-pointer">
+                        transition-all duration-500 ease-in-out 
+                        hover:bg-white hover:text-black hover:shadow-lg mt-[20px] cursor-pointer"
+                        data-aos="zoom-in"
+                        data-aos-delay="400">
                         Book Now
                     </button>
 

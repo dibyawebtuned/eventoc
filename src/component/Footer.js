@@ -1,17 +1,31 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaInstagram, FaFacebookF, FaPhoneAlt, FaEnvelope, FaPaperPlane } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import Logo from "/public/assets/img/EventOC_Logo.png";
 
 const Footer = () => {
+
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: "ease-out",
+            offset: 100,
+        });
+    }, []);
+
+
     return (
         <footer className="bg-black text-gray-300 pt-10 pb-4">
             {/* Logo and tagline */}
-            <div className="text-center mb-10">
+            <div className="text-center mb-10" data-aos="fade-down">
                 <div className="flex justify-center mb-[15px]">
                     <Image
                         src={Logo}
@@ -39,7 +53,7 @@ const Footer = () => {
             </div>
 
             {/* Divider */}
-            <div className="border-t border-[#FFF4DE]/30 max-w-6xl mx-auto mb-10"></div>
+            <div className="border-t border-[#FFF4DE]/30 max-w-6xl mx-auto mb-10" data-aos="fade-up"></div>
 
             {/* Footer content */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-10 max-w-6xl mx-auto px-6 text-sm">
