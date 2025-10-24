@@ -17,6 +17,8 @@ import {
   Ship, Car, Hotel, ShieldCheck, MapPin, Users, UtensilsCrossed, Headphones, Sparkles, Flower2, Camera
 } from "lucide-react";
 
+import { FaBirthdayCake, FaWineGlassAlt, FaCoffee, FaIceCream, FaGlassWhiskey } from "react-icons/fa";
+
 
 // Replace with your actual asset
 import VenueImg from "/public/assets/img/Event of OC/Wedding/Dinning 2.jpg";
@@ -32,27 +34,27 @@ const customVenues = [
 
 const customAddons = [
   {
-    icon: Car,
+    icon: FaBirthdayCake,
     label: "Celebration cake",
     desc: "Seamless guest arrivals with premium transfers.",
   },
   {
-    icon: Hotel,
+    icon: FaWineGlassAlt,
     label: " Champagne towe",
     desc: "Curated stays for comfort and convenience.",
   },
   {
-    icon: ShieldCheck,
+    icon: FaCoffee,
     label: " Coffee car",
     desc: "Discreet, professional, and perfectly coordinated.",
   },
   {
-    icon: MapPin,
+    icon: FaIceCream,
     label: " Gelato/sorbet car",
     desc: "Elegant direction systems designed for clarity.",
   },
   {
-    icon: Users,
+    icon: FaGlassWhiskey,
     label: "Juice/hydration ba",
     desc: "Private zones crafted for comfort and calm.",
   },

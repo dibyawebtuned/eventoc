@@ -18,41 +18,46 @@ import {
   Ship, Car, Hotel, ShieldCheck, MapPin, Users, UtensilsCrossed, Headphones, Sparkles, Flower2, Camera
 } from "lucide-react";
 
+import { FaBuilding, FaUmbrellaBeach, FaHome, FaCocktail, FaImage, FaWarehouse, FaHotel, FaTree, FaCar, FaShieldAlt, FaMapMarkerAlt, FaUser } from "react-icons/fa";
+
 // Replace with your actual asset
 import VenueImg from "/public/assets/img/Event of OC/Wedding/Wedding Venue 2.jpg";
 
 const customVenues = [
-  { name: "Bar packages", icon: Building2 },
-  { name: "Signature cocktails", icon: Sun },
-  { name: "BYO management", icon: Home },
-  { name: "Turnaround", icon: GlassWater },
-  { name: "Re-use plan across ceremony", icon: Ship },
+  { name: "Rooftops ", icon: FaBuilding },
+  { name: "Beach clubs & lawn terraces", icon: FaUmbrellaBeach },
+  { name: "Private homes/villas", icon: FaHome },
+  { name: "Boutique bars", icon: FaCocktail },
+  { name: "Galleries & studios", icon: FaImage },
+  { name: "Warehouses ", icon: FaWarehouse },
+  { name: "Hotel ballrooms", icon: FaHotel },
+  { name: "Garden estates", icon: FaTree },
 ];
 
 const customAddons = [
   {
-    icon: Car,
-    label: "Celebration cake",
+    icon: FaCar,
+    label: "Guest transfers & valet",
     desc: "Seamless guest arrivals with premium transfers.",
   },
   {
-    icon: Hotel,
-    label: " Champagne towe",
+    icon: FaHotel,
+    label: "Accommodation blocks",
     desc: "Curated stays for comfort and convenience.",
   },
   {
-    icon: ShieldCheck,
-    label: " Coffee car",
+    icon: FaShieldAlt,
+    label: "Security & crowd flow",
     desc: "Discreet, professional, and perfectly coordinated.",
   },
   {
-    icon: MapPin,
-    label: " Gelato/sorbet car",
+    icon: FaMapMarkerAlt,
+    label: "Wayfinding signage",
     desc: "Elegant direction systems designed for clarity.",
   },
   {
-    icon: Users,
-    label: "Juice/hydration ba",
+    icon: FaUser,
+    label: "Cloak & green rooms",
     desc: "Private zones crafted for comfort and calm.",
   },
 ];

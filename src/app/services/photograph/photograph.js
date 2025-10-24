@@ -18,16 +18,18 @@ import {
     Ship, Car, Hotel, ShieldCheck, MapPin, Users, UtensilsCrossed, Headphones, Sparkles, Flower2, Camera
 } from "lucide-react";
 
+import { FaImages, FaPhotoVideo, FaFileAlt, FaClock, FaRecycle } from "react-icons/fa";
+
 
 // Replace with your actual asset
 import VenueImg from "/public/assets/img/Event of OC/Wedding/Wedding Couple pose 4.jpg";
 
 const customVenues = [
-    { name: "Edited images", icon: Building2 },
-    { name: "Curated gallery", icon: Sun },
-    { name: "Usage", icon: Home },
-    { name: "Turnaround", icon: GlassWater },
-    { name: "Re-use plan across ceremony", icon: Ship },
+    { name: "Edited images", icon: FaImages },
+    { name: "Curated gallery", icon: FaPhotoVideo },
+    { name: "Usage", icon: FaFileAlt },
+    { name: "Turnaround", icon: FaClock },
+    { name: "Re-use plan across ceremony", icon: FaRecycle },
 ];
 
 

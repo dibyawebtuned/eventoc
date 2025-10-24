@@ -9,6 +9,8 @@ import Banner from "@/component/Banner";
 import ThreeStepModal from "../../../component/Modal";
 import { useState } from "react";
 
+import { FaSeedling, FaLeaf, FaCamera, FaGift, FaSun, FaRecycle, FaWater } from "react-icons/fa";
+
 import {
     Building2,
     Sun,
@@ -22,32 +24,32 @@ import {
 import VenueImg from "/public/assets/img/Event of OC/Wedding/Wedding Venue.jpg";
 
 const customVenues = [
-    { name: "Fresh blooms", icon: Building2 },
-    { name: "Natives and tropicals", icon: Sun },
-    { name: "Selected dried element", icon: Home },
-    { name: "Sustainable mechanics", icon: GlassWater },
-    { name: "Re-use plan across ceremony", icon: Ship },
+    { name: "Fresh blooms", icon: FaLeaf },
+    { name: "Natives and tropicals", icon: FaSun },
+    { name: "Selected dried element", icon: FaSeedling },
+    { name: "Sustainable mechanics", icon: FaRecycle },
+    { name: "Re-use plan across ceremony", icon: FaWater },
 ];
 
 
 const customAddons = [
     {
-        icon: Car,
+        icon: FaSeedling,
         label: "Flower bar for guests",
         desc: "Seamless guest arrivals with premium transfers.",
     },
     {
-        icon: Hotel,
+        icon: FaLeaf,
         label: "Wearable florals",
         desc: "Curated stays for comfort and convenience.",
     },
     {
-        icon: ShieldCheck,
+        icon: FaCamera,
         label: " Photo-moment meadow",
         desc: "Discreet, professional, and perfectly coordinated.",
     },
     {
-        icon: MapPin,
+        icon: FaGift,
         label: "Keepsake dried arrangements",
         desc: "Elegant direction systems designed for clarity.",
     },
