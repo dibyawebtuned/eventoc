@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { FaGlassCheers, FaMusic, FaStar, FaMapMarkerAlt, FaBirthdayCake } from "react-icons/fa";
+import { FaGlassCheers, FaMusic, FaStar, FaMapMarkerAlt, FaBirthdayCake, FaGuitar, FaMoon } from "react-icons/fa";
 import SignatureIdeas from "@/component/Birthday/Signature-ideas";
 import { PackagesComponent } from "@/component/Birthday/Birthday-package";
 import { RunSheetNew } from "@/component/Birthday/Run-sheet";
@@ -17,19 +17,19 @@ const beachIdeas = [
   {
     id: "golden",
     label: "Open-Format DJ + Sax",
-    icon: "FaCocktail",
+    icon: "FaMusic",
     image: "/assets/img/Event of OC/Music/Concert2.jpg",
   },
   {
     id: "villa",
     label: "Indie Sessions",
-    icon: "FaBirthdayCake",
+    icon: "FaGuitar",
     image: "/assets/img/Event of OC/Music/DJ1.jpg",
   },
   {
     id: "lounge",
     label: "Sunset to After-Dark",
-    icon: "FaMask",
+    icon: "FaMoon",
     image: "/assets/img/Event of OC/Music/Music.jpg",
   },
   // {

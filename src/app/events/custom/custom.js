@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { FaGlassCheers, FaMusic, FaStar, FaMapMarkerAlt, FaBirthdayCake } from "react-icons/fa";
+import { FaGlassCheers, FaMusic, FaStar, FaMapMarkerAlt, FaBirthdayCake, FaPalette, FaGlobeAmericas, FaPlane, FaLaptop } from "react-icons/fa";
 import SignatureIdeas from "@/component/Birthday/Signature-ideas";
 import { PackagesComponent } from "@/component/Birthday/Birthday-package";
 import { RunSheetNew } from "@/component/Birthday/Run-sheet";
@@ -17,25 +17,25 @@ const beachIdeas = [
   {
     id: "golden",
     label: "Immersive themes",
-    icon: "FaCocktail",
+    icon: "FaPalette",
     image: "/assets/img/Event of OC/Anniversary/Wine.jpg",
   },
   {
     id: "villa",
     label: "One-night “worlds”",
-    icon: "FaBirthdayCake",
+    icon: "FaGlobeAmericas",
     image: "/assets/img/Event of OC/Wedding/Rings.jpg",
   },
   {
     id: "lounge",
     label: "Destination-style",
-    icon: "FaMask",
+    icon: "FaPlane",
     image: "/assets/img/Event of OC/Anniversary/Drink.jpg",
   },
   {
     id: "beach",
     label: "Hybrid brand",
-    icon: "FaCocktail",
+    icon: "FaLaptop",
     image: "/assets/img/content_image/beach.jpg",
   },
 ];

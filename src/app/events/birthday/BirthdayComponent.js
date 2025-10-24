@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { FaGlassCheers, FaMusic, FaStar, FaMapMarkerAlt, FaBirthdayCake } from "react-icons/fa";
+import { FaGlassCheers, FaMusic, FaStar, FaMapMarkerAlt, FaBirthdayCake, FaSun, FaUtensils, FaGlassMartiniAlt } from "react-icons/fa";
 import SignatureIdeas from "@/component/Birthday/Signature-ideas";
 import { PackagesComponent } from "@/component/Birthday/Birthday-package";
 import { RunSheetNew } from "@/component/Birthday/Run-sheet";
@@ -16,19 +16,19 @@ const birthdayIdeas = [
   {
     id: "golden",
     label: "Golden Hour Rooftop",
-    icon: "FaCocktail",
+    icon: "FaSun",
     image: "/assets/img/Event of OC/Birthday/Birthday celebration 2.jpg",
   },
   {
     id: "villa",
     label: "Private Villa Dinner",
-    icon: "FaBirthdayCake",
+    icon: "FaUtensils",
     image: "/assets/img/Event of OC/Birthday/Birthday celebration 3.jpg",
   },
   {
     id: "lounge",
     label: "After-Dark Lounge",
-    icon: "FaMask",
+    icon: "FaGlassMartiniAlt",
     image: "/assets/img/Event of OC/Birthday/Cake.jpg",
   },
   // {
@@ -79,12 +79,12 @@ export default function BirthdayPage() {
         title="Magical"
         highlightedText="Birthday Events"
         description="From intimate private gatherings to grand celebrations, we curate unforgettable birthday experiences with exquisite décor, premium catering, live entertainment, and seamless logistics."
-        features={[
-          { title: "Curated Themes", desc: "Unique birthday themes tailored to your style and mood." },
-          { title: "Premium Venues", desc: "Handpicked venues that match your vision and guest count." },
-          { title: "Entertainment", desc: "Live DJs, performers, and interactive experiences." },
-          { title: "Seamless Planning", desc: "End-to-end event coordination for stress-free celebrations." },
-        ]}
+        // features={[
+        //   { title: "Curated Themes", desc: "Unique birthday themes tailored to your style and mood." },
+        //   { title: "Premium Venues", desc: "Handpicked venues that match your vision and guest count." },
+        //   { title: "Entertainment", desc: "Live DJs, performers, and interactive experiences." },
+        //   { title: "Seamless Planning", desc: "End-to-end event coordination for stress-free celebrations." },
+        // ]}
         ctaButtons={[
           { text: "Book Your Event Now", type: "primary" },
           // { text: "Explore Packages", type: "secondary" },

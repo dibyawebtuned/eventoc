@@ -86,7 +86,7 @@ export default function HeroSection() {
                                     style={{
                                         background: "linear-gradient(to bottom, #BE9546, #7A5E39)",
                                     }}>
-                                    <span className="relative z-10">Book Now</span>
+                                    <span className="relative z-10 cursor-pointer">Book Now</span>
                                     <span className="absolute inset-0 bg-gradient-to-b from-[#7A5E39] to-[#BE9546] opacity-0 hover:opacity-20 rounded-lg transition-opacity duration-300"></span>
                                 </button>
 

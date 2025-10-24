@@ -284,7 +284,7 @@ export default function Navbar() {
                                         <li>
                                             <button
                                                 onClick={() => setIsModalOpen(true)}
-                                                className="inline-block px-6 py-2 rounded-md transition-shadow shadow-sm bg-gradient-to-b from-[#BE9545] to-[#7A5E39] text-white" >
+                                                className="inline-block px-6 py-2 rounded-md transition-shadow shadow-sm bg-gradient-to-b from-[#BE9545] to-[#7A5E39] text-white cursor-pointer" >
                                                 Book Now
                                             </button>
 
@@ -399,7 +399,7 @@ export default function Navbar() {
                                             <li>
                                                 <button
                                                     onClick={() => setIsModalOpen(true)}
-                                                    className="block text-center px-4 py-2 rounded-md font-semibold bg-gradient-to-b from-[#BE9545] to-[#7A5E39] text-white"
+                                                    className="block text-center px-4 py-2 rounded-md font-semibold bg-gradient-to-b from-[#BE9545] to-[#7A5E39] text-whit cursor-pointer"
                                                 >
                                                     Book Now
                                                 </button>
@@ -418,7 +418,9 @@ export default function Navbar() {
                         <div className="flex items-center justify-between px-4 py-2 gap-4">
                             {/* LOGO */}
                             <div className="relative w-40 h-16">
-                                <Image src={Event_OC_Logo} alt="Logo" fill className="object-contain" priority />
+                                <Link href="/">
+                                    <Image src={Event_OC_Logo} alt="Logo" fill className="object-contain" priority />
+                                </Link>
                             </div>
 
                             {/* Left Menu */}
@@ -578,7 +580,7 @@ export default function Navbar() {
                             {/* Right Menu */}
                             <button
                                 onClick={() => setIsModalOpen(true)}
-                                className="hidden sm:inline-block px-6 py-2 rounded-md font-medium transition-shadow shadow-sm bg-gradient-to-b from-[#BE9545] to-[#7A5E39] text-white">
+                                className="hidden sm:inline-block px-6 py-2 rounded-md font-medium transition-shadow shadow-sm bg-gradient-to-b from-[#BE9545] to-[#7A5E39] text-white cursor-pointer">
                                 Book Now
                             </button>
 
@@ -673,7 +675,7 @@ export default function Navbar() {
                                     <li>
                                         <button
                                             onClick={() => setIsModalOpen(true)}
-                                            className="block text-center px-3 py-1 rounded-md font-semibold bg-gradient-to-b from-[#BE9545] to-[#7A5E39] text-white">
+                                            className="block text-center px-3 py-1 rounded-md font-semibold bg-gradient-to-b from-[#BE9545] to-[#7A5E39] text-white cursor-pointer">
                                             Book Now
                                         </button>
 

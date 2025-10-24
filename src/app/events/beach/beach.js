@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { FaGlassCheers, FaMusic, FaStar, FaMapMarkerAlt, FaBirthdayCake } from "react-icons/fa";
+import { FaGlassCheers, FaMusic, FaStar, FaMapMarkerAlt, FaBirthdayCake, FaUmbrellaBeach, FaPizzaSlice, FaGlassMartiniAlt } from "react-icons/fa";
 import SignatureIdeas from "@/component/Birthday/Signature-ideas";
 import { PackagesComponent } from "@/component/Birthday/Birthday-package";
 import { RunSheetNew } from "@/component/Birthday/Run-sheet";
@@ -17,19 +17,19 @@ const beachIdeas = [
   {
     id: "golden",
     label: "Sunset Swim Social",
-    icon: "FaCocktail",
+    icon: "FaUmbrellaBeach",
     image: "/assets/img/Event of OC/Places/Light House Byron bay.jpg",
   },
   {
     id: "villa",
     label: "Barefoot Beach Picnic",
-    icon: "FaBirthdayCake",
+    icon: "FaPizzaSlice",
     image: "/assets/img/Event of OC/Places/Opera-House.jpg",
   },
   {
     id: "lounge",
     label: "Cabana Club",
-    icon: "FaMask",
+    icon: "FaGlassMartiniAlt",
     image: "/assets/img/Event of OC/Places/Light House Byron bay.jpg",
   },
   // {
@@ -81,10 +81,10 @@ export default function BeachPage() {
         highlightedText="Pool Events"
         description="From Broadbeach lawn lounges to private pool villas, we create sun-kissed parties with coastal elegance and a little wild freedom. Hydration bars, shade plans, waterproof audio and safety-first staffing keep it smooth from first splash to last song."
         features={[
-          { title: "Curated Themes", desc: "Unique birthday themes tailored to your style and mood." },
-          { title: "Premium Venues", desc: "Handpicked venues that match your vision and guest count." },
-          { title: "Entertainment", desc: "Live DJs, performers, and interactive experiences." },
-          { title: "Seamless Planning", desc: "End-to-end event coordination for stress-free celebrations." },
+          { title: "Shade strategy", desc: "" },
+          { title: "Sunscreen & hydration stations", desc: "" },
+          { title: "Towel service", desc: "" },
+          { title: "Wet-area power management", desc: "" },
         ]}
         ctaButtons={[
           { text: "Book Your Event Now", type: "primary" },
