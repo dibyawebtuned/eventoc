@@ -91,7 +91,7 @@ const GalleryComponent = () => {
       <div className="flex justify-center flex-wrap gap-4 mb-14"
         data-aos="fade-up"
         data-aos-delay="200">
-        {["All", "Anniversary", "Birthday", "Conference"].map((tab) => (
+        {["Anniversary", "Birthday", "Conference"].map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
