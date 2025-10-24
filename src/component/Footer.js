@@ -72,7 +72,7 @@ const Footer = () => {
             {/* Footer content */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-10 max-w-6xl mx-auto px-6 text-sm">
                 {/* Quick Links */}
-                <div>
+                <div>x
                     <h3 className={`text-[#D7B26A] font-serif text-[22px] mb-4 tracking-wide ${cinzel.className}`}>
                         QUICK LINKS
                     </h3>
