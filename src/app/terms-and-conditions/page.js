@@ -1,10 +1,36 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "@/component/Nav";
 import Footer from "@/component/Footer";
+import ThreeStepModal from "@/component/Modal";
+
+
+
+import { Cinzel, Montserrat } from "next/font/google";
+
+export const cinzel = Cinzel({
+    subsets: ["latin"],
+    weight: ["400", "500", "600", "700", "900"],
+    variable: "--font-cinzel",
+});
+
+export const montserrat = Montserrat({
+    subsets: ["latin"],
+    weight: ["400", "500", "600", "700", "900"],
+    variable: "--font-montserrat",
+});
+
+
+
 
 const Page = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    // Open modal automatically when page loads
+    useEffect(() => {
+        setIsModalOpen(true);
+    }, []);
     return (
         <div className="flex flex-col min-h-screen bg-black text-white mt-[100px]">
             {/* Header */}
@@ -12,11 +38,11 @@ const Page = () => {
 
             {/* Main Content */}
             <main className="flex-grow px-6 md:px-16 lg:px-32 py-12">
-                <h1 className="text-3xl md:text-4xl font-bold text-[#D7B26A] mb-6">
+                <h1 className={`text-3xl md:text-4xl font-bold text-[#D7B26A] mb-6 ${cinzel.className}`}>
                     Terms & Conditions
                 </h1>
 
-                <div className="space-y-6 text-sm md:text-base leading-relaxed text-gray-300">
+                <div className={`space-y-6 text-sm md:text-base leading-relaxed text-gray-300 ${montserrat.className}`}>
                     <p>
                         These Terms and Conditions (“Terms”) apply to all services provided
                         by <span className="text-[#D7B26A]">Events of The Century</span>
@@ -107,6 +133,12 @@ const Page = () => {
 
             {/* Footer */}
             <Footer />
+
+            {/* Your Modal */}
+            <ThreeStepModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+            />
         </div>
     );
 };
