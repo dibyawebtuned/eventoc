@@ -171,7 +171,8 @@ const PortfolioComponent = () => {
                         )}
 
                         {activeTab === "Reviews" && (
-                          <div className="flex flex-col gap-4 mt-2">
+                          <div className="flex flex-col gap-6 mt-2">
+                            {/* Existing Reviews */}
                             {project.reviews.map((review, idx) => (
                               <motion.div
                                 key={idx}
@@ -216,7 +217,42 @@ const PortfolioComponent = () => {
                                 </div>
                               </motion.div>
                             ))}
+
+                            {/* Static Review Form */}
+                            <div className="bg-gray-800/70 p-4 rounded-xl shadow-lg flex flex-col gap-4 mt-6">
+                              <h3 className={`text-white font-semibold ${montserrat.className}`}>Leave a Review</h3>
+
+                              <input
+                                type="text"
+                                placeholder="Your Name"
+                                className="p-2 rounded-md bg-gray-900 text-white border border-gray-700 focus:outline-none focus:border-[#D7B26A]"
+                              />
+
+                              <select
+                                className="p-2 rounded-md bg-gray-900 text-white border border-gray-700 focus:outline-none focus:border-[#D7B26A]"
+                              >
+                                <option value="">Select Rating</option>
+                                <option value="1">1 Star</option>
+                                <option value="2">2 Stars</option>
+                                <option value="3">3 Stars</option>
+                                <option value="4">4 Stars</option>
+                                <option value="5">5 Stars</option>
+                              </select>
+
+                              <textarea
+                                placeholder="Write your review..."
+                                rows={3}
+                                className="p-2 rounded-md bg-gray-900 text-white border border-gray-700 focus:outline-none focus:border-[#D7B26A]"
+                              ></textarea>
+
+                              <button
+                                className="px-4 py-2 bg-[#D7B26A] text-black font-semibold rounded-md hover:bg-[#c4a240] transition-colors duration-300"
+                              >
+                                Submit Review
+                              </button>
+                            </div>
                           </div>
+
                         )}
 
                       </motion.div>

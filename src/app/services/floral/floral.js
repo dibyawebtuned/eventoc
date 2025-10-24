@@ -6,6 +6,9 @@ import VenueStyles from "@/component/Venue/Venue-style";
 import AddonsSection from "@/component/Venue/Addon";
 import TimelineSection from "@/component/Venue/Timeline";
 import Banner from "@/component/Banner";
+import ThreeStepModal from "../../../component/Modal";
+import { useState } from "react";
+
 import {
     Building2,
     Sun,
@@ -16,7 +19,7 @@ import {
 
 
 // Replace with your actual asset
-import VenueImg from "/public/assets/img/content_image/81z6UCSU5YL.jpg";
+import VenueImg from "/public/assets/img/Event of OC/Wedding/Wedding Venue.jpg";
 
 const customVenues = [
     { name: "Fresh blooms", icon: Building2 },
@@ -56,6 +59,8 @@ const customAddons = [
 ];
 
 const VenueSourcingComponent = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     return (
         <>
             {/* HERO SECTION */}
@@ -87,7 +92,7 @@ const VenueSourcingComponent = () => {
                             className="text-[36px] md:text-[48px] leading-tight text-white font-semibold mt-3 mb-5"
                             style={{ fontFamily: "var(--font-cinzel-regular)" }}
                         >
-                            Style & <span className="text-[#BE9545]">Designs</span>
+                            Sculptural<span className="text-[#BE9545]">{" "} Florals</span>
                         </h2>
 
                         <p
@@ -141,18 +146,23 @@ const VenueSourcingComponent = () => {
                         {/* Buttons */}
                         <div className="flex flex-wrap gap-4">
                             <motion.button
-                                whileHover={{ scale: 1.05 }}
+                                onClick={() => setIsModalOpen(true)}
                                 className="px-8 py-3 bg-[#BE9545] text-white rounded-full font-medium tracking-wide hover:bg-[#a7843e] transition-all duration-300 cursor-pointer"
                             >
-                                Book Now
+                                Book You Event Now
                             </motion.button>
 
-                            <motion.button
+                            <ThreeStepModal
+                                isOpen={isModalOpen}
+                                onClose={() => setIsModalOpen(false)}
+                            />
+
+                            {/* <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 className="px-8 py-3 border border-[#BE9545] text-[#BE9545] rounded-full font-medium tracking-wide hover:bg-[#BE9545]/10 transition-all duration-300 cursor-pointer"
                             >
                                 Explore Venues
-                            </motion.button>
+                            </motion.button> */}
                         </div>
                     </motion.div>
 

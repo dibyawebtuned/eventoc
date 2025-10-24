@@ -17,6 +17,24 @@ import GalleryImg4 from "/public/assets/img/Event of OC/Anniversary/Pink-Wine.jp
 import GalleryImg5 from "/public/assets/img/Event of OC/Places/Opera-House.jpg";
 import GalleryImg6 from "/public/assets/img/Event of OC/Wedding/Bottle opening.jpg";
 
+import annivarsary_one from "/public/assets/img/Event of OC/Anniversary/Drink.jpg";
+import annivarsary_two from "/public/assets/img/Event of OC/Anniversary/Champagne.jpg";
+import annivarsary_three from "/public/assets/img/Event of OC/Anniversary/Drinks.jpg";
+import annivarsary_four from "/public/assets/img/Event of OC/Anniversary/Pink-Wine.jpg";
+
+
+import birthday_one from "/public/assets/img/Event of OC/Birthday/Birthday Celebration 1.jpg";
+import birthday_two from "/public/assets/img/Event of OC/Birthday/Birthday celebration 2.jpg";
+import birthday_three from "/public/assets/img/Event of OC/Birthday/Birthday celebration 3.jpg";
+import birthday_four from "/public/assets/img/Event of OC/Birthday/Birthday Celebration.jpg";
+
+
+import conference_one from "/public/assets/img/Event of OC/Conference/Conference.jpg";
+import conference_two from "/public/assets/img/Event of OC/Conference/Conference1.jpg";
+
+
+
+
 import { Cinzel, Montserrat } from "next/font/google";
 
 export const cinzel = Cinzel({
@@ -38,10 +56,10 @@ const GalleryComponent = () => {
 
   // Gallery data
   const galleryData = {
-    all: [GalleryImg1, GalleryImg2, GalleryImg3, GalleryImg4, GalleryImg5, GalleryImg6, GalleryImg1, GalleryImg2, GalleryImg3, GalleryImg4, GalleryImg5, GalleryImg6],
-    events: [GalleryImg1, GalleryImg3],
-    products: [GalleryImg2],
-    wedding: [GalleryImg1],
+    all: [annivarsary_one, annivarsary_two, annivarsary_three, annivarsary_four, birthday_one, birthday_two, birthday_three, birthday_four, conference_one, conference_two],
+    Anniversary: [annivarsary_one, annivarsary_two, annivarsary_three, annivarsary_four],
+    Birthday: [birthday_one, birthday_two, birthday_three, birthday_four],
+    Conference: [conference_one, conference_two],
   };
 
   // Convert Next.js image imports to plain URLs for lightbox
@@ -58,7 +76,7 @@ const GalleryComponent = () => {
 
       {/* Tabs */}
       <div className="flex justify-center flex-wrap gap-4 mb-14">
-        {["all", "events", "products", "wedding"].map((tab) => (
+        {["All", "Anniversary", "Birthday", "Conference"].map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
