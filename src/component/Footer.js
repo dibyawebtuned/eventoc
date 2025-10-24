@@ -61,7 +61,7 @@ const Footer = () => {
             <div className="border-t border-[#FFF4DE]/30 max-w-6xl mx-auto mb-8 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 2xl:px-40"></div>
 
             {/* Footer Content */}
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 max-w-6xl mx-auto px-14">
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 max-w-6xl mx-auto px-4">
                 {/* Quick Links */}
                 <div>
                     <h3 className={`text-[#D7B26A] font-serif text-lg sm:text-xl mb-4 tracking-wide ${cinzel.className}`}>
