@@ -10,6 +10,20 @@ import "aos/dist/aos.css";
 
 import Logo from "/public/assets/img/EventOC_Logo.png";
 
+import { Cinzel, Montserrat } from "next/font/google";
+
+export const cinzel = Cinzel({
+    subsets: ["latin"],
+    weight: ["400", "500", "600", "700", "700", "900"],
+    variable: "--font-cinzel",
+});
+
+export const montserrat = Montserrat({
+    subsets: ["latin"],
+    weight: ["400", "500", "600", "700", "700", "900"],
+    variable: "--font-montserrat",
+});
+
 const Footer = () => {
 
     useEffect(() => {
@@ -23,7 +37,7 @@ const Footer = () => {
 
 
     return (
-        <footer className="bg-black text-gray-300 pt-10 pb-4">
+        <footer className="bg-[#141414] text-gray-300 pt-10 pb-4">
             {/* Logo and tagline */}
             <div className="text-center mb-10" data-aos="fade-up">
                 <div className="flex justify-center mb-[15px]">
@@ -36,7 +50,7 @@ const Footer = () => {
                         priority
                     />
                 </div>
-                <p className="text-[#D7B26A] text-[16px]">
+                <p className={`text-[#D7B26A] text-[16px] ${montserrat.className}`}>
                     We are more than event planning service
                 </p>
                 <div className="flex justify-center gap-[40px] text-[#D7B26A] text-lg my-[30px]">
@@ -59,10 +73,10 @@ const Footer = () => {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-10 max-w-6xl mx-auto px-6 text-sm">
                 {/* Quick Links */}
                 <div>
-                    <h3 className="text-[#D7B26A] font-serif text-[24px] mb-4 tracking-wide">
+                    <h3 className={`text-[#D7B26A] font-serif text-[22px] mb-4 tracking-wide ${cinzel.className}`}>
                         QUICK LINKS
                     </h3>
-                    <ul className="space-y-2">
+                    <ul className={`space-y-2 ${montserrat.className}`}>
                         <li>
                             <Link href="/"
                                 className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
@@ -98,10 +112,10 @@ const Footer = () => {
 
                 {/* Popular Services */}
                 <div>
-                    <h3 className="text-[#D7B26A] font-serif text-[24px] mb-4 tracking-wide">
+                    <h3 className={`text-[#D7B26A] font-serif text-[22px] mb-4 tracking-wide ${cinzel.className}`}>
                         POPULAR SERVICES
                     </h3>
-                    <ul className="space-y-2">
+                    <ul className={`space-y-2 ${montserrat.className}`}>
                         <li>
                             <Link href="/services/venuesourcing" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
                             after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
@@ -134,10 +148,10 @@ const Footer = () => {
 
                 {/* Terms and policies Pages */}
                 <div>
-                    <h3 className="text-[#D7B26A] font-serif text-[24px] mb-4 tracking-wide">
+                    <h3 className={`text-[#D7B26A] font-serif text-[22px] mb-4 tracking-wide ${cinzel.className}`}>
                         TERMS & POLICIES
                     </h3>
-                    <ul className="space-y-2">
+                    <ul className={`space-y-2 ${montserrat.className}`}>
                         <li>
                             <Link href="/terms-and-conditions" className="text-[16px] relative hover:text-[#D7B26A] transition duration-300 
                             after:content-[''] after:absolute after:left-0 after:-bottom-[4px] 
@@ -156,10 +170,10 @@ const Footer = () => {
 
                 {/* Contact */}
                 <div>
-                    <h3 className="text-[#D7B26A] font-serif text-[24px] mb-4 tracking-wide">
+                    <h3 className={`text-[#D7B26A] text-[22px] mb-4 tracking-wide ${cinzel.className}`}>
                         CONTACT
                     </h3>
-                    <ul className="space-y-3">
+                    <ul className={`space-y-2 ${montserrat.className}`}>
                         <li>
                             <a className="flex items-center gap-2 hover:text-[#D7B26A] transition duration-300">
                                 <FaPhoneAlt className="text-[#D7B26A] w-4 h-4" />
