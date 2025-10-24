@@ -11,11 +11,37 @@ import "swiper/css/navigation";
 
 import Left_heading_line from "/public/assets/img/Left.png";
 import Right_heading_line from "/public/assets/img/Right.png";
+// Venue
 import ServiceOne from "/public/assets/img/content_image/service_one .jpg";
 import ServiceTwo from "/public/assets/img/content_image/service_two.jpg";
 import ServiceThree from "/public/assets/img/content_image/service_three.jpg";
 import ServiceFour from "/public/assets/img/content_image/service_four.jpg";
 import ServiceFive from "/public/assets/img/content_image/a-microphone-in-focus-with-blurred-bokeh-lights-in-the-background-creating-a-vibrant-nightlife-atmosphere.-16727451-scaled-e1737059691145.jpg";
+
+
+// Catering
+import catering_one from "/public/assets/img/Event of OC/Wedding/Dinning 1.jpg";
+import catering_two from "/public/assets/img/Event of OC/Wedding/Dinning 2.jpg";
+import catering_three from "/public/assets/img/Event of OC/Wedding/DINNING.jpg";
+
+// entertainment
+import entertainment_one from "/public/assets/img/Event of OC/Music/Concert.jpg";
+import entertainment_two from "/public/assets/img/Event of OC/Music/Concert1.jpg";
+import entertainment_three from "/public/assets/img/Event of OC/Music/Concert2.jpg";
+import entertainment_four from "/public/assets/img/Event of OC/Music/DJ.jpg";
+import entertainment_five from "/public/assets/img/Event of OC/Music/DJ1.jpg";
+import entertainment_six from "/public/assets/img/Event of OC/Music/DJ2.jpg";
+import entertainment_seven from "/public/assets/img/Event of OC/Music/Music.jpg";
+
+
+// audio
+import audio_one from "/public/assets/img/Event of OC/Wedding/Bottle opening.jpg";
+
+// Photographs 
+import photograph_one from "/public/assets/img/Event of OC/Wedding/Wedding Venue1.jpg";
+import photograph_two from "/public/assets/img/Event of OC/Wedding/People at wedding.jpg";
+import photograph_three from "/public/assets/img/Event of OC/Wedding/Wedding Couple pose 3.jpg";
+import photograph_four from "/public/assets/img/Event of OC/Wedding/Wedding Couple pose 6.jpg";
 
 import { Cinzel, Montserrat } from "next/font/google";
 
@@ -49,9 +75,30 @@ const venueImages = [
   { src: ServiceFive, title: "Emerald Lounge", link: "/services/venuesourcing" },
 ];
 const cateringImages = [
-  { src: ServiceOne, title: "Gold Coast", link: "/public/assets/img/Event of OC/Music/DJ.jpg" },
-  { src: ServiceTwo, title: "Byron Bays", link: "/public/assets/img/Event of OC/Music/Concert.jpg" },
+  { src: catering_one, title: "Gold Coast", link: "/public/assets/img/Event of OC/Music/DJ.jpg" },
+  { src: catering_two, title: "Byron Bays", link: "/public/assets/img/Event of OC/Music/Concert.jpg" },
+  { src: catering_three, title: "Byron Bays", link: "/public/assets/img/Event of OC/Music/Concert.jpg" },
 ];
+
+const entertainmentImage = [
+  { src: entertainment_one, title: "Gold Coast", link: "/public/assets/img/Event of OC/Music/DJ.jpg" },
+  { src: entertainment_two, title: "Gold Coast", link: "/public/assets/img/Event of OC/Music/DJ.jpg" },
+  { src: entertainment_three, title: "Gold Coast", link: "/public/assets/img/Event of OC/Music/DJ.jpg" },
+  { src: entertainment_four, title: "Gold Coast", link: "/public/assets/img/Event of OC/Music/DJ.jpg" },
+  { src: entertainment_five, title: "Gold Coast", link: "/public/assets/img/Event of OC/Music/DJ.jpg" },
+  { src: entertainment_six, title: "Gold Coast", link: "/public/assets/img/Event of OC/Music/DJ.jpg" },
+  { src: entertainment_seven, title: "Gold Coast", link: "/public/assets/img/Event of OC/Music/DJ.jpg" },
+]
+
+const audioImage = [
+  { src: audio_one, title: "Gold Coast", link: "/public/assets/img/Event of OC/Music/DJ.jpg" },
+]
+
+const photographsImage = [
+  { src: photograph_one, title: "Gold Coast", link: "/public/assets/img/Event of OC/Music/DJ.jpg" },
+  { src: photograph_two, title: "Gold Coast", link: "/public/assets/img/Event of OC/Music/DJ.jpg" },
+  { src: photograph_three, title: "Gold Coast", link: "/public/assets/img/Event of OC/Music/DJ.jpg" },
+]
 
 export default function Service() {
   const [activeTab, setActiveTab] = useState("Venue");
@@ -252,7 +299,7 @@ export default function Service() {
                     1024: { slidesPerView: 4 },
                   }}
                 >
-                  {cateringImages.map((image, index) => (
+                  {entertainmentImage.map((image, index) => (
                     <SwiperSlide key={index}>
                       <Link
                         href={image.link}
@@ -316,7 +363,7 @@ export default function Service() {
                     1024: { slidesPerView: 4 },
                   }}
                 >
-                  {cateringImages.map((image, index) => (
+                  {audioImage.map((image, index) => (
                     <SwiperSlide key={index}>
                       <Link
                         href={image.link}
@@ -443,7 +490,7 @@ export default function Service() {
                     1024: { slidesPerView: 4 },
                   }}
                 >
-                  {cateringImages.map((image, index) => (
+                  {photographsImage.map((image, index) => (
                     <SwiperSlide key={index}>
                       <Link
                         href={image.link}
