@@ -81,10 +81,10 @@ export default function CustomPage() {
         highlightedText="Events"
         description="Private brand experiences on an island deck? A secret supper in a warehouse with a single, glowing long table? A sunrise wellness event that ends in a champagne brunch? We craft one-off experiences built entirely around your story"
         features={[
-          { title: "Curated Themes", desc: "Unique birthday themes tailored to your style and mood." },
-          { title: "Premium Venues", desc: "Handpicked venues that match your vision and guest count." },
-          { title: "Entertainment", desc: "Live DJs, performers, and interactive experiences." },
-          { title: "Seamless Planning", desc: "End-to-end event coordination for stress-free celebrations." },
+          { title: "Discovery ", desc: "We learn your purpose, guests and dream scenario." },
+          { title: "Concept & Mood", desc: "You’ll receive a narrative, style board and preliminary budget." },
+          { title: "Build & Book", desc: "Venue, suppliers and schedules locked; designs signed off." },
+          { title: "Showtime", desc: "Our producers run the floor; you enjoy the moment." },
         ]}
         ctaButtons={[
           { text: "Book Your Event Now", type: "primary" },

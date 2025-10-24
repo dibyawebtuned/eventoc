@@ -82,10 +82,10 @@ export default function BrandPage() {
         highlightedText="Launch Events"
         description="From product reveals to pop-up brand worlds, we design launch experiences that turn attentioninto advocacy. Expect crisp sound, cinematic lighting, on-brand styling and content capture that lives on long after doors close."
         features={[
-          { title: "Curated Themes", desc: "Unique birthday themes tailored to your style and mood." },
-          { title: "Premium Venues", desc: "Handpicked venues that match your vision and guest count." },
-          { title: "Entertainment", desc: "Live DJs, performers, and interactive experiences." },
-          { title: "Seamless Planning", desc: "End-to-end event coordination for stress-free celebrations." },
+          { title: "Press & Influencer Preview", desc: "Tight run sheet, staged reveals, content touch-points." },
+          { title: "Customer Pop-Up", desc: "Interactive zones, sampling, live demos, POS integration." },
+          // { title: "Entertainment", desc: "Live DJs, performers, and interactive experiences." },
+          { title: "Executive/Partner Launch", desc: "Keynote seating, media wall, hospitality lounge." },
         ]}
         ctaButtons={[
           { text: "Book Your Event Now", type: "primary" },

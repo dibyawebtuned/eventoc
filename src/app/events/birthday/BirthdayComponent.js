@@ -89,7 +89,7 @@ export default function BirthdayPage() {
         topLabel="Celebrate in Style"
         title="Magical"
         highlightedText="Birthday Events"
-        description="From intimate private gatherings to grand celebrations, we curate unforgettable birthday experiences with exquisite décor, premium catering, live entertainment, and seamless logistics."
+        description="From sunset rooftop cocktails in Surfers to a candle-lit private dinner in Burleigh, we curate birthday celebrations that feel effortless, elevated and absolutely you. Think: statement styling, next-level catering, crisp audio for speeches, and photographs that look editorial."
         features={[
           { title: "Curated Themes", desc: "Unique birthday themes tailored to your style and mood." },
           { title: "Premium Venues", desc: "Handpicked venues that match your vision and guest count." },
