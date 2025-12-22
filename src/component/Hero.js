@@ -67,9 +67,16 @@ export default function HeroSection() {
                         loop>
                     </video> */}
 
-                    <video
+                    {/* <video
                         className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] sm:w-[75%] md:w-[60%] h-[350px] sm:h-[260px] md:h-[90%] object-cover rounded-t-none rounded-b-[20px]"
-                        src="/assets/videos/20251203-112619.mp4"
+                        src="/assets/videos/latest_banner.mp4"
+                        autoPlay
+                        muted
+                        loop
+                    /> */}
+                    <video
+                        className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[400px] sm:h-[260px] md:h-full object-cover rounded-t-none rounded-b-[20px]"
+                        src="/assets/videos/latest_banner.mp4"
                         autoPlay
                         muted
                         loop
@@ -80,7 +87,7 @@ export default function HeroSection() {
                     <div className="absolute top-0 left-0 w-full h-full bg-black/30 rounded-t-none rounded-b-[20px]"></div>
 
                     {/* Hero Content */}
-                    <div className="container mx-auto relative z-10 flex flex-col items-center justify-end h-full text-center px-4">
+                    <div className="container mx-auto relative z-10 flex flex-col items-center justify-end h-full text-center px-4 pb-12 md:pb-16 lg:pb-24">
                         {/* <motion.div className={`${cormorant.className} text-white text-4xl md:text-[78px] font-semibold mb-4`}
                             variants={textVariant}
                             initial="hidden"
